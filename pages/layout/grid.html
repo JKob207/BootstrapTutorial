@@ -40,7 +40,6 @@
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="containers.html">Kontenery</a>
                             <a class="dropdown-item" href="#">Siatka</a>
-                            <a class="dropdown-item">Widoczność elementów na różnych urządzeniach</a>
                         </div>
                     </li>
 
@@ -127,185 +126,100 @@
                 <div class="col-12">
                     <p>System siatki Bootstrap posiada cztery klasy:</p>
                     <ul>
-                        <li>xs (dla telefonów - ekrany o szerokości mniejszej niż 768 pikseli)</li>
-                        <li>sm (w przypadku tabletów - ekrany o szerokości równej lub większej niż 768 pikseli)</li>
-                        <li>md (dla małych laptopów - ekrany o szerokości równej lub większej niż 992px)</li>
-                        <li>lg (dla laptopów i komputerów stacjonarnych - ekrany o szerokości równej lub większej niż
-                            1200 pikseli)</li>
+                        <li><span class="text-danger"><strong>Brak klasy</strong></span> (dla smartfonów - kolumny
+                            zawsze są wyświetlane obok siebie, niezależenie od
+                            rozdzielczości)</li>
+                        <li><span class="text-danger"><strong>.col-sm-*</strong></span> (dla smartfonów w pozycji
+                            horyzontalnej - kolumny wyświetlane obok siebie w
+                            rozdzielczości wyższej lub równej 576px)</li>
+                        <li><span class="text-danger"><strong>.col-md-*</strong></span> (dla tabletów - kolumny
+                            wyświetlane obok siebie w
+                            rozdzielczości wyższej lub równej 768px)</li>
+                        <li><span class="text-danger"><strong>.col-lg-*</strong></span> (dla tabletów w pozycji
+                            horyzontalnej oraz laptopów - kolumny wyświetlane obok
+                            siebie w rozdzielczości wyższej lub równej 992px)</li>
+                        <li><span class="text-danger"><strong>.col-xl-*</strong></span> (dla monitorów z wysokimi
+                            rozdzielczościami - kolumny wyświetlane obok siebie w
+                            rozdzielczości wyższej lub równej 1200px)</li>
                     </ul>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12 my-3 border border-success">
-                    <h3 class="mt-3">Przykład 1: równa szerokość</h3>
-                    <div class="row">
-                        <div class="col bg-success">1 z 3</div>
-                        <div class="col bg-danger">2 z 3</div>
-                        <div class="col bg-success">3 z 3</div>
-                    </div>
-                    <br />
-                    <div class="row">
-                        <div class="bg-dark pl-1 col-12">
-                            <code>
-                            <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span>"XXXX"<span class="text-white-50">&gt;</span>
-                            <br/> <!--Here code!-->
-                            <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
-                        </code>
-                        </div>
-                    </div>
+            <div class="col-12 bg-light border border-dark">
+                <h4 class="p-2">Przykład 1</h4>
+                <div class="row">
+                    <div class="col-md-4 bg-secondary text-light border border-dark">.col-md-4</div>
+                    <div class="col-md-4 bg-secondary text-light border border-dark">.col-md-4</div>
+                    <div class="col-md-4 bg-secondary text-light border border-dark">.col-md-4</div>
                 </div>
-                <div class="col-12 my-3 border border-success">
-                    <h3 class="mt-3">Przykład 2: zdefiniowana szerokość jeden z kolumn</h3>
-                    <div class="row">
-                        <div class="col bg-success">1 z 3</div>
-                        <div class="col-8 bg-danger">2 z 3 (szerokość 8 kolumn)</div>
-                        <div class="col bg-success">3 z 3</div>
-                    </div>
-                    <br />
-                    <div class="row">
-                        <div class="bg-dark pl-1 col-12">
-                            <code>
-                            <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span>"XXXX"<span class="text-white-50">&gt;</span>
-                            <br/> <!--Here code!-->
-                            <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
-                        </code>
-                        </div>
-                    </div>
-                </div>
-                <br />
-                <div class="col-12 my-3 border border-success">
-                    <h3 class="mt-3">Przykład 3: szerokość kolumn zależna od treści</h3>
-                    <div class="row">
-                        <div class="col bg-success">1 z 3</div>
-                        <div class="col-auto bg-danger">Szerokość zależna od treści</div>
-                        <div class="col bg-success">3 z 3</div>
-                    </div>
-                    <br />
-                    <div class="row">
-                        <div class="bg-dark pl-1 col-12">
-                            <code>
-                            <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span>"XXXX"<span class="text-white-50">&gt;</span>
-                            <br/> <!--Here code!-->
-                            <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
-                        </code>
-                        </div>
-                    </div>
-                </div>
-                <br />
-                <div class="col-12 my-3 border border-success">
-                    <h3 class="mt-3">Przykład 4: wiele równych rzędów</h3>
-                    <div class="row">
-                        <div class="col bg-success">col</div>
-                        <div class="col bg-danger">col</div>
-                        <div class="w-100"></div>
-                        <div class="col bg-danger ">col</div>
-                        <div class="col bg-success">col</div>
-                    </div>
-                    <br />
-                    <div class="row">
-                        <div class="bg-dark pl-1 col-12">
-                            <code>
-                            <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span>"XXXX"<span class="text-white-50">&gt;</span>
-                            <br/> <!--Here code!-->
-                            <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
-                        </code>
-                        </div>
-                    </div>
-                </div>
-                <br />
-                <div class="col-12 my-3 border border-success">
-                    <h3 class="mt-3">Przykład 5: wiele równych rzędów</h3>
-                    <div class="row">
-                        <div class="col bg-success">col</div>
-                        <div class="col bg-danger">col</div>
-                        <div class="w-100"></div>
-                        <div class="col bg-danger ">col</div>
-                        <div class="col bg-success">col</div>
-                    </div>
-                    <br />
-                    <div class="row">
-                        <div class="bg-dark pl-1 col-12">
-                            <code>
-                            <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span>"XXXX"<span class="text-white-50">&gt;</span>
-                            <br/> <!--Here code!-->
-                            <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
-                        </code>
-                        </div>
-                    </div>
-                </div>
-                <br />
-                <div class="col-12 my-3 border border-success">
-                    <h3 class="mt-3">Przykład 6: responsywność</h3>
-                    <div class="row">
-                        <div class="col-md-1 bg-success">col-md-1</div>
-                        <div class="col-md-1 bg-danger">col-md-1</div>
-                        <div class="col-md-1 bg-success">col-md-1</div>
-                        <div class="col-md-1 bg-danger">col-md-1</div>
-                        <div class="col-md-1 bg-success">col-md-1</div>
-                        <div class="col-md-1 bg-danger">col-md-1</div>
-                        <div class="col-md-1 bg-success">col-md-1</div>
-                        <div class="col-md-1 bg-danger">col-md-1</div>
-                        <div class="col-md-1 bg-success">col-md-1</div>
-                        <div class="col-md-1 bg-danger">col-md-1</div>
-                        <div class="col-md-1 bg-success">col-md-1</div>
-                        <div class="col-md-1 bg-danger">col-md-1</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-8 bg-secondary">col-md-8</div>
-                        <div class="col-md-4 bg-primary">col-md-4</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4 bg-info">col-md-4</div>
-                        <div class="col-md-4 bg-warning">col-md-4</div>
-                        <div class="col-md-4 bg-secondary">col-md-4</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 bg-success">col-md-6</div>
-                        <div class="col-md-6 bg-danger">col-md-6</div>
-                    </div>
-                    <br />
-                    <div class="row">
-                        <div class="bg-dark pl-1 col-12">
-                            <code>
-                            <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span>"XXXX"<span class="text-white-50">&gt;</span>
-                            <br/> <!--Here code!-->
-                            <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
-                        </code>
-                        </div>
-                    </div>
-                </div>
-                <br />
-                <div class="col-12 my-3 border border-success">
-                    <h3 class="mt-3">Przykład 7: równe szerokości dla różnych wielkości</h3>
-                    <div class="row">
-                        <div class="col bg-success">col</div>
-                        <div class="col bg-danger">col</div>
-                        <div class="col bg-success">col</div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm bg-danger">col-sm</div>
-                        <div class="col-sm bg-success">col-sm</div>
-                        <div class="col-sm bg-danger">col-sm</div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xl bg-secondary">col-xl</div>
-                        <div class="col-xl bg-secondary">col-xl</div>
-                        <div class="col-xl bg-secondary">col-xl</div>
-                    </div>
-                    <br />
-                    <div class="row">
-                        <div class="bg-dark pl-1 col-12">
-                            <code>
-                            <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span>"XXXX"<span class="text-white-50">&gt;</span>
-                            <br/> <!--Here code!-->
-                            <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
-                        </code>
-                        </div>
-                    </div>
-                </div>
+                <!----code-->
+                <pre class="mt-1">
+    <div class="bg-dark pl-1"><code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"col-md-4"</span><span class="text-white-50">&gt;</span><span class="text-light">.col-md-4</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"col-md-4"</span><span class="text-white-50">&gt;</span><span class="text-light">.col-md-4</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"col-md-4"</span><span class="text-white-50">&gt;</span><span class="text-light">.col-md-4</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></div></pre>
+                <!--/code-->
             </div>
+
+            <div class="col-12 bg-light border border-dark mt-3">
+                <h4 class="p-2">Przykład 2</h4>
+                <div class="row">
+                    <div class="col-md-8 bg-secondary text-light border border-dark">.col-md-8</div>
+                    <div class="col-md-4 bg-secondary text-light border border-dark">.col-md-4</div>
+                </div>
+                <!----code-->
+                <pre class="mt-1">
+    <div class="bg-dark pl-1"><code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"col-md-8"</span><span class="text-white-50">&gt;</span><span class="text-light">.col-md-8</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"col-md-4"</span><span class="text-white-50">&gt;</span><span class="text-light">.col-md-4</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></div></pre>
+                <!--/code-->
+            </div>
+
+            <div class="col-12 bg-light border border-dark mt-3">
+                <h4 class="p-2">Przykład 3</h4>
+                <div class="row">
+                    <div class="col-md-2 bg-secondary text-light border border-dark">.col-md-2</div>
+                    <div class="col-md-10 bg-secondary text-light border border-dark">.col-md-10</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 bg-secondary text-light border border-dark">.col-md-3</div>
+                    <div class="col-md-3 bg-secondary text-light border border-dark">.col-md-3</div>
+                    <div class="col-md-3 bg-secondary text-light border border-dark">.col-md-3</div>
+                    <div class="col-md-3 bg-secondary text-light border border-dark">.col-md-3</div>
+                </div>
+                <!----code-->
+                <pre class="mt-1">
+    <div class="bg-dark pl-1"><code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"col-md-2"</span><span class="text-white-50">&gt;</span><span class="text-light">.col-md-2</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"col-md-10"</span><span class="text-white-50">&gt;</span><span class="text-light">.col-md-10</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"col-md-3"</span><span class="text-white-50">&gt;</span><span class="text-light">.col-md-3</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"col-md-3"</span><span class="text-white-50">&gt;</span><span class="text-light">.col-md-3</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"col-md-3"</span><span class="text-white-50">&gt;</span><span class="text-light">.col-md-3</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"col-md-3"</span><span class="text-white-50">&gt;</span><span class="text-light">.col-md-3</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></div></pre>
+                <!--/code-->
+            </div>
+
+            <div class="col-12 bg-light border border-dark mt-3">
+                <h4 class="p-2">Przykład 4</h4>
+                <div class="row">
+                    <div class="col-lg-2 bg-secondary text-light border border-dark">.col-lg-4</div>
+                    <div class="col-md-auto bg-secondary text-light border border-dark">Szerokość zależy od treści</div>
+                    <div class="col-lg-2 bg-secondary text-light border border-dark">.col-lg-4</div>
+                </div>
+                <!----code-->
+                <pre class="mt-1">
+    <div class="bg-dark pl-1"><code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"col-lg-2"</span><span class="text-white-50">&gt;</span><span class="text-light">.col-lg-2</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"col-md-auto"</span><span class="text-white-50">&gt;</span><span class="text-light">Szerokość zależy od treści</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"col-lg-2"</span><span class="text-white-50">&gt;</span><span class="text-light">.col-lg-2</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></div></pre>
+                <!--/code-->
+            </div>
+
         </div>
     </main>
 
