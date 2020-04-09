@@ -48,8 +48,8 @@
 
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="typography.html">Typografia</a>
-                            <a class="dropdown-item" href="#">Wyświetlanie kodu</a>
-                            <a class="dropdown-item" href="images.html">Obrazy</a>
+                            <a class="dropdown-item" href="code.html">Wyświetlanie kodu</a>
+                            <a class="dropdown-item" href="#">Obrazy</a>
                             <a class="dropdown-item">Obrazy z podpisem</a>
                             <a class="dropdown-item">Tabele</a>
                         </div>
@@ -100,91 +100,74 @@
     <main>
         <div class="container my-5">
             <header>
-                <h2>Wyświetlanie kodu</h2>
+                <h2>Obrazki</h2>
             </header>
-            <h4>Wstawianie kodu liniowo</h4>
-            <p>Znacznik <kbd>&lt;code&gt;</kbd> służy do liniowego wstawiania kodu na stronę. Jednak aby otrzymać ostre
-                nawiasy, należy zapisywać je jako: <xmp>&lt;</xmp> dla znacznika mniejszości "&lt;" oraz <xmp>&gt;</xmp>
-                dla znacznika większości "&gt;"
-            </p>
+            <h4>Obraz responsywny</h4>
+            <p>Aby obrazek był responsywny i skalował się odpowienio należy nadać mu klasę <kbd>.img-fluid</kbd></p>
             <div class="col-12 bg-light border border-dark mt-3">
-                <div class="p-2">
-                    <p>Indentyfikator do elementu HTML dodajemy poprzez
-                        <code>&lt;p id="id-name"&gt;...&lt;/p&gt;</code>
-                    </p>
-                    <p>Klasę do elementu HTML dodajemy poprzez
-                        <code>&lt;p class="class-name"&gt;...&lt;/p&gt;</code>
-                    </p>
+                <div class="p-2 row">
+                    <img src="https://placehold.it/350x250" class="img-fluid col-10 offset-1" />
                 </div>
                 <!--code-->
                 <pre class="mt-1">
-<div class="bg-dark pl-1"><code><span class="text-white-50">&lt;</span><span class="text-info">p</span><span class="text-white-50">&gt;</span><span class="text-light">Indentyfikator do elementu HTML dodajemy poprzez 
-    <span class="text-white-50">&lt;</span><span class="text-info">code</span><span class="text-white-50">&gt;</span><span class="text-light">&lt;p id="id-name"&gt;...&lt;/p&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">code</span><span class="text-white-50">&gt;</span></span>
-<span class="text-white-50">&lt;/</span><span class="text-info">p</span><span class="text-white-50">&gt;</span>
-<span class="text-white-50">&lt;</span><span class="text-info">p</span><span class="text-white-50">&gt;</span><span class="text-light">Klasę do elementu HTML dodajemy poprzez 
-    <span class="text-white-50">&lt;</span><span class="text-info">code</span><span class="text-white-50">&gt;</span><span class="text-light">&lt;p class="class-name"&gt;...&lt;/p&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">code</span><span class="text-white-50">&gt;</span></span>
-<span class="text-white-50">&lt;/</span><span class="text-info">p</span><span class="text-white-50">&gt;</span>
+<div class="bg-dark pl-1"><code><span class="text-white-50">&lt;</span><span class="text-info">img </span><span class="text-light">src=</span><span class="text-danger">"https://placehold.it/350x250"</span><span class="text-light"> class=</span><span class="text-danger">"img-fluid"</span><span class="text-white-50"> /&gt;</span>
 </code></div></pre>
                 <!--/code-->
             </div>
-            <h4 class="mt-3">Wstawianie kodu blokowo</h4>
-            <p>Znacznik <kbd>&lt;pre&gt;</kbd> służy do wstawiania całych bloków kodu wraz z "wcięciami".</p>
+            <h4 class="mt-3">Kształty obrazków</h4>
+            <p>Dzięki klasom w Bootstrapie możemy zaokrąglić rogi obrazkowi <kbd>.rounded</kbd>, umieścić go w okręgu
+                <kbd>.rounded-circle</kbd> albo dodać mu ramkę <kbd>.img-thumbnail</kbd></p>
             <div class="col-12 bg-light border border-dark mt-3">
-                <pre>
-                    Tutaj kod z wcięciami
-                </pre>
-                <!--code-->
-                <pre class="mt-1">
-<div class="bg-dark pl-1"><code><span class="text-white-50">&lt;</span><span class="text-info">pre</span><span class="text-white-50">&gt;</span>
-                    <span class="text-light">Tutaj kod z wcięciami</span>
-<span class="text-white-50">&lt;/</span><span class="text-info">pre</span><span class="text-white-50">&gt;</span></code></div></pre>
-                <!--/code-->
-            </div>
-            <h4 class="mt-3">Wyświetlanie wzorów</h4>
-            <p>Znacznik <kbd>&lt;var&gt;</kbd> służy do umieszczenia w nim wzorów</p>
-            <div class="col-12 bg-light border border-dark mt-3">
-                <div class="p-2">
-                    <var>y=ax+b</var>
+                <div class="p-2 row">
+                    <img src="https://placehold.it/200?text=.rounded" class="rounded col-4" />
+                    <img src="https://placehold.it/200?text=.rounded-circle" class="rounded-circle col-4" />
+                    <img src="https://placehold.it/200?text=.img-thumbnail" class="img-thumbnail col-4" />
                 </div>
                 <!--code-->
                 <pre class="mt-1">
-<div class="bg-dark pl-1"><code><span class="text-white-50">&lt;</span><span class="text-info">var</span><span class="text-white-50">&gt;</span><span class="text-light">y=ax+b</span><span class="text-white-50">&lt;/</span><span class="text-info">var</span><span class="text-white-50">&gt;</span>
+<div class="bg-dark pl-1"><code><span class="text-white-50">&lt;</span><span class="text-info">img </span><span class="text-light">src=</span><span class="text-danger">"https://placehold.it/200?text=.rounded"</span><span class="text-light"> class=</span><span class="text-danger">"rounded"</span><span class="text-white-50"> /&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">img </span><span class="text-light">src=</span><span class="text-danger">"https://placehold.it/200?text=.rounded-circle"</span><span class="text-light"> class=</span><span class="text-danger">"rounded-circle"</span><span class="text-white-50"> /&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">img </span><span class="text-light">src=</span><span class="text-danger">"https://placehold.it/200?text=.img-thumbnail"</span><span class="text-light"> class=</span><span class="text-danger">"img-thumbnail"</span><span class="text-white-50"> /&gt;</span>
 </code></div></pre>
                 <!--/code-->
             </div>
-            <h4 class="mt-3">Znaki klawiaturowe</h4>
-            <p>Znacznik <kbd>&lt;kbd&gt;</kbd> pozwala na uzyskanie formatownia podobnego do przyciskow na klawiaturze
-            </p>
+            <h4 class="mt-3">Ustawianie obrazków</h4>
+            <p>Aby ustawić nasz obraz po stronie lewej krawędzi mamy do dyspozycji klasę <kbd>.float-left</kbd>,
+                natomiast aby wyrównać obraz do prawej używamy klasy <kbd>.float-right</kbd></p>
             <div class="col-12 bg-light border border-dark mt-3">
                 <div class="p-2">
-                    <p>
-                        Aby wyświetlić zawartość katalogu w terminalu w Windowsie należy użyć polecenia <kbd>dir</kbd>
-                        <br />Natomiast aby to samo zrobić w konsoli w Linuksie należy wpisać <kbd>ls</kbd>
-                    </p>
+                    <img src="https://placehold.it/200?text=.float-left" class="rounded float-left" />
+                    <img src="https://placehold.it/200?text=.float-right" class="rounded float-right" />
+                    <div class="clearfix"></div>
                 </div>
                 <!--code-->
                 <pre class="mt-1">
-<div class="bg-dark pl-1"><code><span class="text-white-50">&lt;</span><span class="text-info">p</span><span class="text-white-50">&gt;</span>
-    <span class="text-light">Aby wyświetlić zawartość katalogu w terminalu w Windowsie należy użyć polecenia</span>
-    <span class="text-white-50">&lt;</span><span class="text-info">kbd</span><span class="text-white-50">&gt;</span><span class="text-light">dir</span><span class="text-white-50">&lt;/</span><span class="text-info">kbd</span><span class="text-white-50">&gt;</span>
-    <span class="text-light">Natomiast aby to samo zrobić w konsoli w Linuksie należy wpisać</span>
-    <span class="text-white-50">&lt;</span><span class="text-info">kbd</span><span class="text-white-50">&gt;</span><span class="text-light">ls</span><span class="text-white-50">&lt;/</span><span class="text-info">kbd</span><span class="text-white-50">&gt;</span>
-<span class="text-white-50">&lt;/</span><span class="text-info">p</span><span class="text-white-50">&gt;</span></code></div></pre>
-                <!--/code-->
-            </div>
-            <h4 class="mt-3">Wyświetlanie komunikatów</h4>
-            <p>Znacznik <kbd>&lt;samp&gt;</kbd> pozwala na uzyskanie formatownia podobnego do kominukatu w oknie konsoli
-            </p>
-            <div class="col-12 bg-light border border-dark mt-3">
-                <div class="p-2">
-                    <samp>Komunikat zwrócony przez program.</samp>
-                </div>
-                <!--code-->
-                <pre class="mt-1">
-<div class="bg-dark pl-1"><code><span class="text-white-50">&lt;</span><span class="text-info">samp</span><span class="text-white-50">&gt;</span><span class="text-light">Kominikat zwrócony przez program.</span><span class="text-white-50">&lt;/</span><span class="text-info">samp</span><span class="text-white-50">&gt;</span>
+<div class="bg-dark pl-1"><code><span class="text-white-50">&lt;</span><span class="text-info">img </span><span class="text-light">src=</span><span class="text-danger">"https://placehold.it/200?text=.float-left"</span><span class="text-light"> class=</span><span class="text-danger">"rounded float-left"</span><span class="text-white-50"> /&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">img </span><span class="text-light">src=</span><span class="text-danger">"https://placehold.it/200?text=.float-right"</span><span class="text-light"> class=</span><span class="text-danger">"rounded float-right"</span><span class="text-white-50"> /&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"clearfix"</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
 </code></div></pre>
                 <!--/code-->
             </div>
+            <p class="mt-2">Natomiast aby wyrówać obrazek mamy do dyspozycji dwie metody. Można użyć klasy
+                <kbd>.mx-auto</kbd> wraz z
+                <kbd>d-block</kbd>. Można użyć także klasy <kbd>.text-center</kbd></p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <img src="https://placehold.it/300?text=.mx-auto+.d-block" class="mx-auto d-block" />
+                    <div class="text-center mt-4">
+                        <img src="https://placehold.it/300?text=.text-center" />
+                    </div>
+                </div>
+                <!--code-->
+                <pre class="mt-1">
+<div class="bg-dark pl-1"><code><span class="text-white-50">&lt;</span><span class="text-info">img </span><span class="text-light">src=</span><span class="text-danger">"https://placehold.it/300?text=.mx-auto+.d-block"</span><span class="text-light"> class=</span><span class="text-danger">"mx-auto d-block"</span><span class="text-white-50"> /&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"text-center mt-4"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">img </span><span class="text-light">src=</span><span class="text-danger">""https://placehold.it/300?text=.text-center"</span><span class="text-white-50"> /&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+</code></div></pre>
+                <!--/code-->
+            </div>
+
         </div>
     </main>
 
