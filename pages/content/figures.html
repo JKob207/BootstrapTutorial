@@ -38,8 +38,8 @@
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Układ</a>
 
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Kontenery</a>
-                            <a class="dropdown-item" href="grid.html">Siatka</a>
+                            <a class="dropdown-item" href="../layout/containers.html">Kontenery</a>
+                            <a class="dropdown-item" href="../layout/grid.html">Siatka</a>
                         </div>
                     </li>
 
@@ -47,10 +47,10 @@
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Zawartość</a>
 
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="../content/typography.html">Typografia</a>
-                            <a class="dropdown-item" href="../content/code.html">Wyświetlanie kodu</a>
-                            <a class="dropdown-item" href="../content/images.html">Obrazy</a>
-                            <a class="dropdown-item" href="../content/figures.html">Obrazy z podpisem</a>
+                            <a class="dropdown-item" href="typography.html">Typografia</a>
+                            <a class="dropdown-item" href="code.html">Wyświetlanie kodu</a>
+                            <a class="dropdown-item" href="images.html">Obrazy</a>
+                            <a class="dropdown-item" href="#">Obrazy z podpisem</a>
                             <a class="dropdown-item">Tabele</a>
                         </div>
                     </li>
@@ -100,23 +100,29 @@
     <main>
         <div class="container my-5">
             <header>
-                <h2>Kontenery</h2>
+                <h2>Obrazki z podpisem</h2>
             </header>
-            <h4>Podstawowe pojemniki</h4>
-            <p><kbd>.container</kbd> jest to klasa pojemnika o stałej szerokości dopasowującego się szerokościa do
-                elementu nadrzędnego.</p>
-
-            <div class="bg-dark pl-1">
-                <pre><code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"container"</span><span class="text-white-50">&gt;</span>
-                    <br/><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></pre>
-            </div>
-            <br />
-            <p><kbd>.container-fluid</kbd> jest to klasa pojemnika o pełnej szerokości okna strony.</p>
-            <div class="bg-dark pl-1">
-                <pre><code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"container-fluid"</span><span class="text-white-50">&gt;</span>
-                <br/><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></pre>
-            </div>
-
+            <h4>Figure</h4>
+            <p>Wraz z nadejściem HTMl5 dostaliśmy znacznik <kbd>&lt;figure&gt;</kbd> który służy do umieszczania w nim
+                obrazków, diagramów, czy też ilustracji z opisem umieszczonym wewnątrz
+                <kbd>&lt;figcaption&gt;</kbd>
+                <div class="col-12 bg-light border border-dark mt-3">
+                    <div class="p-2">
+                        <figure class="figure">
+                            <img src="https://placehold.it/400x400" class="figure-img img-fluid rounded" />
+                            <figcaption class="figure-caption">Podpis pod obrazkiem</figcaption>
+                        </figure>
+                    </div>
+                    <!--code-->
+                    <div class="bg-dark pl-1">
+                        <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">figure </span><span class="text-light">class=</span><span class="text-danger">"figure"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">img </span><span class="text-light">src=</span><span class="text-danger">"https://placehold.it/400x400"</span><span class="text-light"> class=</span><span class="text-danger">"figure-img img-fluid rounded"</span><span class="text-white-50"> /&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">figcaption </span><span class="text-light">class=</span><span class="text-danger">"figure-caption"</span><span class="text-white-50">&gt;</span><span class="text-light">Podpis pod obrazkiem</span><span class="text-white-50">&lt;/</span><span class="text-info">figcaption</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">figure</span><span class="text-white-50">&gt;</span></code></pre>
+                    </div>
+                    <!--/code-->
+                </div>
         </div>
     </main>
 
