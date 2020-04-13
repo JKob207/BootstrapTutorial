@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="pl_PL">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jakub Kobialka" />
+    <title>Kompedium wiedzy o Bootstrapie</title>
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark navbar-expand-lg bg-primary">
+            <a class="navbar-brand" href="../../index.html">
+                <svg class="bi bi-bootstrap" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M12 1H4a3 3 0 00-3 3v8a3 3 0 003 3h8a3 3 0 003-3V4a3 3 0 00-3-3zM4 0a4 4 0 00-4 4v8a4 4 0 004 4h8a4 4 0 004-4V4a4 4 0 00-4-4H4z"
+                        clip-rule="evenodd" />
+                    <path fill-rule="evenodd"
+                        d="M8.537 12H5.062V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396zM6.375 4.658v2.467h1.558c1.16 0 1.764-.428 1.764-1.23 0-.78-.569-1.237-1.541-1.237H6.375zm1.898 6.229H6.375V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377z"
+                        clip-rule="evenodd" />
+                </svg>
+                Kompedium Bootstrap
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu"
+                aria-controls="mainmenu" aria-expanded="false" aria-label="Przełącznik nawigacji">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainmenu">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Układ</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../layout/containers.html">Kontenery</a>
+                            <a class="dropdown-item" href="../layout/grid.html">Siatka</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Zawartość</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="typography.html">Typografia</a>
+                            <a class="dropdown-item" href="code.html">Wyświetlanie kodu</a>
+                            <a class="dropdown-item" href="images.html">Obrazy</a>
+                            <a class="dropdown-item" href="figures.html">Obrazy z podpisem</a>
+                            <a class="dropdown-item" href="#">Tabele</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Komponenty</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item">Alerty</a>
+                            <a class="dropdown-item">Odznaki</a>
+                            <a class="dropdown-item">Okruszki</a>
+                            <a class="dropdown-item">Przyciski</a>
+                            <a class="dropdown-item">Radio i checkbuttony jako przyciski</a>
+                            <a class="dropdown-item">Grupy przycisków</a>
+                            <a class="dropdown-item">Karty</a>
+                            <a class="dropdown-item">Slider</a>
+                            <a class="dropdown-item">Akordeon</a>
+                            <a class="dropdown-item">Listy rozwijane</a>
+                            <a class="dropdown-item">Formularze</a>
+                            <a class="dropdown-item">Dodatki do formularzy</a>
+                            <a class="dropdown-item">Jumbotron</a>
+                            <a class="dropdown-item">Listy</a>
+                            <a class="dropdown-item">Pop-up</a>
+                            <a class="dropdown-item">Paginacja</a>
+                            <a class="dropdown-item">Komunikaty</a>
+                            <a class="dropdown-item">Paski postępu</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Narzędzia</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item">Ramki</a>
+                            <a class="dropdown-item">Clearfix</a>
+                            <a class="dropdown-item">Ikona zamykania</a>
+                            <a class="dropdown-item">Kolory</a>
+                            <a class="dropdown-item">Display</a>
+                            <a class="dropdown-item">Umieszczanie filmików zewnętrznych</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container my-5">
+            <header>
+                <h2>Tabele</h2>
+            </header>
+            <h4>Prosta tabela</h4>
+            <p>Podstawowa tabela w Bootstrapie posiada duże odstępy oraz poziome przegródki. Klasa <kbd>.table</kbd>
+                nadaje tabeli podstawowej stylizacji.</p>
+            <div class="col-12 border border-dark mt-3">
+                <div class="p-2">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Jon</td>
+                            <td>Doe</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Mark</td>
+                            <td>Abosom</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Harry</td>
+                            <td>Birgam</td>
+                        </tr>
+                    </table>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">table </span><span class="text-light">class=</span><span class="text-danger">"table"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">thead</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">#</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">First Name</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">Last Name</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">thead</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">1</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Jon</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Doe</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">2</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Mark</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Abosom</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">3</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Harry</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Birgam</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">table</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h4 class="mt-3">Tabla ciemna</h4>
+            <p>Istnieje także tabela ciemna stylizowana klasą <kbd>.table-dark</kbd> która zmieni kolory tableli na
+                ciemne a fonty na białe.</p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <table class="table table-dark">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Jon</td>
+                            <td>Doe</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Mark</td>
+                            <td>Abosom</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Harry</td>
+                            <td>Birgam</td>
+                        </tr>
+                    </table>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">table </span><span class="text-light">class=</span><span class="text-danger">"table table-dark"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">thead</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">#</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">First Name</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">Last Name</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">thead</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">1</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Jon</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Doe</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">2</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Mark</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Abosom</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">3</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Harry</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Birgam</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">table</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h4 class="mt-3">Style nagłówka tabeli</h4>
+            <p>Możemy wyróżnić nasz nagłówek tabeli czyli sekcje <kbd>&lt;thead&gt;</kbd> odpowiednio klasą
+                <kbd>.thead-dark</kbd>, która zmienia kolor nagłówka na ciemny, a także klasą <kbd>.thead-light</kbd>,
+                która zmienia kolor na szare tło.</p>
+            <div class="col-12 border border-dark mt-3">
+                <div class="p-2">
+                    <table class="table">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Jon</td>
+                            <td>Doe</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Mark</td>
+                            <td>Abosom</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Harry</td>
+                            <td>Birgam</td>
+                        </tr>
+                    </table>
+
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Jon</td>
+                            <td>Doe</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Mark</td>
+                            <td>Abosom</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Harry</td>
+                            <td>Birgam</td>
+                        </tr>
+                    </table>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">table </span><span class="text-light">class=</span><span class="text-danger">"table"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">thead </span><span class="text-light">class=</span><span class="text-danger">"thead-light"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">#</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">First Name</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">Last Name</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">thead</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">1</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Jon</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Doe</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">2</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Mark</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Abosom</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">3</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Harry</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Birgam</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">table</span><span class="text-white-50">&gt;</span>
+
+<span class="text-white-50">&lt;</span><span class="text-info">table </span><span class="text-light">class=</span><span class="text-danger">"table"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">thead </span><span class="text-light">class=</span><span class="text-danger">"thead-dark"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">#</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">First Name</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">Last Name</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">thead</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">1</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Jon</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Doe</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">2</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Mark</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Abosom</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">3</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Harry</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Birgam</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">table</span><span class="text-white-50">&gt;</span>
+</code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h4 class="mt-3">Pasiaste tabele</h4>
+            <p>Klasa <kbd>.table-striped</kbd> nadaje calej tabeli wizualne oddzielenie co drugi rząd.</p>
+            <div class="col-12 border border-dark mt-3">
+                <div class="p-2">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <th scope=" row">1</th>
+                            <td>Jon</td>
+                            <td>Doe</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Mark</td>
+                            <td>Abosom</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Harry</td>
+                            <td>Birgam</td>
+                        </tr>
+                    </table>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">table </span><span class="text-light">class=</span><span class="text-danger">"table table-striped"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">thead</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">#</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">First Name</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">Last Name</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">thead</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">1</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Jon</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Doe</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">2</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Mark</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Abosom</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">3</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Harry</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Birgam</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">table</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h4 class="mt-3">Pełne obramowanie tabel</h4>
+            <p>Aby każda komórka miała swoje własne obramowanie należy użyć klasy <kbd>.table-bordered</kbd></p>
+            <div class="col-12 border border-dark mt-3">
+                <div class="p-2">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <th scope=" row">1</th>
+                            <td>Jon</td>
+                            <td>Doe</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Mark</td>
+                            <td>Abosom</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Harry</td>
+                            <td>Birgam</td>
+                        </tr>
+                    </table>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">table </span><span class="text-light">class=</span><span class="text-danger">"table table-bordered"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">thead</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">#</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">First Name</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">Last Name</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">thead</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">1</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Jon</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Doe</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">2</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Mark</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Abosom</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">3</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Harry</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Birgam</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">table</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h4 class="mt-3">Podświetane rzędy tabel</h4>
+            <p>Klasa <kbd>.table-hover</kbd> podświetla rzędy po najechaniu na nie myszką.</p>
+            <div class="col-12 border border-dark mt-3">
+                <div class="p-2">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <th scope=" row">1</th>
+                            <td>Jon</td>
+                            <td>Doe</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Mark</td>
+                            <td>Abosom</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Harry</td>
+                            <td>Birgam</td>
+                        </tr>
+                    </table>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">table </span><span class="text-light">class=</span><span class="text-danger">"table table-hover"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">thead</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">#</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">First Name</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">Last Name</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">thead</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">1</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Jon</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Doe</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">2</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Mark</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Abosom</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">3</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Harry</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Birgam</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">table</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h4 class="mt-3">Tabela skondensowana</h4>
+            <p>Klasa <kbd>.table-sm</kbd> pozwala na zmniejszenie odstępów między kolejnymi rzędami.</p>
+            <div class="col-12 border border-dark mt-3">
+                <div class="p-2">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <th scope=" row">1</th>
+                            <td>Jon</td>
+                            <td>Doe</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Mark</td>
+                            <td>Abosom</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Harry</td>
+                            <td>Birgam</td>
+                        </tr>
+                    </table>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">table </span><span class="text-light">class=</span><span class="text-danger">"table table-sm"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">thead</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">#</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">First Name</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">Last Name</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">thead</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">1</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Jon</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Doe</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">2</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Mark</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Abosom</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">3</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Harry</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Birgam</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">table</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h4 class="mt-3">Kolore rzędy i komórki w tabeli</h4>
+            <p>Uzywając klas: <kbd>.table-active</kbd>, <kbd>.table-success</kbd>, <kbd>.table-info</kbd>,
+                <kbd>.table-warning</kbd>, <kbd>.table-danger</kbd> na komórkach albo na rzędach tabeli nadamy im
+                odpowiedni kolor.</p>
+            <div class="col-12 border border-dark mt-3">
+                <div class="p-2">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Color Header</th>
+                                <th>Column Header</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Default color</td>
+                            <td>Content</td>
+                        </tr>
+                        <tr class="table-active">
+                            <th scope="row">2</th>
+                            <td>Grey color</td>
+                            <td>Content</td>
+                        </tr>
+                        <tr class="table-success">
+                            <th scope="row">3</th>
+                            <td>Green color</td>
+                            <td>Content</td>
+                        </tr>
+                        <tr class="table-info">
+                            <th scope="row">4</th>
+                            <td>Blue color</td>
+                            <td>Content</td>
+                        </tr>
+                        <tr class="table-warning">
+                            <th scope="row">5</th>
+                            <td>Yellow color</td>
+                            <td>Content</td>
+                        </tr>
+                        <tr class="table-danger">
+                            <th scope="row">6</th>
+                            <td>Red color</td>
+                            <td>Content</td>
+                        </tr>
+                    </table>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">table </span><span class="text-light">class=</span><span class="text-danger">"table"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">thead</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">#</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">Color Header</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">Column Header</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">thead</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">1</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Default color</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Content</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr </span><span class="text-light">class=</span><span class="text-danger">"table-active"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">2</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Grey color</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Content</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr </span><span class="text-light">class=</span><span class="text-danger">"table-success"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">3</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Green color</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Content</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr </span><span class="text-light">class=</span><span class="text-danger">"table-info"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">4</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Blue color</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Content</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr </span><span class="text-light">class=</span><span class="text-danger">"table-warning"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">5</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Yellow color</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Content</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr </span><span class="text-light">class=</span><span class="text-danger">"table-danger"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">6</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Red color</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Content</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">table</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <p class="mt-2">Przykład z pokolorowanymi komórkami: </p>
+            <div class="col-12 border border-dark mt-3">
+                <div class="p-2">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Column Header</th>
+                                <th>Column Header</th>
+                                <th>Column Header</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <th scope=" row">1</th>
+                            <td class="table-active">.table-active</td>
+                            <td>Content</td>
+                            <td class="table-success">.table-success</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Content</td>
+                            <td class="table-warning">.table-warning</td>
+                            <td>Content</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td class="table-info">.table-info</td>
+                            <td>Content</td>
+                            <td class="table-danger">.table-danger</td>
+                        </tr>
+                    </table>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">table </span><span class="text-light">class=</span><span class="text-danger">"table"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">thead</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">#</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">Column Header</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">Column Header</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">Column Header</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">thead</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">1</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td </span><span class="text-light">class=</span><span class="text-danger">"table-active</span><span class="text-white-50">&gt;</span><span class="text-light">.table-active</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Content</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td </span><span class="text-light">class=</span><span class="text-danger">"table-success"</span><span class="text-white-50">&gt;</span><span class="text-light">.table-success</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">2</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Content</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td </span><span class="text-light">class=</span><span class="text-danger">"table-warning"</span><span class="text-white-50">&gt;</span><span class="text-light">.table-warning</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Content</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">3</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td </span><span class="text-light">class=</span><span class="text-danger">"table-info"</span><span class="text-white-50">&gt;</span><span class="text-light">.table-info</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Content</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">td </span><span class="text-light">class=</span><span class="text-danger">"table-danger"</span><span class="text-white-50">&gt;</span><span class="text-light">.table-danger</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">table</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h4 class="mt-3">Responsywna tabela</h4>
+            <p>Klasa <kbd>.table-responsive</kbd> użyta w divie, tworzy nam tabele która dopasowuje się do wielkości
+                ekranu. Gdy skończy się miejsce tabeli na ekranie zostanie utworzony poziomy pasek przewijania dla całej
+                tabeli.
+                <br />Można dostostowywać kiedy ma się pojawić scroll tabeli używając breakpointów, czyli poszczególnych
+                klas: </p>
+            <ul>
+                <li><kbd>.table-responsive-sm</kbd></li>
+                <li><kbd>.table-responsive-md</kbd></li>
+                <li><kbd>.table-responsive-lg</kbd></li>
+                <li><kbd>.table-responsive-xl</kbd></li>
+            </ul>
+            <div class="col-12 border border-dark mt-3">
+                <div class="p-2">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>First name</th>
+                                    <th>Last name</th>
+                                    <th>Age</th>
+                                    <th>Country</th>
+                                    <th>City</th>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <th class="row">1</th>
+                                <td>John</td>
+                                <td>Kettling</td>
+                                <td>45</td>
+                                <td>UK</td>
+                                <td>London</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"table-responsive</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">table </span><span class="text-light">class=</span><span class="text-danger">"table"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">thead</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+                <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">#</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+                <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">First Name</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+                <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">Last Name</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+                <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">Age</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+                <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">Country</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+                <span class="text-white-50">&lt;</span><span class="text-info">th</span><span class="text-white-50">&gt;</span><span class="text-light">City</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">thead</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">th </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span><span class="text-light">1</span><span class="text-white-50">&lt;/</span><span class="text-info">th</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">John</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">Kettling</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">45</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">UK</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">td</span><span class="text-white-50">&gt;</span><span class="text-light">London</span><span class="text-white-50">&lt;/</span><span class="text-info">td</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">tr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">table</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+        </div>
+    </main>
+
+    <footer class="container-fluid py-2 bg-primary fixed-bottom">
+        <p class="text-center text-light m-0">Stworzono przez Jakub Kobiałka</p>
+    </footer>
+
+    <!--JS scripts-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
