@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pl_PL">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jakub Kobialka" />
+    <title>Kompedium wiedzy o Bootstrapie</title>
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark navbar-expand-lg bg-primary">
+            <a class="navbar-brand" href="../../index.html">
+                <svg class="bi bi-bootstrap" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M12 1H4a3 3 0 00-3 3v8a3 3 0 003 3h8a3 3 0 003-3V4a3 3 0 00-3-3zM4 0a4 4 0 00-4 4v8a4 4 0 004 4h8a4 4 0 004-4V4a4 4 0 00-4-4H4z"
+                        clip-rule="evenodd" />
+                    <path fill-rule="evenodd"
+                        d="M8.537 12H5.062V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396zM6.375 4.658v2.467h1.558c1.16 0 1.764-.428 1.764-1.23 0-.78-.569-1.237-1.541-1.237H6.375zm1.898 6.229H6.375V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377z"
+                        clip-rule="evenodd" />
+                </svg>
+                Kompedium Bootstrap
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu"
+                aria-controls="mainmenu" aria-expanded="false" aria-label="Przełącznik nawigacji">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainmenu">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Układ</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../layout/containers.html">Kontenery</a>
+                            <a class="dropdown-item" href="../layout/grid.html">Siatka</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Zawartość</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../content/typography.html">Typografia</a>
+                            <a class="dropdown-item" href="../content/code.html">Wyświetlanie kodu</a>
+                            <a class="dropdown-item" href="../content/images.html">Obrazy</a>
+                            <a class="dropdown-item" href="../content/figures.html">Obrazy z podpisem</a>
+                            <a class="dropdown-item" href="../content/tables.html">Tabele</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Komponenty</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Alerty</a>
+                            <a class="dropdown-item">Odznaki</a>
+                            <a class="dropdown-item">Okruszki</a>
+                            <a class="dropdown-item">Przyciski</a>
+                            <a class="dropdown-item">Radio i checkbuttony jako przyciski</a>
+                            <a class="dropdown-item">Grupy przycisków</a>
+                            <a class="dropdown-item">Karty</a>
+                            <a class="dropdown-item">Slider</a>
+                            <a class="dropdown-item">Akordeon</a>
+                            <a class="dropdown-item">Listy rozwijane</a>
+                            <a class="dropdown-item">Formularze</a>
+                            <a class="dropdown-item">Dodatki do formularzy</a>
+                            <a class="dropdown-item">Jumbotron</a>
+                            <a class="dropdown-item">Listy</a>
+                            <a class="dropdown-item">Pop-up</a>
+                            <a class="dropdown-item">Paginacja</a>
+                            <a class="dropdown-item">Komunikaty</a>
+                            <a class="dropdown-item">Paski postępu</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Narzędzia</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item">Ramki</a>
+                            <a class="dropdown-item">Clearfix</a>
+                            <a class="dropdown-item">Ikona zamykania</a>
+                            <a class="dropdown-item">Kolory</a>
+                            <a class="dropdown-item">Display</a>
+                            <a class="dropdown-item">Umieszczanie filmików zewnętrznych</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container my-5">
+            <header>
+                <h2>Alerty</h2>
+            </header>
+            <h4>Podstawowe alerty</h4>
+            <p>Podstawowy element alert. Służy do umieszczenia w nim komunikatu albo dodatkowej informacji. Tworzymy go
+                używając znacznika <kbd>&lt;div&gt;</kbd> oraz klasy <kbd>.alert</kbd> z klasą <kbd>.alert-*</kbd>,
+                gdzie "*" oznacza kontekst i kolor danego elementu. Może to być:</p>
+            <ul>
+                <li><kbd>primary</kbd></li>
+                <li><kbd>secondary</kbd></li>
+                <li><kbd>success</kbd></li>
+                <li><kbd>danger</kbd></li>
+                <li><kbd>warning</kbd></li>
+                <li><kbd>info</kbd></li>
+                <li><kbd>light</kbd></li>
+                <li><kbd>dark</kbd></li>
+            </ul>
+            <div class="col-12 border border-dark mt-3">
+                <div class="p-2">
+                    <div class="alert alert-primary" role="alert">To jest alert typu <strong>primary</strong></div>
+                    <div class="alert alert-secondary" role="alert">To jest alert typu <strong>secondary</strong></div>
+                    <div class="alert alert-success" role="alert">To jest alert typu <strong>success</strong></div>
+                    <div class="alert alert-danger" role="alert">To jest alert typu <strong>danger</strong></div>
+                    <div class="alert alert-warning" role="alert">To jest alert typu <strong>warning</strong></div>
+                    <div class="alert alert-info" role="alert">To jest alert typu <strong>info</strong></div>
+                    <div class="alert alert-light" role="alert">To jest alert typu <strong>light</strong></div>
+                    <div class="alert alert-dark" role="alert">To jest alert typu <strong>dark</strong></div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"alert alert-primary"</span><span class="text-light"> role=</span><span class="text-danger">"alert"</span><span class="text-white-50">&gt;</span><span class="text-light">To jest alert typu primary</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"alert alert-primary"</span><span class="text-light"> role=</span><span class="text-danger">"alert"</span><span class="text-white-50">&gt;</span><span class="text-light">To jest alert typu secondary</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"alert alert-primary"</span><span class="text-light"> role=</span><span class="text-danger">"alert"</span><span class="text-white-50">&gt;</span><span class="text-light">To jest alert typu success</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"alert alert-primary"</span><span class="text-light"> role=</span><span class="text-danger">"alert"</span><span class="text-white-50">&gt;</span><span class="text-light">To jest alert typu danger</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"alert alert-primary"</span><span class="text-light"> role=</span><span class="text-danger">"alert"</span><span class="text-white-50">&gt;</span><span class="text-light">To jest alert typu warning</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"alert alert-primary"</span><span class="text-light"> role=</span><span class="text-danger">"alert"</span><span class="text-white-50">&gt;</span><span class="text-light">To jest alert typu info</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"alert alert-primary"</span><span class="text-light"> role=</span><span class="text-danger">"alert"</span><span class="text-white-50">&gt;</span><span class="text-light">To jest alert typu light</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"alert alert-primary"</span><span class="text-light"> role=</span><span class="text-danger">"alert"</span><span class="text-white-50">&gt;</span><span class="text-light">To jest alert typu dark</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+</code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h4 class="mt-3">Alerty z linkiem</h4>
+            <p>Jeśli w naszym alercie chcemy zawrzeć link, musimy go odpowiednio ostylować przy użyciu klasy
+                <kbd>.alert-link</kbd></p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <div class="alert alert-primary" role="alert">
+                        To jest alert typu primary <strong><a href="#" class="alert-link">z linikiem</a></strong>
+                    </div>
+                    <div class="alert alert-secondary" role="alert">
+                        To jest alert typu secondary <strong><a href="#" class="alert-link">z linikiem</a></strong>
+                    </div>
+                    <div class="alert alert-success" role="alert">
+                        To jest alert typu success <strong><a href="#" class="alert-link">z linikiem</a></strong>
+                    </div>
+                    <div class="alert alert-danger" role="alert">
+                        To jest alert typu danger <strong><a href="#" class="alert-link">z linikiem</a></strong>
+                    </div>
+                    <div class="alert alert-warning" role="alert">
+                        To jest alert typu warning <strong><a href="#" class="alert-link">z linikiem</a></strong>
+                    </div>
+                    <div class="alert alert-info" role="alert">
+                        To jest alert typu info <strong><a href="#" class="alert-link">z linikiem</a></strong>
+                    </div>
+                    <div class="alert alert-light" role="alert">
+                        To jest alert typu light <strong><a href="#" class="alert-link">z linikiem</a></strong>
+                    </div>
+                    <div class="alert alert-dark" role="alert">
+                        To jest alert typu dark <strong><a href="#" class="alert-link">z linikiem</a></strong>
+                    </div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"alert alert-primary"</span><span class="text-light"> role=</span><span class="text-danger">"alert"</span><span class="text-white-50">&gt;</span>
+    <span class="text-light">To jest alert typu primary </span><span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">href=</span><span class="text-danger">"#"</span><span class="text-light"> class=</span><span class="text-danger">"alert-link"</span><span class="text-white-50">&gt;</span><span class="text-light">z linkiem</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"alert alert-secondary"</span><span class="text-light"> role=</span><span class="text-danger">"alert"</span><span class="text-white-50">&gt;</span>
+    <span class="text-light">To jest alert typu secondary </span><span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">href=</span><span class="text-danger">"#"</span><span class="text-light"> class=</span><span class="text-danger">"alert-link"</span><span class="text-white-50">&gt;</span><span class="text-light">z linkiem</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"alert alert-success"</span><span class="text-light"> role=</span><span class="text-danger">"alert"</span><span class="text-white-50">&gt;</span>
+    <span class="text-light">To jest alert typu success </span><span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">href=</span><span class="text-danger">"#"</span><span class="text-light"> class=</span><span class="text-danger">"alert-link"</span><span class="text-white-50">&gt;</span><span class="text-light">z linkiem</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"alert alert-danger"</span><span class="text-light"> role=</span><span class="text-danger">"alert"</span><span class="text-white-50">&gt;</span>
+    <span class="text-light">To jest alert typu danger </span><span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">href=</span><span class="text-danger">"#"</span><span class="text-light"> class=</span><span class="text-danger">"alert-link"</span><span class="text-white-50">&gt;</span><span class="text-light">z linkiem</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"alert alert-warning"</span><span class="text-light"> role=</span><span class="text-danger">"alert"</span><span class="text-white-50">&gt;</span>
+    <span class="text-light">To jest alert typu warning </span><span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">href=</span><span class="text-danger">"#"</span><span class="text-light"> class=</span><span class="text-danger">"alert-link"</span><span class="text-white-50">&gt;</span><span class="text-light">z linkiem</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"alert alert-info"</span><span class="text-light"> role=</span><span class="text-danger">"alert"</span><span class="text-white-50">&gt;</span>
+    <span class="text-light">To jest alert typu info </span><span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">href=</span><span class="text-danger">"#"</span><span class="text-light"> class=</span><span class="text-danger">"alert-link"</span><span class="text-white-50">&gt;</span><span class="text-light">z linkiem</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"alert alert-light"</span><span class="text-light"> role=</span><span class="text-danger">"alert"</span><span class="text-white-50">&gt;</span>
+    <span class="text-light">To jest alert typu light </span><span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">href=</span><span class="text-danger">"#"</span><span class="text-light"> class=</span><span class="text-danger">"alert-link"</span><span class="text-white-50">&gt;</span><span class="text-light">z linkiem</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"alert alert-dark"</span><span class="text-light"> role=</span><span class="text-danger">"alert"</span><span class="text-white-50">&gt;</span>
+    <span class="text-light">To jest alert typu dark </span><span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">href=</span><span class="text-danger">"#"</span><span class="text-light"> class=</span><span class="text-danger">"alert-link"</span><span class="text-white-50">&gt;</span><span class="text-light">z linkiem</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+</code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h4 class="mt-3">Rozbudowane alerty</h4>
+            <p>Aby rozbudowanać nasz alert o kilka linijek a także o tytuł musimy użyć odpowienich klas stylujących.
+                Nagłówkowi powinniśmy nadać klasę <kbd>.alert-heading</kbd>. Aby umieścić w nim stopkę możemy użyć
+                znacznika <kbd>&lt;hr&gt;</kbd>. Jeśli korzystamy w naszym alercie z alertów musimy ostatni z nich
+                ostylowac klasą <kbd>.mb-0</kbd> aby usunąć dolny margines.</p>
+            <div class="col-12 border border-dark mt-3">
+                <div class="p-2">
+                    <div class="alert alert-info" role="alert">
+                        <h4 class="alert-heading">Lorem ipsum</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p>Architecto nihil qui ab voluptatibus aperiam mollitia
+                            soluta et dolores deleniti ea vitae beatae.</p>
+                        <p>Et beatae assumenda blanditiis ratione voluptatem voluptatibus in repellendus fugiat
+                            provident iure itaque deserunt, dicta nesciunt molestias!</p>
+                        <hr>
+                        <p class="mb-0">Non quasi sunt exercitationem mollitia quo sed harum laudantium enim fugit natus
+                            delectus saepe facilis.</p>
+                    </div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"alert alert-info"</span><span class="text-light"> role=</span><span class="text-danger">"alert"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">h4 </span><span class="text-light">class=</span><span class="text-danger">"alert-heading"</span><span class="text-white-50">&gt;</span><span class="text-light">Lorem ipsum</span><span class="text-white-50">&lt;/</span><span class="text-info">h4</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">p</span><span class="text-white-50">&gt;</span><span class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span><span class="text-white-50">&lt;/</span><span class="text-info">p</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">p</span><span class="text-white-50">&gt;</span><span class="text-light">Architecto nihil qui ab voluptatibus aperiam mollitia
+        soluta et dolores deleniti ea vitae beatae.</span><span class="text-white-50">&lt;/</span><span class="text-info">p</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">p</span><span class="text-white-50">&gt;</span><span class="text-light">Et beatae assumenda blanditiis ratione voluptatem
+        voluptatibus in repellendus fugiat provident iure 
+        itaque deserunt, dicta nesciunt molestias!</span><span class="text-white-50">&lt;/</span><span class="text-info">p</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">hr</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">p </span><span class="text-light">class=</span><span class="text-danger">"mb-0"</span><span class="text-white-50">&gt;</span><span class="text-light">Non quasi sunt exercitationem mollitia
+        quo sed harum laudantium enim fugit natus delectus saepe facilis.</span><span class="text-white-50">&lt;/</span><span class="text-info">p</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h4 class="mt-4">Alerty z zamykaniem</h4>
+            <p>aby stworzyć alert który można zamknąć należy wykonać kilka kroków: </p>
+            <ul>
+                <li>Alertowi należy nadac klasę <kbd>.alert-dismissible</kbd></li>
+                <li>Jeżeli chcemy ay alert znikał płynie a nie od razu, dodajemy klasy <kbd>.fade</kbd> oraz
+                    <kbd>.show</kbd></li>
+                <li>Wewnątrz alertu umieszczamy button z atrybutem <kbd>data-dismiss="alert"</kbd></li>
+            </ul>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>Uwaga!</strong> Ten komunikat można zamknąć.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"alert alert-danger alert-dismissible fade show"</span><span class="text-light"> role=</span><span class="text-danger">"alert"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">strong</span><span class="text-white-50">&gt;</span><span class="text-light">Uwaga!</span><span class="text-white-50">&lt;/</span><span class="text-info">strong</span><span class="text-white-50">&gt;</span><span class="text-light"> Ten komunikat można zamknąć.</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">type=</span><span class="text-danger">"button"</span><span class="text-light"> class=</span><span class="text-danger">"close"</span><span class="text-light"> aria-label=</span><span class="text-danger">"close"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">span </span><span class="text-light">aria-hidden=</span><span class="text-danger">"true"</span><span class="text-white-50">&gt;</span><span class="text-light">& times;</span><span class="text-white-50">&lt;/</span><span class="text-info">span</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+        </div>
+    </main>
+
+    <footer class="container-fluid py-2 bg-primary fixed-bottom">
+        <p class="text-center text-light m-0">Stworzono przez Jakub Kobiałka</p>
+    </footer>
+
+    <!--JS scripts-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
