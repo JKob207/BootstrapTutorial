@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pl_PL">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jakub Kobialka" />
+    <title>Kompedium wiedzy o Bootstrapie</title>
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark navbar-expand-lg bg-primary">
+            <a class="navbar-brand" href="../../index.html">
+                <svg class="bi bi-bootstrap" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M12 1H4a3 3 0 00-3 3v8a3 3 0 003 3h8a3 3 0 003-3V4a3 3 0 00-3-3zM4 0a4 4 0 00-4 4v8a4 4 0 004 4h8a4 4 0 004-4V4a4 4 0 00-4-4H4z"
+                        clip-rule="evenodd" />
+                    <path fill-rule="evenodd"
+                        d="M8.537 12H5.062V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396zM6.375 4.658v2.467h1.558c1.16 0 1.764-.428 1.764-1.23 0-.78-.569-1.237-1.541-1.237H6.375zm1.898 6.229H6.375V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377z"
+                        clip-rule="evenodd" />
+                </svg>
+                Kompedium Bootstrap
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu"
+                aria-controls="mainmenu" aria-expanded="false" aria-label="Przełącznik nawigacji">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainmenu">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Układ</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../layout/containers.html">Kontenery</a>
+                            <a class="dropdown-item" href="../layout/grid.html">Siatka</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Zawartość</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../content/typography.html">Typografia</a>
+                            <a class="dropdown-item" href="../content/code.html">Wyświetlanie kodu</a>
+                            <a class="dropdown-item" href="../content/images.html">Obrazy</a>
+                            <a class="dropdown-item" href="../content/figures.html">Obrazy z podpisem</a>
+                            <a class="dropdown-item" href="../content/tables.html">Tabele</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Komponenty</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="alerts.html">Alerty</a>
+                            <a class="dropdown-item" href="badges.html">Odznaki</a>
+                            <a class="dropdown-item">Okruszki</a>
+                            <a class="dropdown-item">Przyciski</a>
+                            <a class="dropdown-item">Radio i checkbuttony jako przyciski</a>
+                            <a class="dropdown-item">Grupy przycisków</a>
+                            <a class="dropdown-item">Karty</a>
+                            <a class="dropdown-item">Slider</a>
+                            <a class="dropdown-item">Akordeon</a>
+                            <a class="dropdown-item">Listy rozwijane</a>
+                            <a class="dropdown-item">Formularze</a>
+                            <a class="dropdown-item">Dodatki do formularzy</a>
+                            <a class="dropdown-item">Jumbotron</a>
+                            <a class="dropdown-item">Listy</a>
+                            <a class="dropdown-item">Pop-up</a>
+                            <a class="dropdown-item">Paginacja</a>
+                            <a class="dropdown-item">Komunikaty</a>
+                            <a class="dropdown-item">Paski postępu</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Narzędzia</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item">Ramki</a>
+                            <a class="dropdown-item">Clearfix</a>
+                            <a class="dropdown-item">Ikona zamykania</a>
+                            <a class="dropdown-item">Kolory</a>
+                            <a class="dropdown-item">Display</a>
+                            <a class="dropdown-item">Umieszczanie filmików zewnętrznych</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container my-5">
+            <header>
+                <h1>Odznaki</h1>
+            </header>
+            <h2>Podstawowe odznaki</h2>
+            <p>Odznaki tworzymy przy użyciu znacznika <kbd>&lt;span&gt;</kbd> z klasami <kbd>.badge .badge-*</kbd>,
+                gdzie zamiast "*" dajemy Boostrapowe klasy kontekstowe, takie jak: </p>
+            <ul>
+                <li><kbd>.badge-primary</kbd></li>
+                <li><kbd>.badge-secondary</kbd></li>
+                <li><kbd>.badge-success</kbd></li>
+                <li><kbd>.badge-danger</kbd></li>
+                <li><kbd>.badge-warning</kbd></li>
+                <li><kbd>.badge-info</kbd></li>
+                <li><kbd>.badge-light</kbd></li>
+                <li><kbd>.badge-dark</kbd></li>
+            </ul>
+            <div class="col-12 border border-dark mt-3">
+                <div class="p-2">
+                    <span class="badge badge-primary">Promocja!</span>
+                    <span class="badge badge-secondary">Promocja!</span>
+                    <span class="badge badge-success">Promocja!</span>
+                    <span class="badge badge-danger">Promocja!</span>
+                    <span class="badge badge-warning">Promocja!</span>
+                    <span class="badge badge-info">Promocja!</span>
+                    <span class="badge badge-light">Promocja!</span>
+                    <span class="badge badge-dark">Promocja!</span>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">span </span><span class="text-light">class=</span><span class="text-danger">"badge badge-primary"</span><span class="text-white-50">&gt;</span><span class="text-light">Promocja!</span><span class="text-white-50">&lt;/</span><span class="text-info">span</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">span </span><span class="text-light">class=</span><span class="text-danger">"badge badge-secondary"</span><span class="text-white-50">&gt;</span><span class="text-light">Promocja!</span><span class="text-white-50">&lt;/</span><span class="text-info">span</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">span </span><span class="text-light">class=</span><span class="text-danger">"badge badge-success"</span><span class="text-white-50">&gt;</span><span class="text-light">Promocja!</span><span class="text-white-50">&lt;/</span><span class="text-info">span</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">span </span><span class="text-light">class=</span><span class="text-danger">"badge badge-danger"</span><span class="text-white-50">&gt;</span><span class="text-light">Promocja!</span><span class="text-white-50">&lt;/</span><span class="text-info">span</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">span </span><span class="text-light">class=</span><span class="text-danger">"badge badge-warning"</span><span class="text-white-50">&gt;</span><span class="text-light">Promocja!</span><span class="text-white-50">&lt;/</span><span class="text-info">span</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">span </span><span class="text-light">class=</span><span class="text-danger">"badge badge-info"</span><span class="text-white-50">&gt;</span><span class="text-light">Promocja!</span><span class="text-white-50">&lt;/</span><span class="text-info">span</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">span </span><span class="text-light">class=</span><span class="text-danger">"badge badge-light"</span><span class="text-white-50">&gt;</span><span class="text-light">Promocja!</span><span class="text-white-50">&lt;/</span><span class="text-info">span</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">span </span><span class="text-light">class=</span><span class="text-danger">"badge badge-dark"</span><span class="text-white-50">&gt;</span><span class="text-light">Promocja!</span><span class="text-white-50">&lt;/</span><span class="text-info">span</span><span class="text-white-50">&gt;</span>
+</code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Odznaki w przyciskach</h2>
+            <p>Dzięki odznakom możemy stworzyć także przyciski które pokazują nam np. ilość powiadomień. Możemy taki
+                efekt uzyskać umieszczając wewnątrz przycisku element <kbd>&lt;span&gt;</kbd> z klasami <kbd>.badge
+                    .badge-*</kbd></p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <button type="button" class="btn btn-primary">
+                        Wiadomości <span class="badge badge-light">2</span>
+                    </button>
+                    <button type="button" class="btn btn-warning">
+                        Wiadomości <span class="badge badge-light">2</span>
+                    </button>
+                    <button type="button" class="btn btn-dark">
+                        Wiadomości <span class="badge badge-light">2</span>
+                    </button>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">type=</span><span class="text-danger">"button"</span><span class="text-light">class=</span><span class="text-danger">"btn btn-primary"</span><span class="text-white-50">&gt;</span>
+    <span class="text-light">Wiadomości </span><span class="text-white-50">&lt;</span><span class="text-info">span </span><span class="text-light">class=</span><span class="text-danger">"badge badge-light"</span><span class="text-white-50">&gt;</span><span class="text-light">2</span><span class="text-white-50">&lt;/</span><span class="text-info">span</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">type=</span><span class="text-danger">"button"</span><span class="text-light">class=</span><span class="text-danger">"btn btn-warning"</span><span class="text-white-50">&gt;</span>
+    <span class="text-light">Wiadomości </span><span class="text-white-50">&lt;</span><span class="text-info">span </span><span class="text-light">class=</span><span class="text-danger">"badge badge-light"</span><span class="text-white-50">&gt;</span><span class="text-light">2</span><span class="text-white-50">&lt;/</span><span class="text-info">span</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">type=</span><span class="text-danger">"button"</span><span class="text-light">class=</span><span class="text-danger">"btn btn-dark"</span><span class="text-white-50">&gt;</span>
+    <span class="text-light">Wiadomości </span><span class="text-white-50">&lt;</span><span class="text-info">span </span><span class="text-light">class=</span><span class="text-danger">"badge badge-light"</span><span class="text-white-50">&gt;</span><span class="text-light">2</span><span class="text-white-50">&lt;/</span><span class="text-info">span</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+</code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Zaokrąglone odznaki</h2>
+            <p>Aby zaokrąglić rogi naszych odznak należy użyć klasy <kbd>.badge-pill</kbd></p>
+            <div class="col-12 border border-dark mt-3">
+                <div class="p-2">
+                    <span class="badge badge-primary badge-pill">badge-primary</span>
+                    <span class="badge badge-secondary badge-pill">badge-secondary</span>
+                    <span class="badge badge-success badge-pill">badge-success</span>
+                    <span class="badge badge-danger badge-pill">badge-danger</span>
+                    <span class="badge badge-warning badge-pill">badge-warning</span>
+                    <span class="badge badge-info badge-pill">badge-info</span>
+                    <span class="badge badge-light badge-pill">badge-light</span>
+                    <span class="badge badge-dark badge-pill">badge-dark</span>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">span </span><span class="text-light">class=</span><span class="text-danger">"badge badge-primary badge-pill"</span><span class="text-white-50">&gt;</span><span class="text-light">badge-primary</span><span class="text-white-50">&lt;/</span><span class="text-info">span</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">span </span><span class="text-light">class=</span><span class="text-danger">"badge badge-secondary badge-pill"</span><span class="text-white-50">&gt;</span><span class="text-light">badge-secondary</span><span class="text-white-50">&lt;/</span><span class="text-info">span</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">span </span><span class="text-light">class=</span><span class="text-danger">"badge badge-success badge-pill"</span><span class="text-white-50">&gt;</span><span class="text-light">badge-success</span><span class="text-white-50">&lt;/</span><span class="text-info">span</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">span </span><span class="text-light">class=</span><span class="text-danger">"badge badge-danger badge-pill"</span><span class="text-white-50">&gt;</span><span class="text-light">badge-danger</span><span class="text-white-50">&lt;/</span><span class="text-info">span</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">span </span><span class="text-light">class=</span><span class="text-danger">"badge badge-warning badge-pill"</span><span class="text-white-50">&gt;</span><span class="text-light">badge-warning</span><span class="text-white-50">&lt;/</span><span class="text-info">span</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">span </span><span class="text-light">class=</span><span class="text-danger">"badge badge-info badge-pill"</span><span class="text-white-50">&gt;</span><span class="text-light">badge-info</span><span class="text-white-50">&lt;/</span><span class="text-info">span</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">span </span><span class="text-light">class=</span><span class="text-danger">"badge badge-light badge-pill"</span><span class="text-white-50">&gt;</span><span class="text-light">badge-light</span><span class="text-white-50">&lt;/</span><span class="text-info">span</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">span </span><span class="text-light">class=</span><span class="text-danger">"badge badge-dark badge-pill"</span><span class="text-white-50">&gt;</span><span class="text-light">badge-dark</span><span class="text-white-50">&lt;/</span><span class="text-info">span</span><span class="text-white-50">&gt;</span>
+</code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Linki w odznakach</h2>
+            <p>Zamiast znacznika <kbd>&lt;span&gt;</kbd> można użyć znacznik <kbd>&lt;a&gt;</kbd> jako odznakę. Wtedy
+                stanie się ona linkiem.</p>
+            <div class="col-12 border border-dark mt-3">
+                <div class="p-2">
+                    <a href="#" class="badge badge-primary badge-pill">badge-primary</a>
+                    <a href="#" class="badge badge-secondary badge-pill">badge-secondary</a>
+                    <a href="#" class="badge badge-success badge-pill">badge-success</a>
+                    <a href="#" class="badge badge-danger badge-pill">badge-danger</a>
+                    <a href="#" class="badge badge-warning badge-pill">badge-warning</a>
+                    <a href="#" class="badge badge-info badge-pill">badge-info</a>
+                    <a href="#" class="badge badge-light badge-pill">badge-light</a>
+                    <a href="#" class="badge badge-dark badge-pill">badge-dark</a>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">href=</span><span class="text-danger">"#"</span><span class="text-light"> class=</span><span class="text-danger">"badge badge-primary"</span><span class="text-white-50">&gt;</span><span class="text-light">badge-primary</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">href=</span><span class="text-danger">"#"</span><span class="text-light"> class=</span><span class="text-danger">"badge badge-secondary"</span><span class="text-white-50">&gt;</span><span class="text-light">badge-secondary</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">href=</span><span class="text-danger">"#"</span><span class="text-light"> class=</span><span class="text-danger">"badge badge-success"</span><span class="text-white-50">&gt;</span><span class="text-light">badge-success</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">href=</span><span class="text-danger">"#"</span><span class="text-light"> class=</span><span class="text-danger">"badge badge-danger"</span><span class="text-white-50">&gt;</span><span class="text-light">badge-danger</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">href=</span><span class="text-danger">"#"</span><span class="text-light"> class=</span><span class="text-danger">"badge badge-warning"</span><span class="text-white-50">&gt;</span><span class="text-light">badge-warning</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">href=</span><span class="text-danger">"#"</span><span class="text-light"> class=</span><span class="text-danger">"badge badge-info"</span><span class="text-white-50">&gt;</span><span class="text-light">badge-info</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">href=</span><span class="text-danger">"#"</span><span class="text-light"> class=</span><span class="text-danger">"badge badge-light"</span><span class="text-white-50">&gt;</span><span class="text-light">badge-light</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">href=</span><span class="text-danger">"#"</span><span class="text-light"> class=</span><span class="text-danger">"badge badge-dark"</span><span class="text-white-50">&gt;</span><span class="text-light">badge-dark</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+</code></pre>
+                    <!--/code-->
+                </div>
+            </div>
+    </main>
+
+    <footer class="container-fluid py-2 bg-primary fixed-bottom">
+        <p class="text-center text-light m-0">Stworzono przez Jakub Kobiałka</p>
+    </footer>
+
+    <!--JS scripts-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
