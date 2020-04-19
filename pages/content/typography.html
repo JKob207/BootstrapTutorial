@@ -100,9 +100,13 @@
     <main>
         <div class="container my-5">
             <header>
-                <h2>Typografia</h2>
+                <h1>Typografia</h1>
             </header>
-            <h4>Nagłówki</h4>
+            <h2>Nagłówki</h2>
+            <p>Mamy sześć podstawowych nagłówków od <kbd>&lt;h1&gt;</kbd> do <kbd>&lt;h6&gt;</kbd>. Nie powinny one
+                slużyc jako określanie wielkości fontu. Znaczniki typu H są ostylowane już w Bootstrapie za pomocą
+                większego dolnego marginesu oraz grubości fontu ustawionej na 500. Aby ostylować paragraf aby "wyglądał"
+                jak nagłówek używamy odpowienio klas od <kbd>.h1</kbd> do <kbd>.h6</kbd></p>
             <div class="col-12 bg-light border border-dark mt-3">
                 <div class="p-2">
                     <h1>H1. nagłówek (Semibold 36px)</h1>
@@ -125,7 +129,9 @@
                 </div>
                 <!--/code-->
             </div>
-            <h4 class="mt-3">Nagłówki z dodatkowym tekstem</h4>
+            <h2 class="mt-3">Nagłówki z dodatkowym tekstem</h2>
+            <p>Możemy także stworzyć nagłówek z mniejszym przypisem. Mamy do tego znacznik <kbd>&lt;small&gt;</kbd>,
+                którego umieszczamy wewnątrz znacznika H.</p>
             <div class="col-12 bg-light border border-dark mt-3">
                 <div class="p-2">
                     <h3>
@@ -143,8 +149,9 @@
                 </div>
                 <!--/code-->
             </div>
-            <h4 class="mt-3">Jeszcze większe nagłówki</h4>
-            <p>Podane klasy można stosować zarówno do nagłówków jak i do paragrafów.</p>
+            <h2 class="mt-3">Jeszcze większe nagłówki</h2>
+            <p>Jeżeli font o wielkości 36px nadal jest za mały możemy skorzystać z klas od <kbd>.display-1</kbd> do
+                <kbd>.dispaly-4</kbd>. Podane klasy można stosować zarówno do nagłówków jak i do paragrafów.</p>
             <div class="col-12 bg-light border border-dark mt-3">
                 <div class="p-2">
                     <h1 class="display-1">Display 1</h1>
@@ -163,7 +170,8 @@
                 </div>
                 <!--/code-->
             </div>
-            <h4 class="mt-3">Większy paragraf</h4>
+            <h2 class="mt-3">Większy paragraf</h2>
+            <p>Aby stworzyć większy paragraf możemy skorzystać z klasy <kbd>.lead</kbd></p>
             <div class="col-12 bg-light border border-dark mt-3">
                 <div class="p-2">
                     <p class="lead">Paragraf z klasą lead</p>
@@ -175,7 +183,7 @@
                 </div>
                 <!--/code-->
             </div>
-            <h4 class="mt-3">Stylowanie elementów liniowych</h4>
+            <h2 class="mt-3">Stylowanie elementów liniowych</h2>
             <div class="col-12 bg-light border border-dark mt-3">
                 <div class="p-2">
                     <p>Użycie znacznika mark pozwala na <mark>podświetlenie</mark> tekstu.</p>
@@ -202,7 +210,10 @@
                 </div>
                 <!--/code-->
             </div>
-            <h4 class="mt-3">Skróty w tekście</h4>
+            <h2 class="mt-3">Skróty w tekście</h2>
+            <p>gdy stosujemy różne skróty w tekście i chcemy aby po najechaniu na nie kursorem pojawił się nam
+                rozwinięcie danego skrótu, możemy użyć znacznika <kbd>&lt;abbr&gt;</kbd> z włąściwością
+                <kbd>title="Wyjaśnienie skrótu"</kbd></p>
             <div class="col-12 bg-light border border-dark mt-3">
                 <div class="p-2">
                     <p><abbr title="Kaskadowe arkusze stylów">CSS</abbr></p>
@@ -217,7 +228,10 @@
                 </div>
                 <!--/code-->
             </div>
-            <h4 class="mt-3">Cytat</h4>
+            <h2 class="mt-3">Cytat</h2>
+            <p>Cytaty możemy wyróżniać wizualnie dzięki Bootstrapowi. Możemy użyć do tego znacznika
+                <kbd>&lt;blockquote&gt;</kbd> z klasą <kbd>.blockquote</kbd>
+            </p>
             <div class="col-12 bg-light border border-dark mt-3">
                 <div class="p-2">
                     <blockquote class="blockquote">
@@ -237,7 +251,10 @@
                 </div>
                 <!--/code-->
             </div>
-            <h4 class="mt-3">Cytat z podpisem</h4>
+            <h2 class="mt-3">Cytat z podpisem</h2>
+            <p>Używając cytatu możemy wyróżnić autora i źródło. Aby to zrobić możemy skorzystać ze znacznika
+                <kbd>&lt;footer class="blockquote-footer"&gt;</kbd> umieszczonego w znaczniku
+                <kbd>&lt;blockquote&gt;</kbd>. Natomiast źródło podajemy w znaczniku <kbd>&lt;cite&gt;</kbd></p>
             <div class="col-12 bg-light border border-dark mt-3">
                 <div class="p-2">
                     <blockquote class="blockquote">
@@ -261,8 +278,10 @@
                 </div>
                 <!--/code-->
             </div>
-            <h4 class="mt-3">Listy</h4>
-            <h5>Listy bez wypunktowań</h5>
+            <h2 class="mt-3">Listy</h2>
+            <h3>Listy bez wypunktowań</h3>
+            <p>Aby stworzyć listę bez wypunktowań, musimy do znacznika <kbd>&lt;ul&gt;</kbd> dodać klasę
+                <kbd>.list-unstyled</kbd></p>
             <div class="col-12 bg-light border border-dark mt-3">
                 <div class="p-2">
                     <ul class="list-unstyled">
@@ -283,7 +302,6 @@
                         <li>Eget porttitor lorem</li>
                     </ul>
                 </div>
-                <!--Here code result-->
                 <!--code-->
                 <div class="bg-dark pl-1">
                     <pre class="mt-1">
@@ -307,7 +325,10 @@
                 </div>
                 <!--/code-->
             </div>
-            <h5 class="mt-3">Listy bez wypunktowań</h5>
+            <h3 class="mt-3">Listy liniowe</h3>
+            <p>Aby elementy naszej listy układały się poziomo a nie pionowo, wystarczy do znacznikowi
+                <kbd>&lt;ul&gt;</kbd> nadać klasę <kbd>.list-inline</kbd>, a następnie do znacznikom
+                <kbd>&lt;li&gt;</kbd> dodać klasę <kbd>.list-item-item</kbd></p>
             <div class="col-12 bg-light border border-dark mt-3">
                 <div class="p-2">
                     <ul class="list-inline">
@@ -327,24 +348,29 @@
                 </div>
                 <!--/code-->
             </div>
-            <h5 class="mt-3">Lista z opisem dl -> dt -> dd</h5>
+            <h3 class="mt-3">Lista z opisem</h3>
+            <p>Do opisywania listy posiadamy trzy znaczniki: <kbd>&lt;dl&gt;</kbd> - description list (znacznik
+                opinający całą listę), <kbd>&lt;dt&gt;</kbd> - description title (tytuł listy), <kbd>&lt;dd&gt;</kbd> -
+                description definition (opis elementu na liście). Listę tworzymy od otwarcia znacznika
+                <kbd>&lt;dl&gt;</kbd> z klasą <kbd>.row</kbd>. Kolejno każdy element listy składa się z tytułu i opisu.
+                Każdy z nich ma przypisaną odpowiednią klasę kolumny.</p>
             <div class="col-12 bg-light border border-dark mt-3">
                 <div class="p-2">
-                    <dl>
-                        <dt>Coffee</dt>
-                        <dd>black hot drink</dd>
-                        <dt>Milk</dt>
-                        <dd>white cold drink</dd>
+                    <dl class="row">
+                        <dt class="col-sm-3">Coffee</dt>
+                        <dd class="col-sm-9">black hot drink</dd>
+                        <dt class="col-sm-3">Milk</dt>
+                        <dd class="col-sm-9">white cold drink</dd>
                     </dl>
                 </div>
                 <!--code-->
                 <div class="bg-dark pl-1">
                     <pre class="mt-1">
-<code><span class="text-white-50">&lt;</span><span class="text-info">dl</span><span class="text-white-50">&gt;</span>
-    <span class="text-white-50">&lt;</span><span class="text-info">dt</span><span class="text-white-50">&gt;</span><span class="text-light">Coffee</span><span class="text-white-50">&lt;/</span><span class="text-info">dt</span><span class="text-white-50">&gt;</span>
-    <span class="text-white-50">&lt;</span><span class="text-info">dd</span><span class="text-white-50">&gt;</span><span class="text-light">black hot drink</span><span class="text-white-50">&lt;/</span><span class="text-info">dd</span><span class="text-white-50">&gt;</span>
-    <span class="text-white-50">&lt;</span><span class="text-info">dt</span><span class="text-white-50">&gt;</span><span class="text-light">Milk</span><span class="text-white-50">&lt;/</span><span class="text-info">dt</span><span class="text-white-50">&gt;</span>
-    <span class="text-white-50">&lt;</span><span class="text-info">dd</span><span class="text-white-50">&gt;</span><span class="text-light">white cold drink</span><span class="text-white-50">&lt;/</span><span class="text-info">dd</span><span class="text-white-50">&gt;</span>
+<code><span class="text-white-50">&lt;</span><span class="text-info">dl </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">dt </span><span class="text-light">class=</span><span class="text-danger">"col-sm-3"</span><span class="text-white-50">&gt;</span><span class="text-light">Coffee</span><span class="text-white-50">&lt;/</span><span class="text-info">dt</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">dd </span><span class="text-light">class=</span><span class="text-danger">"col-sm-9"</span><span class="text-white-50">&gt;</span><span class="text-light">black hot drink</span><span class="text-white-50">&lt;/</span><span class="text-info">dd</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">dt </span><span class="text-light">class=</span><span class="text-danger">"col-sm-3"</span><span class="text-white-50">&gt;</span><span class="text-light">Milk</span><span class="text-white-50">&lt;/</span><span class="text-info">dt</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">dd </span><span class="text-light">class=</span><span class="text-danger">"col-sm-9"</span><span class="text-white-50">&gt;</span><span class="text-light">white cold drink</span><span class="text-white-50">&lt;/</span><span class="text-info">dd</span><span class="text-white-50">&gt;</span>
 <span class="text-white-50">&lt;/</span><span class="text-info">dl</span><span class="text-white-50">&gt;</span></code></pre>
                 </div>
                 <!--/code-->
