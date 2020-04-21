@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pl_PL">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jakub Kobialka" />
+    <title>Kompedium wiedzy o Bootstrapie</title>
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark navbar-expand-lg bg-primary">
+            <a class="navbar-brand" href="../../index.html">
+                <svg class="bi bi-bootstrap" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M12 1H4a3 3 0 00-3 3v8a3 3 0 003 3h8a3 3 0 003-3V4a3 3 0 00-3-3zM4 0a4 4 0 00-4 4v8a4 4 0 004 4h8a4 4 0 004-4V4a4 4 0 00-4-4H4z"
+                        clip-rule="evenodd" />
+                    <path fill-rule="evenodd"
+                        d="M8.537 12H5.062V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396zM6.375 4.658v2.467h1.558c1.16 0 1.764-.428 1.764-1.23 0-.78-.569-1.237-1.541-1.237H6.375zm1.898 6.229H6.375V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377z"
+                        clip-rule="evenodd" />
+                </svg>
+                Kompedium Bootstrap
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu"
+                aria-controls="mainmenu" aria-expanded="false" aria-label="Przełącznik nawigacji">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainmenu">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Układ</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../layout/containers.html">Kontenery</a>
+                            <a class="dropdown-item" href="../layout/grid.html">Siatka</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Zawartość</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../content/typography.html">Typografia</a>
+                            <a class="dropdown-item" href="../content/code.html">Wyświetlanie kodu</a>
+                            <a class="dropdown-item" href="../content/images.html">Obrazy</a>
+                            <a class="dropdown-item" href="../content/figures.html">Obrazy z podpisem</a>
+                            <a class="dropdown-item" href="../content/tables.html">Tabele</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Komponenty</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="alerts.html">Alerty</a>
+                            <a class="dropdown-item" href="badges.html">Odznaki</a>
+                            <a class="dropdown-item" href="breadcrumb.html">Okruszki</a>
+                            <a class="dropdown-item" href="button.html">Przyciski</a>
+                            <a class="dropdown-item" href="#">Grupy przycisków</a>
+                            <a class="dropdown-item">Karty</a>
+                            <a class="dropdown-item">Slider</a>
+                            <a class="dropdown-item">Akordeon</a>
+                            <a class="dropdown-item">Listy rozwijane</a>
+                            <a class="dropdown-item">Formularze</a>
+                            <a class="dropdown-item">Dodatki do formularzy</a>
+                            <a class="dropdown-item">Jumbotron</a>
+                            <a class="dropdown-item">Listy</a>
+                            <a class="dropdown-item">Pop-up</a>
+                            <a class="dropdown-item">Paginacja</a>
+                            <a class="dropdown-item">Komunikaty</a>
+                            <a class="dropdown-item">Paski postępu</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Narzędzia</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item">Ramki</a>
+                            <a class="dropdown-item">Clearfix</a>
+                            <a class="dropdown-item">Ikona zamykania</a>
+                            <a class="dropdown-item">Kolory</a>
+                            <a class="dropdown-item">Display</a>
+                            <a class="dropdown-item">Umieszczanie filmików zewnętrznych</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container my-5">
+            <header>
+                <h1>Grupy przycisków</h1>
+            </header>
+            <h2>Podstawowe zgrupowanie</h2>
+            <p>Aby stworzyć grupę przycisków musimy na początku umieścić je w elemencie div, który posiada klasę
+                <kbd>.btn-group</kbd> oraz atrybut <kbd>role="group"</kbd>. W jego wnętrzu możemy stworzyć klasyczne
+                przyciski.</p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <div class="btn-group" role="group">
+                        <button class="btn btn-primary" type="button">Przycisk 1</button>
+                        <button class="btn btn-success" type="button">Przycisk 2</button>
+                        <button class="btn btn-danger" type="button">Przycisk 3</button>
+                    </div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"btn-group"</span><span class="text-light"> role=</span><span class="text-danger">"group"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-primary"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-white-50">&gt;</span><span class="text-light">Przycisk 1</span><span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-success"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-white-50">&gt;</span><span class="text-light">Przycisk 2</span><span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-danger"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-white-50">&gt;</span><span class="text-light">Przycisk 3</span><span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Pasek narzędzi</h2>
+            <p>Możemy stworzyć różne paski narzędziowe dla naszej strony. Przyciski takiego paska umieszczamy w divie z
+                klasą <kbd>.btn-toolbar</kbd> i atrybutem <kbd>role="toolbar"</kbd>. </p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <div class="btn-toolbar" role="toolbar">
+                        <div class="btn-group mr-2" role="group">
+                            <button class="btn btn-primary" type="button">Edycja</button>
+                            <button class="btn btn-primary" type="button">Format</button>
+                            <button class="btn btn-primary" type="button">Narzędzia</button>
+                        </div>
+                        <div class="btn-group" role="group">
+                            <button class="btn btn-success" type="button">Zapisz</button>
+                            <button class="btn btn-danger" type="button">Usuń</button>
+                        </div>
+                    </div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"btn-toolbar"</span><span class="text-light"> role=</span><span class="text-danger">"toolbar"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"btn-group mr-2"</span><span class="text-light"> role=</span><span class="text-danger">"group"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-primary"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-white-50">&gt;</span><span class="text-light">Edycja</span><span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-primary"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-white-50">&gt;</span><span class="text-light">Format</span><span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-primary"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-white-50">&gt;</span><span class="text-light">Narzędzia</span><span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"btn-group"</span><span class="text-light"> role=</span><span class="text-danger">"group"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-success"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-white-50">&gt;</span><span class="text-light">Zapisz</span><span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-danger"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-white-50">&gt;</span><span class="text-light">Usuń</span><span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Checkboxy</h2>
+            <p>Możemy ostylować za pomocą Bootstrapa także grupę checkboxów. Zaczynamy od utworzenia elementu element
+                div z klasą
+                <kbd>.btn-group .btn-group-toogle</kbd> oraz atrybutem <kbd>data-toggle="buttons"</kbd>. Wewnątrz niego
+                dodajemy element <kbd>&lt;label&gt;</kbd> z klasami <kbd>.btn btn-*</kbd>, gdzie "*" oznacza kolor
+                przycisku. Wewnątrz tego elementu umieszczamy nasz checkbox, czyli <kbd>&lt;input type="checkbox"
+                    autocomplete="off" /&gt; Nazwa opcji</kbd>. Jeżli chcemy aby był on domyślnie zaznaczony dodajemy mu
+                atrybut <kbd>checked</kbd> oraz na element label atrybut <kbd>active</kbd>.</p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-primary active">
+                            <input type="checkbox" checked autocomplete="off" /> Checkbox 1
+                        </label>
+                        <label class="btn btn-success">
+                            <input type="checkbox" autocomplete="off" /> Checkbox 2
+                        </label>
+                        <label class="btn btn-danger">
+                            <input type="checkbox" autocomplete="off" /> Checkbox 3
+                        </label>
+                        <label class="btn btn-warning">
+                            <input type="checkbox" autocomplete="off" /> Checkbox 4
+                        </label>
+                    </div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"btn-group btn-group-toggle"</span><span class="text-light"> data-toggle=</span><span class="text-danger">"buttons"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">class=</span><span class="text-danger">"btn btn-primary active"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"checkbox"</span><span class="text-light">checked</span><span class="text-light"> autocomplete=</span><span class="text-danger">"off"</span><span class="text-white-50"> /&gt;</span><span class="text-light">Checkbox 1</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">class=</span><span class="text-danger">"btn btn-success"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"checkbox"</span><span class="text-light"> autocomplete=</span><span class="text-danger">"off"</span><span class="text-white-50"> /&gt;</span><span class="text-light">Checkbox 2</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">class=</span><span class="text-danger">"btn btn-danger"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"checkbox"</span><span class="text-light"> autocomplete=</span><span class="text-danger">"off"</span><span class="text-white-50"> /&gt;</span><span class="text-light">Checkbox 3</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">class=</span><span class="text-danger">"btn btn-warning"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"checkbox"</span><span class="text-light"> autocomplete=</span><span class="text-danger">"off"</span><span class="text-white-50"> /&gt;</span><span class="text-light">Checkbox 4</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Radiobuttony</h2>
+            <p>Grupy radiobuttonów tworzymy analogicznie co checkboxy. Różnica polega tylko na zamianie typu inputa na
+                typ <kbd>radio</kbd></p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-primary active">
+                            <input type="radio" checked autocomplete="off" /> Checkbox 1
+                        </label>
+                        <label class="btn btn-success">
+                            <input type="radio" autocomplete="off" /> Radiobutton 2
+                        </label>
+                        <label class="btn btn-danger">
+                            <input type="radio" autocomplete="off" /> Radiobutton 3
+                        </label>
+                        <label class="btn btn-warning">
+                            <input type="radio" autocomplete="off" /> Radiobutton 4
+                        </label>
+                    </div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+    <code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"btn-group btn-group-toggle"</span><span class="text-light"> data-toggle=</span><span class="text-danger">"buttons"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">class=</span><span class="text-danger">"btn btn-primary active"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"radio"</span><span class="text-light">checked</span><span class="text-light"> autocomplete=</span><span class="text-danger">"off"</span><span class="text-white-50"> /&gt;</span><span class="text-light">Radiobutton 1</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">class=</span><span class="text-danger">"btn btn-success"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"radio"</span><span class="text-light"> autocomplete=</span><span class="text-danger">"off"</span><span class="text-white-50"> /&gt;</span><span class="text-light">Radiobutton 2</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">class=</span><span class="text-danger">"btn btn-danger"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"radio"</span><span class="text-light"> autocomplete=</span><span class="text-danger">"off"</span><span class="text-white-50"> /&gt;</span><span class="text-light">Radiobutton 3</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">class=</span><span class="text-danger">"btn btn-warning"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"radio"</span><span class="text-light"> autocomplete=</span><span class="text-danger">"off"</span><span class="text-white-50"> /&gt;</span><span class="text-light">Radiobutton 4</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Rozmiary grupy przycisków</h2>
+            <p>Podobnie jak ze zwykłymi przyciskami, możemy zmieniać rozmiar całej grupie przycisków. Wystarczy, że
+                dodamy odpowiednią wielkość elementowi div, który scala całą naszą grupę.</p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <div class="btn-group btn-group-lg col-12 m-1" role="group">
+                        <button class="btn btn-secondary" type="button">Lewy</button>
+                        <button class="btn btn-secondary" type="button">Środkowy</button>
+                        <button class="btn btn-secondary" type="button">Prawy</button>
+                    </div>
+                    <div class="btn-group col-12 m-1" role="group">
+                        <button class="btn btn-secondary" type="button">Lewy</button>
+                        <button class="btn btn-secondary" type="button">Środkowy</button>
+                        <button class="btn btn-secondary" type="button">Prawy</button>
+                    </div>
+                    <div class="btn-group btn-group-sm col-12 m-1" role="group">
+                        <button class="btn btn-secondary" type="button">Lewy</button>
+                        <button class="btn btn-secondary" type="button">Środkowy</button>
+                        <button class="btn btn-secondary" type="button">Prawy</button>
+                    </div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"btn-group btn-group-lg"</span><span class="text-light"> role=</span><span class="text-danger">"group"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-secondary"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-white-50">&gt;</span><span class="text-light">Lewy</span><span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-secondary"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-white-50">&gt;</span><span class="text-light">Środkowy</span><span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-secondary"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-white-50">&gt;</span><span class="text-light">Prawy</span><span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"btn-group"</span><span class="text-light"> role=</span><span class="text-danger">"group"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-secondary"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-white-50">&gt;</span><span class="text-light">Lewy</span><span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-secondary"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-white-50">&gt;</span><span class="text-light">Środkowy</span><span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-secondary"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-white-50">&gt;</span><span class="text-light">Prawy</span><span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"btn-group btn-group-sm"</span><span class="text-light"> role=</span><span class="text-danger">"group"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-secondary"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-white-50">&gt;</span><span class="text-light">Lewy</span><span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-secondary"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-white-50">&gt;</span><span class="text-light">Środkowy</span><span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-secondary"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-white-50">&gt;</span><span class="text-light">Prawy</span><span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Przyciski z rozwijaną listą</h2>
+            <p>Możemy stworzyć grupę przycisków, z których jeden z nich jest listą rozwijaną po kliknięciu. W celu
+                stworzeniu tego tworzymy podstawową klase przycisków z elementem nadrzędnym div z klasą
+                <kbd>.btn-group</kbd> i umieszczamy w środku elementy button. Aby dodać listę
+                rozwijaną, musimy w środku naszego diva dodać kolejną grupę przycisków. W jego wnętrzu umieszczamy
+                element button z dodatkową klasą <kbd>.dropdown-toggle</kbd> oraz atrybutem
+                <kbd>data-toggle="dropdown"</kbd>. Kolejno dodajemy naszą listę w nim. Listę tą tworzymy poprzez dodanie
+                elementu div z klasą <kbd>.dropdown-menu</kbd>, a w jego wnętrzu dodajemy linki z klasą
+                <kbd>.dropdown-item</kbd></p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <div class="btn-group" role="group">
+                        <button class="btn btn-primary" type="button">Przycisk</button>
+                        <button class="btn btn-primary" type="button">Przycisk</button>
+                        <div class="btn-group" role="group">
+                            <button id="btnDropdownList" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="dropdown" aria-expanded="false">
+                                Lista
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="btnDropdownList">
+                                <a href="#" class="dropdown-item">Link</a>
+                                <a href="#" class="dropdown-item">Link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"btn-group"</span><span class="text-light"> role=</span><span class="text-danger">"group"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-primary"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-white-50">&gt;</span><span class="text-light">Przycisk</span><span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-primary"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-white-50">&gt;</span><span class="text-light">Przycisk</span><span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"btn-group"</span><span class="text-light"> role=</span><span class="text-danger">"group"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">id=</span><span class="text-danger">"btnDropdownList"</span><span class="text-light"> class=</span><span class="text-danger">"btn btn-primary dropdown-toggle"</span><span class="text-light"> data-toggle=</span><span class="text-danger">"dropdown"</span>
+        <span class="text-light"> aria-haspopup=</span><span class="text-danger">"dropdown"</span><span class="text-light"> aria-expanded=</span><span class="text-danger">"false"</span><span class="text-white-50">&gt;</span>
+            <span class="text-light">Lista</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"dropdown-menu"</span><span class="text-light"> aria-labelledby=</span><span class="text-danger">"btnDropdownList"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">href=</span><span class="text-danger">"#"</span><span class="text-light"> class=</span><span class="text-danger">"dropdown-item"</span><span class="text-white-50">&gt;</span><span class="text-light">Link</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">href=</span><span class="text-danger">"#"</span><span class="text-light"> class=</span><span class="text-danger">"dropdown-item"</span><span class="text-white-50">&gt;</span><span class="text-light">Link</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Pionowa grupa przycisków</h2>
+            <p>Aby nasza grupa przycisków była pionowa wystarczy w nadrzędnym elemencie div grupy dodać klasę
+                <kbd>.btn-group-vertical</kbd></p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <div class="btn-group-vertical">
+                        <button class="btn btn-primary" type="button">Przycisk</button>
+                        <button class="btn btn-primary" type="button">Przycisk</button>
+                        <button class="btn btn-primary" type="button">Przycisk</button>
+                    </div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"btn-group-vertical"</span><span class="text-light"> role=</span><span class="text-danger">"group"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-primary"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-white-50">&gt;</span><span class="text-light">Przycisk</span><span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-primary"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-white-50">&gt;</span><span class="text-light">Przycisk</span><span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-primary"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-white-50">&gt;</span><span class="text-light">Przycisk</span><span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></pre>
+                    <!--/code-->
+                </div>
+            </div>
+    </main>
+
+    <footer class="container-fluid py-2 bg-primary fixed-bottom">
+        <p class="text-center text-light m-0">Stworzono przez Jakub Kobiałka</p>
+    </footer>
+
+    <!--JS scripts-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
