@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pl_PL">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jakub Kobialka" />
+    <title>Kompedium wiedzy o Bootstrapie</title>
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark navbar-expand-lg bg-primary">
+            <a class="navbar-brand" href="../../index.html">
+                <svg class="bi bi-bootstrap" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M12 1H4a3 3 0 00-3 3v8a3 3 0 003 3h8a3 3 0 003-3V4a3 3 0 00-3-3zM4 0a4 4 0 00-4 4v8a4 4 0 004 4h8a4 4 0 004-4V4a4 4 0 00-4-4H4z"
+                        clip-rule="evenodd" />
+                    <path fill-rule="evenodd"
+                        d="M8.537 12H5.062V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396zM6.375 4.658v2.467h1.558c1.16 0 1.764-.428 1.764-1.23 0-.78-.569-1.237-1.541-1.237H6.375zm1.898 6.229H6.375V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377z"
+                        clip-rule="evenodd" />
+                </svg>
+                Kompedium Bootstrap
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu"
+                aria-controls="mainmenu" aria-expanded="false" aria-label="Przełącznik nawigacji">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainmenu">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Układ</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../layout/containers.html">Kontenery</a>
+                            <a class="dropdown-item" href="../layout/grid.html">Siatka</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Zawartość</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../content/typography.html">Typografia</a>
+                            <a class="dropdown-item" href="../content/code.html">Wyświetlanie kodu</a>
+                            <a class="dropdown-item" href="../content/images.html">Obrazy</a>
+                            <a class="dropdown-item" href="../content/figures.html">Obrazy z podpisem</a>
+                            <a class="dropdown-item" href="../content/tables.html">Tabele</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Komponenty</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="alerts.html">Alerty</a>
+                            <a class="dropdown-item" href="badges.html">Odznaki</a>
+                            <a class="dropdown-item" href="breadcrumb.html">Okruszki</a>
+                            <a class="dropdown-item" href="button.html">Przyciski</a>
+                            <a class="dropdown-item" href="button-group.html">Grupy przycisków</a>
+                            <a class="dropdown-item" href="cards.html">Karty</a>
+                            <a class="dropdown-item" href="#">Slider</a>
+                            <a class="dropdown-item">Akordeon</a>
+                            <a class="dropdown-item">Listy rozwijane</a>
+                            <a class="dropdown-item">Formularze</a>
+                            <a class="dropdown-item">Dodatki do formularzy</a>
+                            <a class="dropdown-item">Jumbotron</a>
+                            <a class="dropdown-item">Listy</a>
+                            <a class="dropdown-item">Pop-up</a>
+                            <a class="dropdown-item">Paginacja</a>
+                            <a class="dropdown-item">Komunikaty</a>
+                            <a class="dropdown-item">Paski postępu</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Narzędzia</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item">Ramki</a>
+                            <a class="dropdown-item">Clearfix</a>
+                            <a class="dropdown-item">Ikona zamykania</a>
+                            <a class="dropdown-item">Kolory</a>
+                            <a class="dropdown-item">Display</a>
+                            <a class="dropdown-item">Umieszczanie filmików zewnętrznych</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container my-5">
+            <header>
+                <h1>Slider</h1>
+            </header>
+            <h2>Podstawowy przykład</h2>
+            <p>Podstawowym elementem slidea jest div z klasami <kbd>.carousel .slide</kbd>. Otrzymuje on także
+                indentyfikator. Każdy sklider na stronie musi posiadać swój unikalny identyfikator.
+                Wewnątrz tego diva zawieramy kolejny element div z klasą <kbd>.carousel-inner</kbd>. W środku tworzymy
+                diva z klasą <kbd>.carousel-item</kbd>, który jest pojedynczym slidem. Pierwszemu z naszych slajdów
+                powinniśmy nadać klasę <kbd>.active</kbd>. Wewnątrz każdego pojedynczego slajdu umieszczamy obraz
+                <kbd>&lt;img src="..." class="d-block w-100" alt="Opis slajdu" /&gt;</kbd></p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <div id="slider" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100" src="https://via.placeholder.com/1280x500.png?text=Slajd+1"
+                                    alt="Opis slajdu" />
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="https://via.placeholder.com/1280x500.png?text=Slajd+2"
+                                    alt="Opis slajdu" />
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="https://via.placeholder.com/1280x500.png?text=Slajd+3"
+                                    alt="Opis slajdu" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">id=</span><span class="text-danger">"slider"</span><span class="text-light"> class=</span><span class="text-danger">"carousel slide"</span><span class="text-light"> data-ride=</span><span class="text-danger">"carousel"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"carousel-inner"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"carousel-item active"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">img </span><span class="text-light">class=</span><span class="text-danger">"d-block w-100"</span><span class="text-light"> src=</span><span class="text-danger">"https://via.placeholder.com/1280x500.png?text=Slajd+1"</span><span class="text-light"> alt=</span><span class="text-danger">"Opis slajdu"</span><span class="text-white-50"> /&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"carousel-item"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">img </span><span class="text-light">class=</span><span class="text-danger">"d-block w-100"</span><span class="text-light"> src=</span><span class="text-danger">"https://via.placeholder.com/1280x500.png?text=Slajd+2"</span><span class="text-light"> alt=</span><span class="text-danger">"Opis slajdu"</span><span class="text-white-50"> /&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"carousel-item"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">img </span><span class="text-light">class=</span><span class="text-danger">"d-block w-100"</span><span class="text-light"> src=</span><span class="text-danger">"https://via.placeholder.com/1280x500.png?text=Slajd+3"</span><span class="text-light"> alt=</span><span class="text-danger">"Opis slajdu"</span><span class="text-white-50"> /&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Slajder ze strzałkami</h2>
+            <p>Aby dodać opcję własnego przewijania, musimy do naszego podstawowego slidera dodać strzałki. Wewnątrz
+                głównego diva dodajemy dwie strzałki. Pierwsza z nich ma klasę <kbd>.carousel-control-prev</kbd>,
+                natomiast druga ma klasę <kbd>.carousel-control-next</kbd>.</p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <div id="slider2" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100" src="https://via.placeholder.com/1280x500.png?text=Slajd+1"
+                                    alt="Opis slajdu" />
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="https://via.placeholder.com/1280x500.png?text=Slajd+2"
+                                    alt="Opis slajdu" />
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="https://via.placeholder.com/1280x500.png?text=Slajd+3"
+                                    alt="Opis slajdu" />
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#slider2" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Poprzedni</span>
+                        </a>
+                        <a class="carousel-control-next" href="#slider2" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Następny</span>
+                        </a>
+                    </div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">id=</span><span class="text-danger">"slider"</span><span class="text-light"> class=</span><span class="text-danger">"carousel slide"</span><span class="text-light"> data-ride=</span><span class="text-danger">"carousel"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"carousel-inner"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"carousel-item active"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">img </span><span class="text-light">class=</span><span class="text-danger">"d-block w-100"</span><span class="text-light"> src=</span><span class="text-danger">"https://via.placeholder.com/1280x500.png?text=Slajd+1"</span><span class="text-light"> alt=</span><span class="text-danger">"Opis slajdu"</span><span class="text-white-50"> /&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"carousel-item"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">img </span><span class="text-light">class=</span><span class="text-danger">"d-block w-100"</span><span class="text-light"> src=</span><span class="text-danger">"https://via.placeholder.com/1280x500.png?text=Slajd+2"</span><span class="text-light"> alt=</span><span class="text-danger">"Opis slajdu"</span><span class="text-white-50"> /&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"carousel-item"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">img </span><span class="text-light">class=</span><span class="text-danger">"d-block w-100"</span><span class="text-light"> src=</span><span class="text-danger">"https://via.placeholder.com/1280x500.png?text=Slajd+3"</span><span class="text-light"> alt=</span><span class="text-danger">"Opis slajdu"</span><span class="text-white-50"> /&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"carousel-control-prev"</span><span class="text-light"> href=</span><span class="text-danger">"#slider2"</span><span class="text-light"> role=</span><span class="text-danger">"button"</span><span class="text-light"> data-slide=</span><span class="text-danger">"prev"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">span </span><span class="text-light">class=</span><span class="text-danger">"carousel-control-next-icon"</span><span class="text-light"> aria-hidden=</span><span class="text-danger">"true"</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">span</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">span </span><span class="text-light">class=</span><span class="text-danger">"sr-only"</span><span class="text-white-50">&gt;</span><span class="text-light">Poprzedni</span><span class="text-white-50">&lt;/</span><span class="text-info">span</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"carousel-control-next"</span><span class="text-light"> href=</span><span class="text-danger">"#slider2"</span><span class="text-light"> role=</span><span class="text-danger">"button"</span><span class="text-light"> data-slide=</span><span class="text-danger">"next"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">span </span><span class="text-light">class=</span><span class="text-danger">"carousel-control-next-icon"</span><span class="text-light"> aria-hidden=</span><span class="text-danger">"true"</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">span</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">span </span><span class="text-light">class=</span><span class="text-danger">"sr-only"</span><span class="text-white-50">&gt;</span><span class="text-light">Następny</span><span class="text-white-50">&lt;/</span><span class="text-info">span</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Slider ze znacznikami</h2>
+            <p>Możemy dodać znaczniki które umożliwią nam przełączenie się nam na dowolny slajd. W naszym głównym
+                divie umieszczamy znacznik <kbd>&lt;ol&gt;</kbd>, a w nim tyle znaczników <kbd>&lt;li&gt;</kbd> ile mamy
+                slajdów. Każdy taki element listy musi mieć odpowiednie atrybuty:
+                <kbd>target="#identyfikatorSlidera"</kbd> oraz <kbd>data-slide-to="X"</kbd>, gdzie "X" oznacza kolejny
+                numery slajdów.</p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <div id="slider3" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#slider3" data-slide-to="0" class="active"></li>
+                            <li data-target="#slider3" data-slide-to="1"></li>
+                            <li data-target="#slider3" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100" src="https://via.placeholder.com/1280x500.png?text=Slajd+1"
+                                    alt="Opis slajdu" />
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="https://via.placeholder.com/1280x500.png?text=Slajd+2"
+                                    alt="Opis slajdu" />
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="https://via.placeholder.com/1280x500.png?text=Slajd+3"
+                                    alt="Opis slajdu" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">id=</span><span class="text-danger">"slider"</span><span class="text-light"> class=</span><span class="text-danger">"carousel slide"</span><span class="text-light"> data-ride=</span><span class="text-danger">"carousel"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">ol </span><span class="text-light">class=</span><span class="text-danger">"carousel-indicators"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div</span><span class="text-light"> data-target=</span><span class="text-danger">"#slider3"</span><span class="text-light"> data-slide-to=</span><span class="text-danger">"0"</span><span class="text-light"> class=</span><span class="text-danger">"active"</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div</span><span class="text-light"> data-target=</span><span class="text-danger">"#slider3"</span><span class="text-light"> data-slide-to=</span><span class="text-danger">"1"</span><span class="text-light"><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div</span><span class="text-light"> data-target=</span><span class="text-danger">"#slider3"</span><span class="text-light"> data-slide-to=</span><span class="text-danger">"2"</span><span class="text-light"><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">ol</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"carousel-inner"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"carousel-item active"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">img </span><span class="text-light">class=</span><span class="text-danger">"d-block w-100"</span><span class="text-light"> src=</span><span class="text-danger">"https://via.placeholder.com/1280x500.png?text=Slajd+1"</span><span class="text-light"> alt=</span><span class="text-danger">"Opis slajdu"</span><span class="text-white-50"> /&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"carousel-item"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">img </span><span class="text-light">class=</span><span class="text-danger">"d-block w-100"</span><span class="text-light"> src=</span><span class="text-danger">"https://via.placeholder.com/1280x500.png?text=Slajd+2"</span><span class="text-light"> alt=</span><span class="text-danger">"Opis slajdu"</span><span class="text-white-50"> /&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"carousel-item"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">img </span><span class="text-light">class=</span><span class="text-danger">"d-block w-100"</span><span class="text-light"> src=</span><span class="text-danger">"https://via.placeholder.com/1280x500.png?text=Slajd+3"</span><span class="text-light"> alt=</span><span class="text-danger">"Opis slajdu"</span><span class="text-white-50"> /&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Slider z tekstem</h2>
+            <p>Możemy stworzyć slajd z tekstem w środku. W tym celu wewnątrz diva który zawiera nasz obrazek dodajemy
+                diva z klasami <kbd>.carousel-caption .d-none .d-md-block</kbd>. Wewnątrz tego diva możemy umieszczać
+                zarówno znacznika <kbd>&lt;h*&gt;</kbd> jak i <kbd>&lt;p&gt;</kbd></p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <div id="slider4" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#slider4" data-slide-to="0" class="active"></li>
+                            <li data-target="#slider4" data-slide-to="1"></li>
+                            <li data-target="#slider4" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100" src="https://via.placeholder.com/1280x500.png?text=."
+                                    alt="Opis slajdu" />
+                                <div class="carousel-caption">
+                                    <h5>Pierwszy slajd</h5>
+                                    <p>Opis pierwszego slajdu</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="https://via.placeholder.com/1280x500.png?text=."
+                                    alt="Opis slajdu" />
+                                <div class="carousel-caption">
+                                    <h5>Drugi slajd</h5>
+                                    <p>Opis drugiego slajdu</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="https://via.placeholder.com/1280x500.png?text=."
+                                    alt="Opis slajdu" />
+                                <div class="carousel-caption">
+                                    <h5>Trzeci slajd</h5>
+                                    <p>Opis trzeciego slajdu</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#slider4" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Poprzedni</span>
+                        </a>
+                        <a class="carousel-control-next" href="#slider4" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Następny</span>
+                        </a>
+                    </div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">id=</span><span class="text-danger">"slider4"</span><span class="text-light"> class=</span><span class="text-danger">"carousel slide"</span><span class="text-light"> data-ride=</span><span class="text-danger">"carousel"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">ol </span><span class="text-light">class=</span><span class="text-danger">"carousel-indicators"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div</span><span class="text-light"> data-target=</span><span class="text-danger">"#slider4"</span><span class="text-light"> data-slide-to=</span><span class="text-danger">"0"</span><span class="text-light"> class=</span><span class="text-danger">"active"</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div</span><span class="text-light"> data-target=</span><span class="text-danger">"#slider4"</span><span class="text-light"> data-slide-to=</span><span class="text-danger">"1"</span><span class="text-light"><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div</span><span class="text-light"> data-target=</span><span class="text-danger">"#slider4"</span><span class="text-light"> data-slide-to=</span><span class="text-danger">"2"</span><span class="text-light"><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">ol</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"carousel-inner"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"carousel-item active"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">img </span><span class="text-light">class=</span><span class="text-danger">"d-block w-100"</span><span class="text-light"> src=</span><span class="text-danger">"https://via.placeholder.com/1280x500.png?text=Slajd+1"</span><span class="text-light"> alt=</span><span class="text-danger">"Opis slajdu"</span><span class="text-white-50"> /&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"carousel-item"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">img </span><span class="text-light">class=</span><span class="text-danger">"d-block w-100"</span><span class="text-light"> src=</span><span class="text-danger">"https://via.placeholder.com/1280x500.png?text=Slajd+2"</span><span class="text-light"> alt=</span><span class="text-danger">"Opis slajdu"</span><span class="text-white-50"> /&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"carousel-item"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">img </span><span class="text-light">class=</span><span class="text-danger">"d-block w-100"</span><span class="text-light"> src=</span><span class="text-danger">"https://via.placeholder.com/1280x500.png?text=Slajd+3"</span><span class="text-light"> alt=</span><span class="text-danger">"Opis slajdu"</span><span class="text-white-50"> /&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"carousel-control-prev"</span><span class="text-light"> href=</span><span class="text-danger">"#slider4"</span><span class="text-light"> role=</span><span class="text-danger">"button"</span><span class="text-light"> data-slide=</span><span class="text-danger">"prev"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">span </span><span class="text-light">class=</span><span class="text-danger">"carousel-control-next-icon"</span><span class="text-light"> aria-hidden=</span><span class="text-danger">"true"</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">span</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">span </span><span class="text-light">class=</span><span class="text-danger">"sr-only"</span><span class="text-white-50">&gt;</span><span class="text-light">Poprzedni</span><span class="text-white-50">&lt;/</span><span class="text-info">span</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"carousel-control-next"</span><span class="text-light"> href=</span><span class="text-danger">"#slider4"</span><span class="text-light"> role=</span><span class="text-danger">"button"</span><span class="text-light"> data-slide=</span><span class="text-danger">"next"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">span </span><span class="text-light">class=</span><span class="text-danger">"carousel-control-next-icon"</span><span class="text-light"> aria-hidden=</span><span class="text-danger">"true"</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">span</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">span </span><span class="text-light">class=</span><span class="text-danger">"sr-only"</span><span class="text-white-50">&gt;</span><span class="text-light">Następny</span><span class="text-white-50">&lt;/</span><span class="text-info">span</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+        </div>
+    </main>
+
+    <footer class="container-fluid py-2 bg-primary fixed-bottom">
+        <p class="text-center text-light m-0">Stworzono przez Jakub Kobiałka</p>
+    </footer>
+
+    <!--JS scripts-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
