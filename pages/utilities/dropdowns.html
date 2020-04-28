@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pl_PL">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jakub Kobialka" />
+    <title>Kompedium wiedzy o Bootstrapie</title>
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark navbar-expand-lg bg-primary">
+            <a class="navbar-brand" href="../../index.html">
+                <svg class="bi bi-bootstrap" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M12 1H4a3 3 0 00-3 3v8a3 3 0 003 3h8a3 3 0 003-3V4a3 3 0 00-3-3zM4 0a4 4 0 00-4 4v8a4 4 0 004 4h8a4 4 0 004-4V4a4 4 0 00-4-4H4z"
+                        clip-rule="evenodd" />
+                    <path fill-rule="evenodd"
+                        d="M8.537 12H5.062V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396zM6.375 4.658v2.467h1.558c1.16 0 1.764-.428 1.764-1.23 0-.78-.569-1.237-1.541-1.237H6.375zm1.898 6.229H6.375V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377z"
+                        clip-rule="evenodd" />
+                </svg>
+                Kompedium Bootstrap
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu"
+                aria-controls="mainmenu" aria-expanded="false" aria-label="Przełącznik nawigacji">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainmenu">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Układ</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../layout/containers.html">Kontenery</a>
+                            <a class="dropdown-item" href="../layout/grid.html">Siatka</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Zawartość</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../content/typography.html">Typografia</a>
+                            <a class="dropdown-item" href="../content/code.html">Wyświetlanie kodu</a>
+                            <a class="dropdown-item" href="../content/images.html">Obrazy</a>
+                            <a class="dropdown-item" href="../content/figures.html">Obrazy z podpisem</a>
+                            <a class="dropdown-item" href="../content/tables.html">Tabele</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Komponenty</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="alerts.html">Alerty</a>
+                            <a class="dropdown-item" href="badges.html">Odznaki</a>
+                            <a class="dropdown-item" href="breadcrumb.html">Okruszki</a>
+                            <a class="dropdown-item" href="button.html">Przyciski</a>
+                            <a class="dropdown-item" href="button-group.html">Grupy przycisków</a>
+                            <a class="dropdown-item" href="cards.html">Karty</a>
+                            <a class="dropdown-item" href="slider.html">Slider</a>
+                            <a class="dropdown-item" href="collapse.html">Akordeon</a>
+                            <a class="dropdown-item" href="#">Listy rozwijane</a>
+                            <a class="dropdown-item">Formularze</a>
+                            <a class="dropdown-item">Dodatki do formularzy</a>
+                            <a class="dropdown-item">Jumbotron</a>
+                            <a class="dropdown-item">Listy</a>
+                            <a class="dropdown-item">Pop-up</a>
+                            <a class="dropdown-item">Paginacja</a>
+                            <a class="dropdown-item">Komunikaty</a>
+                            <a class="dropdown-item">Paski postępu</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Narzędzia</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item">Ramki</a>
+                            <a class="dropdown-item">Clearfix</a>
+                            <a class="dropdown-item">Ikona zamykania</a>
+                            <a class="dropdown-item">Kolory</a>
+                            <a class="dropdown-item">Display</a>
+                            <a class="dropdown-item">Umieszczanie filmików zewnętrznych</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container my-5">
+            <header>
+                <h1>Lista rozwijana</h1>
+            </header>
+            <h2>Podstawowa lista</h2>
+            <p>Lista może być użyteczna w przypadku gdy chcemy schować wiele elementów, opcji, albo też linków. Możemy w
+                taki sposób je pogrupować i ukryć pod odpowiednim przyciskiem.</p>
+            <h3>Lista w przycisku</h3>
+            <p>Jeśli chcemy stworzyć listę, która będzie ukryta pod przyciskiem, musimy całość jej kodu umieścić w divie
+                z klasą <kbd>.dropdown</kbd>. Może to też być dowolny element który posiada właściwość <kbd>postion:
+                    relative</kbd>. W jego wnętrzu tworzymy button lub znacznik <kbd>&lt;a&gt;</kbd> z klasą
+                <kbd>.dropdown-toggle</kbd> oraz z atrybutem <kbd>data-toggle="dropdown"</kbd>. Następnie tworzymy
+                odrębnego diva z klasą <kbd>.dropdown-menu</kbd> i w jego wnętrzu umieszczamy nasze linki z klasą
+                <kbd>.dropdown-item</kbd>, które będą elementami naszej listy.</p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="listaPodstawowa"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Kliknij!
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="listaPodstawowa">
+                            <a class="dropdown-item" href="#">Pierwszy element</a>
+                            <a class="dropdown-item" href="#">Drugi element</a>
+                            <a class="dropdown-item" href="#">Trzeci element</a>
+                        </div>
+                    </div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"dropdown"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-primary dropdown-toggle"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-light"> id=</span><span class="text-danger">"listaPodstawowa"</span>
+        <span class="text-light">data-toggle=</span><span class="text-danger">"dropdown"</span><span class="text-light"> aria-haspopup=</span><span class="text-danger">"true"</span><span class="text-light"> aria-expanded=</span><span class="text-danger">"false"</span><span class="text-white-50">&gt;</span>
+        <span class="text-light">Kliknij!</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"dropdown-menu"</span><span class="text-light"> aria-labelledby=</span><span class="text-danger">"listaPodstawowa"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Pierwszy element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Drugi element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Trzeci element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h3 class="mt-3">Lista w rozdzielonym przycisku</h3>
+            <p>Możemy stworzyć także przycisk który ma część odpowiedzialną za wyświetlanie listy. Tworzymy w tym celu
+                naszego diva z klasą <kbd>.btn-group</kbd> albo element z pozycją relatywną. W jego wnętrzu umieszamy
+                dwa elementy typu button. Pierwszy z nich stylujemy jak zwykły przycisk. Natomiast drugiemu, czyli to
+                jest ten który rozwija naszą listę, oprócz podstawowych klas nadajemy także klasy:
+                <kbd>.droppdown-toggle .dropdown-toggle-split</kbd>. Dodajemy mu także atrybut
+                <kbd>data-toggle="dropdown"</kbd>. Następnie
+                dodajemy odrębnego diva z klasą <kbd>.dropdown-menu</kbd> i w jego wnętrzu umieszczamy nasze linki z
+                klasą <kbd>.dropdown-item</kbd>, które będą elementami naszej listy. </p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <div class="btn-group">
+                        <button class="btn btn-primary" type="button">Kliknij!</button>
+                        <button class="btn btn-primary dropdown-toggle dropdown-toggle-split" type="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Pierwszy element</a>
+                            <a class="dropdown-item" href="#">Drugi element</a>
+                            <a class="dropdown-item" href="#">Trzeci element</a>
+                        </div>
+                    </div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"btn-group"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-primary"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-white-50">&gt;</span>
+        <span class="text-light">Kliknij!</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-primary dropdown-toggle dropdown-toggle-split"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span>
+        <span class="text-light">data-toggle=</span><span class="text-danger">"dropdown"</span><span class="text-light"> aria-haspopup=</span><span class="text-danger">"true"</span><span class="text-light"> aria-expanded=</span><span class="text-danger">"false"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"dropdown-menu"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Pierwszy element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Drugi element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Trzeci element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Rozmiary</h2>
+            <p>Naszym listom budowanym na przyciskach możemy łatwo zmieniać rozmiary. Wystarczy zastosować klasę
+                <kbd>.btn-sm</kbd> lub <kbd>.btn-lg</kbd></p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <div class="dropdown">
+                        <button class="btn btn-danger dropdown-toggle btn-sm" type="button" id="listaPodstawowaDanger"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Kliknij!
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="listaPodstawowaDanger">
+                            <a class="dropdown-item" href="#">Pierwszy element</a>
+                            <a class="dropdown-item" href="#">Drugi element</a>
+                            <a class="dropdown-item" href="#">Trzeci element</a>
+                        </div>
+                    </div>
+                    <div class="dropdown mt-2">
+                        <button class="btn btn-success dropdown-toggle" type="button" id="listaPodstawowaSuccess"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Kliknij!
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="listaPodstawowaSuccess">
+                            <a class="dropdown-item" href="#">Pierwszy element</a>
+                            <a class="dropdown-item" href="#">Drugi element</a>
+                            <a class="dropdown-item" href="#">Trzeci element</a>
+                        </div>
+                    </div>
+                    <div class="dropdown mt-2">
+                        <button class="btn btn-warning dropdown-toggle btn-lg" type="button" id="listaPodstawowaWarning"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Kliknij!
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="listaPodstawowa">
+                            <a class="dropdown-item" href="#">Pierwszy element</a>
+                            <a class="dropdown-item" href="#">Drugi element</a>
+                            <a class="dropdown-item" href="#">Trzeci element</a>
+                        </div>
+                    </div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"dropdown"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-danger dropdown-toggle btn-sm"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-light"> id=</span><span class="text-danger">"listaPodstawowaDanger"</span>
+        <span class="text-light">data-toggle=</span><span class="text-danger">"dropdown"</span><span class="text-light"> aria-haspopup=</span><span class="text-danger">"true"</span><span class="text-light"> aria-expanded=</span><span class="text-danger">"false"</span><span class="text-white-50">&gt;</span>
+        <span class="text-light">Kliknij!</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"dropdown-menu"</span><span class="text-light"> aria-labelledby=</span><span class="text-danger">"listaPodstawowaDanger"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Pierwszy element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Drugi element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Trzeci element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"dropdown"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-success dropdown-toggle"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-light"> id=</span><span class="text-danger">"listaPodstawowaSuccess"</span>
+        <span class="text-light">data-toggle=</span><span class="text-danger">"dropdown"</span><span class="text-light"> aria-haspopup=</span><span class="text-danger">"true"</span><span class="text-light"> aria-expanded=</span><span class="text-danger">"false"</span><span class="text-white-50">&gt;</span>
+        <span class="text-light">Kliknij!</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"dropdown-menu"</span><span class="text-light"> aria-labelledby=</span><span class="text-danger">"listaPodstawowaSuccess"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Pierwszy element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Drugi element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Trzeci element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"dropdown"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-warning dropdown-toggle btn-lg"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-light"> id=</span><span class="text-danger">"listaPodstawowaWarning"</span>
+        <span class="text-light">data-toggle=</span><span class="text-danger">"dropdown"</span><span class="text-light"> aria-haspopup=</span><span class="text-danger">"true"</span><span class="text-light"> aria-expanded=</span><span class="text-danger">"false"</span><span class="text-white-50">&gt;</span>
+        <span class="text-light">Kliknij!</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"dropdown-menu"</span><span class="text-light"> aria-labelledby=</span><span class="text-danger">"listaPodstawowaWarning"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Pierwszy element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Drugi element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Trzeci element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Lista rozwijana w górę</h2>
+            <p>Aby stworzyć listę rozwijaną w górę, należy głównemu elementowi div dodać klasę <kbd>.dropup</kbd></p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <div class="dropdown dropup">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="listaPodstawowaGóra"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Kliknij!
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="listaPodstawowaGóra">
+                            <a class="dropdown-item" href="#">Pierwszy element</a>
+                            <a class="dropdown-item" href="#">Drugi element</a>
+                            <a class="dropdown-item" href="#">Trzeci element</a>
+                        </div>
+                    </div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"dropdown dropup"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-primary dropdown-toggle"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-light"> id=</span><span class="text-danger">"listaPodstawowaGóra"</span>
+        <span class="text-light">data-toggle=</span><span class="text-danger">"dropdown"</span><span class="text-light"> aria-haspopup=</span><span class="text-danger">"true"</span><span class="text-light"> aria-expanded=</span><span class="text-danger">"false"</span><span class="text-white-50">&gt;</span>
+        <span class="text-light">Kliknij!</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"dropdown-menu"</span><span class="text-light"> aria-labelledby=</span><span class="text-danger">"listaPodstawowaGóra"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Pierwszy element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Drugi element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Trzeci element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Lista po prawej</h2>
+            <p>Domyślnie wyświetlanie listy jest wyrównane do lewej strony przycisku. Aby przenieść wyświetlanie na
+                prawą stronę musimy elementowi div z klasą <kbd>.dropdown-menu</kbd> dodać klasę
+                <kbd>.dropdown-menu-right</kbd></p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="listaPodstawowaPrawo"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Kliknij!
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="listaPodstawowaPrawo">
+                            <a class="dropdown-item" href="#">Pierwszy element</a>
+                            <a class="dropdown-item" href="#">Drugi element</a>
+                            <a class="dropdown-item" href="#">Trzeci element</a>
+                        </div>
+                    </div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"dropdown"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-primary dropdown-toggle"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-light"> id=</span><span class="text-danger">"listaPodstawowaPrawo"</span>
+        <span class="text-light">data-toggle=</span><span class="text-danger">"dropdown"</span><span class="text-light"> aria-haspopup=</span><span class="text-danger">"true"</span><span class="text-light"> aria-expanded=</span><span class="text-danger">"false"</span><span class="text-white-50">&gt;</span>
+        <span class="text-light">Kliknij!</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"dropdown-menu dropdown-menu-right"</span><span class="text-light"> aria-labelledby=</span><span class="text-danger">"listaPodstawowaPrawo"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Pierwszy element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Drugi element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Trzeci element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Nagłówek listy</h2>
+            <p>Każdej naszej liście rozwijanej możemy nadać jakiś nagłówek. Aby tego dokonać, wewnątrz elementu div z
+                klasą <kbd>.dropdown-menu</kbd>, jako pierwszy element listy tworzymy sobie nagłówek "h*" z klasą
+                <kbd>.dropdown-header</kbd></p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="listaPodstawowaNagłówek"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Kliknij!
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="listaPodstawowaNagłówek">
+                            <h6 class="dropdown-header">Nagłówek listy</h6>
+                            <a class="dropdown-item" href="#">Pierwszy element</a>
+                            <a class="dropdown-item" href="#">Drugi element</a>
+                            <a class="dropdown-item" href="#">Trzeci element</a>
+                        </div>
+                    </div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"dropdown"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-primary dropdown-toggle"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-light"> id=</span><span class="text-danger">"listaPodstawowaNagłówek"</span>
+        <span class="text-light">data-toggle=</span><span class="text-danger">"dropdown"</span><span class="text-light"> aria-haspopup=</span><span class="text-danger">"true"</span><span class="text-light"> aria-expanded=</span><span class="text-danger">"false"</span><span class="text-white-50">&gt;</span>
+        <span class="text-light">Kliknij!</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"dropdown-menu"</span><span class="text-light"> aria-labelledby=</span><span class="text-danger">"listaPodstawowaNagłówek"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">h6 </span><span class="text-light">class=</span><span class="text-danger">"dropdown-header"</span><span class="text-white-50">&gt;</span><span class="text-light">Nagłówek listy</span><span class="text-white-50">&lt;/</span><span class="text-info">h6</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Pierwszy element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Drugi element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Trzeci element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Rozdzielacz</h2>
+            <p>Elementy naszej listy możemy wizualnie rozdzielać. Pomiędzy elementami diva z klasą
+                <kbd>.dropdown-menu</kbd> możemy wstawić pustago diva z klasą <kbd>.dropdown-divider</kbd></p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="listaPodstawowaSeparator"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Kliknij!
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="listaPodstawowaSeparator">
+                            <a class="dropdown-item" href="#">Pierwszy element</a>
+                            <a class="dropdown-item" href="#">Drugi element</a>
+                            <a class="dropdown-item" href="#">Trzeci element</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Czwarty element</a>
+                        </div>
+                    </div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"dropdown"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-primary dropdown-toggle"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-light"> id=</span><span class="text-danger">"listaPodstawowaSeparator"</span>
+        <span class="text-light">data-toggle=</span><span class="text-danger">"dropdown"</span><span class="text-light"> aria-haspopup=</span><span class="text-danger">"true"</span><span class="text-light"> aria-expanded=</span><span class="text-danger">"false"</span><span class="text-white-50">&gt;</span>
+        <span class="text-light">Kliknij!</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"dropdown-menu"</span><span class="text-light"> aria-labelledby=</span><span class="text-danger">"listaPodstawowaSeparator"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Pierwszy element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Drugi element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Trzeci element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"dropdown-divider"</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Czwarty element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Wyłączenie elementu listy</h2>
+            <p>Jeśli chcemy z jakiegoś powodu wyłączyć element listy wystarczy dodać mu klasę <kbd>.disabled</kbd></p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="listaPodstawowaDisabled"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Kliknij!
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="listaPodstawowaDisabled">
+                            <a class="dropdown-item" href="#">Pierwszy element</a>
+                            <a class="dropdown-item" href="#">Drugi element</a>
+                            <a class="dropdown-item disabled" href="#">Trzeci element</a>
+                        </div>
+                    </div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"dropdown"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">class=</span><span class="text-danger">"btn btn-primary dropdown-toggle"</span><span class="text-light"> type=</span><span class="text-danger">"button"</span><span class="text-light"> id=</span><span class="text-danger">"listaPodstawowaDisabled"</span>
+        <span class="text-light">data-toggle=</span><span class="text-danger">"dropdown"</span><span class="text-light"> aria-haspopup=</span><span class="text-danger">"true"</span><span class="text-light"> aria-expanded=</span><span class="text-danger">"false"</span><span class="text-white-50">&gt;</span>
+        <span class="text-light">Kliknij!</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"dropdown-menu"</span><span class="text-light"> aria-labelledby=</span><span class="text-danger">"listaPodstawowaDisabled"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Pierwszy element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Drugi element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">class=</span><span class="text-danger">"dropdown-item disabled"</span><span class="text-light"> href=</span><span class="text-danger">"#"</span><span class="text-white-50">&gt;</span><span class="text-light">Trzeci element</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+        </div>
+    </main>
+
+    <footer class="container-fluid py-2 bg-primary fixed-bottom">
+        <p class="text-center text-light m-0">Stworzono przez Jakub Kobiałka</p>
+    </footer>
+
+    <!--JS scripts-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
