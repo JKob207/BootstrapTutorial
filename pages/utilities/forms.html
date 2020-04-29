@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="pl_PL">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jakub Kobialka" />
+    <title>Kompedium wiedzy o Bootstrapie</title>
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark navbar-expand-lg bg-primary">
+            <a class="navbar-brand" href="../../index.html">
+                <svg class="bi bi-bootstrap" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M12 1H4a3 3 0 00-3 3v8a3 3 0 003 3h8a3 3 0 003-3V4a3 3 0 00-3-3zM4 0a4 4 0 00-4 4v8a4 4 0 004 4h8a4 4 0 004-4V4a4 4 0 00-4-4H4z"
+                        clip-rule="evenodd" />
+                    <path fill-rule="evenodd"
+                        d="M8.537 12H5.062V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396zM6.375 4.658v2.467h1.558c1.16 0 1.764-.428 1.764-1.23 0-.78-.569-1.237-1.541-1.237H6.375zm1.898 6.229H6.375V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377z"
+                        clip-rule="evenodd" />
+                </svg>
+                Kompedium Bootstrap
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu"
+                aria-controls="mainmenu" aria-expanded="false" aria-label="Przełącznik nawigacji">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainmenu">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Układ</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../layout/containers.html">Kontenery</a>
+                            <a class="dropdown-item" href="../layout/grid.html">Siatka</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Zawartość</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../content/typography.html">Typografia</a>
+                            <a class="dropdown-item" href="../content/code.html">Wyświetlanie kodu</a>
+                            <a class="dropdown-item" href="../content/images.html">Obrazy</a>
+                            <a class="dropdown-item" href="../content/figures.html">Obrazy z podpisem</a>
+                            <a class="dropdown-item" href="../content/tables.html">Tabele</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Komponenty</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="alerts.html">Alerty</a>
+                            <a class="dropdown-item" href="badges.html">Odznaki</a>
+                            <a class="dropdown-item" href="breadcrumb.html">Okruszki</a>
+                            <a class="dropdown-item" href="button.html">Przyciski</a>
+                            <a class="dropdown-item" href="button-group.html">Grupy przycisków</a>
+                            <a class="dropdown-item" href="cards.html">Karty</a>
+                            <a class="dropdown-item" href="slider.html">Slider</a>
+                            <a class="dropdown-item" href="collapse.html">Akordeon</a>
+                            <a class="dropdown-item" href="dropdowns.html">Listy rozwijane</a>
+                            <a class="dropdown-item" href="#">Formularze</a>
+                            <a class="dropdown-item">Dodatki do formularzy</a>
+                            <a class="dropdown-item">Jumbotron</a>
+                            <a class="dropdown-item">Listy</a>
+                            <a class="dropdown-item">Pop-up</a>
+                            <a class="dropdown-item">Paginacja</a>
+                            <a class="dropdown-item">Komunikaty</a>
+                            <a class="dropdown-item">Paski postępu</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Narzędzia</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item">Ramki</a>
+                            <a class="dropdown-item">Clearfix</a>
+                            <a class="dropdown-item">Ikona zamykania</a>
+                            <a class="dropdown-item">Kolory</a>
+                            <a class="dropdown-item">Display</a>
+                            <a class="dropdown-item">Umieszczanie filmików zewnętrznych</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container my-5">
+            <header>
+                <h1>Formularze</h1>
+            </header>
+            <h2>Podstawowy przykład</h2>
+            <p>Zajmimy się na początku prostym formularzem logowania. Na początku musimy stworzyć nasz formularz czyli
+                element <kbd>&lt;form&gt;</kbd> wewnątrz którego będziemy układali całą strukturę. Poszczególne elementy
+                formularza muismy umieścić w divie z klasą <kbd>.form-group</kbd>. W takiej grupie możemy umieścić
+                etykietę dla danego pola czyli znacznik <kbd>&lt;label&gt;</kbd>. Samo pole umieszczamy za pomocą
+                znacznika <kbd>&lt;input&gt;</kbd>. Takie pole może być typu email lub password, którym nadajemy klasę
+                <kbd>.form-control</kbd>. Jeśli pole jest typu checkbox nadajemy mu klasę <kbd>.form-check-input</kbd>.
+                Dodatkową informacje o polu wpisujemy w znaczniku <kbd>small</kbd> z klasą <kbd>.form-text</kbd> </p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <form>
+                        <div class="form-group">
+                            <label for="adresEmail">Adres email</label>
+                            <input type="email" class="form-control" id="adresEmail" aria-describedby="podpowiedzEmail"
+                                placeholder="Wpisz adres email" />
+                            <small id="podpowiedzEmail" class="form-text text-muted">Wpisz powyżej swój adres
+                                email</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="haslo">Hasło</label>
+                            <input type="password" class="form-control" id="haslo" placeholder="Wpisz hasło" />
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="checkbox" />
+                            <label for="checkbox" class="form-check-label">Zaznacz checkbox!</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Wyślij</button>
+                    </form>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">form</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-group"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">for=</span><span class="text-danger">"adresEmail"</span><span class="text-white-50">&gt;</span><span class="text-light">Adres email</span><span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"email"</span><span class="text-light"> class=</span><span class="text-danger">"form-control"</span><span class="text-light"> id=</span><span class="text-danger">"adresEmail"</span><span class="text-light"> aria-describedby=</span><span class="text-danger">"podpowiedzEmail"</span><span class="text-light"> placeholder=</span><span class="text-danger">"Wpisz adres email"</span><span class="text-white-50"> /&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">small </span><span class="text-light">id=</span><span class="text-danger">"podpowiedzEmail"</span><span class="text-light"> class=</span><span class="text-danger">"form-text text-muted"</span><span class="text-white-50">&gt;</span><span class="text-light">Wpisz powyżej swój adre email</span><span class="text-white-50">&lt;/</span><span class="text-info">small</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-group"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">for=</span><span class="text-danger">"haslo"</span><span class="text-white-50">&gt;</span><span class="text-light">Hasło</span><span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"password"</span><span class="text-light"> class=</span><span class="text-danger">"form-control"</span><span class="text-light"> id=</span><span class="text-danger">"haslo"</span><span class="text-light"> placeholder=</span><span class="text-danger">"Wpisz hasło"</span><span class="text-white-50"> /&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-check"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"checkbox"</span><span class="text-light"> class=</span><span class="text-danger">"form-check-input"</span><span class="text-light"> id=</span><span class="text-danger">"checkbox"</span><span class="text-white-50"> /&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">for=</span><span class="text-danger">"checkbox"</span><span class="text-light"> class=</span><span class="text-danger">"form-check-label"</span><span class="text-white-50">&gt;</span><span class="text-light">Zaznacz checkbox!</span><span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">type=</span><span class="text-danger">"submit"</span><span class="text-light"> class=</span><span class="text-danger">"btn btn-primary"</span><span class="text-white-50">&gt;</span><span class="text-light">Wyślij</span><span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">form</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Różne pola w formularzach</h2>
+            <p>Oprócz takich standardowych typ pól mamy do dyspozycji jeszcze takie pola jak rozwijane listy wyboru
+                <kbd>&lt;select&gt;</kbd> oraz pola tekstowe <kbd>&lt;textarea&gt;</kbd>. Musimy tutaj pamiętać aby te
+                lementy znalazły się w osobnych divach z klasą <kbd>.form-group</kbd>, oraz aby same pola miały klasę
+                <kbd>.form-control</kbd></p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <form>
+                        <div class="form-group">
+                            <label for="przykładowySelect">Przykładowy select</label>
+                            <select class="form-control" id="przykładowySelect">
+                                <option>Opcja 1</option>
+                                <option>Opcja 2</option>
+                                <option>Opcja 3</option>
+                                <option>Opcja 4</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="przykładowyMultiSelect">Przykładowy wielokrotny select</label>
+                            <select multiple class="form-control" id="przykładowyMultiSelect">
+                                <option>Opcja 1</option>
+                                <option>Opcja 2</option>
+                                <option>Opcja 3</option>
+                                <option>Opcja 4</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="przykładowaTextarea">Przykładowa textarea</label>
+                            <textarea class="form-control" id="przykładowaTextarea" rows="3"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">form</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-group"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">for=</span><span class="text-danger">"przykładowySelect"</span><span class="text-white-50">&gt;</span><span class="text-light">Przykładowy select</span><span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">select </span><span class="text-light">class=</span><span class="text-danger">"form-control"</span><span class="text-light"> id=</span><span class="text-danger">"przykładowySelect"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">option</span><span class="text-white-50">&gt;</span><span class="text-light">Opcja 1</span><span class="text-white-50">&lt;/</span><span class="text-info">option</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">option</span><span class="text-white-50">&gt;</span><span class="text-light">Opcja 2</span><span class="text-white-50">&lt;/</span><span class="text-info">option</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">option</span><span class="text-white-50">&gt;</span><span class="text-light">Opcja 3</span><span class="text-white-50">&lt;/</span><span class="text-info">option</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">option</span><span class="text-white-50">&gt;</span><span class="text-light">Opcja 4</span><span class="text-white-50">&lt;/</span><span class="text-info">option</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">select</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-group"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">for=</span><span class="text-danger">"przykładowyMultiSelect"</span><span class="text-white-50">&gt;</span><span class="text-light">Przykładowy wielokrotny select</span><span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">select </span><span class="text-light">multiple</span><span class="text-light"> class=</span><span class="text-danger">"form-control"</span><span class="text-light"> id=</span><span class="text-danger">"przykładowyMultiSelect"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">option</span><span class="text-white-50">&gt;</span><span class="text-light">Opcja 1</span><span class="text-white-50">&lt;/</span><span class="text-info">option</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">option</span><span class="text-white-50">&gt;</span><span class="text-light">Opcja 2</span><span class="text-white-50">&lt;/</span><span class="text-info">option</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">option</span><span class="text-white-50">&gt;</span><span class="text-light">Opcja 3</span><span class="text-white-50">&lt;/</span><span class="text-info">option</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">option</span><span class="text-white-50">&gt;</span><span class="text-light">Opcja 4</span><span class="text-white-50">&lt;/</span><span class="text-info">option</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">select</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-group"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">for=</span><span class="text-danger">"przykładowaTextarea"</span><span class="text-white-50">&gt;</span><span class="text-light">Przykładowa textarea</span><span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">textarea </span><span class="text-light">class=</span><span class="text-danger">"form-control"</span><span class="text-light"> id=</span><span class="text-danger">"przykładowaTextarea"</span><span class="text-light"> rows=</span><span class="text-danger">"3"</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">textarea</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">form</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <p class="mt-3">Istnieje także pole stworzone do wysyłania plików. Wtedy takiemu polu nadajemy klasę
+                <kbd>.form-control-file</kbd></p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <form>
+                        <div class="form-group">
+                            <label for="przykładoweWysyłaniePliku">Przykładowe wysyłanie pliku</label>
+                            <input type="file" class="form-control-file" id="przykładoweWysyłaniePliku" />
+                        </div>
+                    </form>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">form</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-group"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">for=</span><span class="text-danger">"przykładoweWysyłaniePliku"</span><span class="text-white-50">&gt;</span><span class="text-light">Przykładowe wysyłanie pliku</span><span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"file"</span><span class="text-light"> class=</span><span class="text-danger">"form-control-file"</span><span class="text-light"> id=</span><span class="text-danger">"przykładoweWysyłaniePliku"</span><span class="text-white-50"> /&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">form</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Rozmiary pól</h2>
+            <p>Dzięki klasom Bootstrapa możemy wpływać na rozmiar pól formularza. Klasa <kbd>.form-control-lg</kbd>
+                spowoduje, że nasze pole będzie większe od standaedowego, a klasa <kbd>.form-control-sm</kbd> sprawi, że
+                pole będzie mniejsze.</p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" />
+                    <input class="form-control my-3" type="text" placeholder="Standardowe pole" />
+                    <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" />
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">class=</span><span class="text-danger">"form-control form-control-lg"</span><span class="text-light"> type=</span><span class="text-danger">"text"</span><span class="text-light"> placeholder=</span><span class="text-danger">".form-control-lg"</span><span class="text-white-50"> /&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">class=</span><span class="text-danger">"form-control"</span><span class="text-light"> type=</span><span class="text-danger">"text"</span><span class="text-light"> placeholder=</span><span class="text-danger">"Standardowe pole"</span><span class="text-white-50"> /&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">class=</span><span class="text-danger">"form-control form-control-sm"</span><span class="text-light"> type=</span><span class="text-danger">"text"</span><span class="text-light"> placeholder=</span><span class="text-danger">".form-control-sm"</span><span class="text-white-50"> /&gt;</span>
+</code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Pola tylko do odczytu</h2>
+            <p>Czasami może się zdarzyć, że nie chcemy aby jakieś pole mogło zostać modyfikowane przez użytkownika.
+                Możemy się przeciwtemu zabespieczyć dodając atrybut <kbd>readonly</kbd> do naszego inputa. Dodatkowo
+                jeśli chcemy go ostylować tak, aby wyglądał jak zwykły tekst, musimy klasę inputa
+                <kbd>.form-control</kbd> zamienić na klasę <kbd>.form-control-plaintext</kbd></p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <input type="text" class="form-control" placeholder="Pole tylko do odczytu" readonly />
+                    <form class="mt-2">
+                        <div class="form-group">
+                            <label for="zablokowanyEmail">Email</label>
+                            <input type="text" class="form-control-plaintext" id="zablokowanyEmail"
+                                value="adres@mail.com" readonly />
+                        </div>
+                        <div class="form-group">
+                            <label for="odblokowaneHasło">Hasło</label>
+                            <input type="password" class="form-control" id="odblokowaneHasło"
+                                placeholder="Wpisz hasło" />
+                        </div>
+                    </form>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"text"</span><span class="text-light"> class=</span><span class="text-danger">"form-control"</span><span class="text-light"> placeholder=</span><span class="text-danger">"Pole tylko do odczytu"</span><span class="text-light"> readonly</span><span class="text-white-50"> /&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">form</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-group"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">for=</span><span class="text-danger">"zablokowanyEmail"</span><span class="text-white-50">&gt;</span><span class="text-light">Email</span><span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"text"</span><span class="text-light"> class=</span><span class="text-danger">"form-control-plaintext"</span><span class="text-light"> id=</span><span class="text-danger">"zablokowanyEmail"</span><span class="text-light"> value=</span><span class="text-danger">"adres@mail.com"</span><span class="text-light"> readonly</span><span class="text-white-50"> /&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-group"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">for=</span><span class="text-danger">"odblokowaneHasło"</span><span class="text-white-50">&gt;</span><span class="text-light">Hasło</span><span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"password"</span><span class="text-light"> class=</span><span class="text-danger">"form-control"</span><span class="text-light"> id=</span><span class="text-danger">"odblokowaneHasło"</span><span class="text-light"> placeholder=</span><span class="text-danger">"Wpisz hasło"</span><span class="text-white-50"> /&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">form</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Checkbox i radio</h2>
+            <p>Oprócz takich standardowych pól mamy do dyspozycji także pola typu checkbox i radio. Grupujemy je w
+                divach z klasą <kbd>.form-check</kbd>. Poszczególne pola muszą mieć przypisaną klasę
+                <kbd>.form-check-input</kbd>, a etykiety do nich klasę <kbd>.form-check-label</kbd>. Jeśli chcemy takie
+                pole wyłączyć wystarczy dopisać mu właściwość <kbd>disabled</kbd></p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <form>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="pierwszyCheckbox" />
+                            <label class="form-check-label" for="pierwszyCheckbox">Pierwszy checkbox</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="drugiCheckbox" disabled />
+                            <label class="form-check-label" for="drugiCheckbox">Drugi zablokowany checkbox</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="pierwszeRadio" name="przykładoweRadio" />
+                            <label class="form-check-label" for="pierwszeRadio">Pierwsze radio</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="drugieRadio" name="przykładoweRadio" />
+                            <label class="form-check-label" for="drugieRadio">Drugie radio</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="trzecieRadio" name="przykładoweRadio"
+                                disabled />
+                            <label class="form-check-label" for="trzecieRadio">Trzecie zablokowane radio</label>
+                        </div>
+                    </form>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">form</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-check"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"checkbox"</span><span class="text-light"> class=</span><span class="text-danger">"form-check-input"</span><span class="text-light"> id=</span><span class="text-danger">"pierwszyCheckbox"</span><span class="text-white-50"> /&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">class=</span><span class="text-danger">"form-check-label"</span><span class="text-light"> for=</span><span class="text-danger">"pierwszyCheckbox"</span><span class="text-white-50">&gt;</span><span class="text-light">Pierwszy checkbox</span><span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-check"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"checkbox"</span><span class="text-light"> class=</span><span class="text-danger">"form-check-input"</span><span class="text-light"> id=</span><span class="text-danger">"drugiCheckbox"</span><span class="text-light"> disabled</span><span class="text-white-50"> /&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">class=</span><span class="text-danger">"form-check-label"</span><span class="text-light"> for=</span><span class="text-danger">"drugiCheckbox"</span><span class="text-white-50">&gt;</span><span class="text-light">Drugi zablokowany checkbox</span><span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-check"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"radio"</span><span class="text-light"> class=</span><span class="text-danger">"form-check-input"</span><span class="text-light"> id=</span><span class="text-danger">"pierwszeRadio"</span><span class="text-light"> name=</span><span class="text-danger">"przykładoweRadio"</span><span class="text-white-50"> /&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">class=</span><span class="text-danger">"form-check-label"</span><span class="text-light"> for=</span><span class="text-danger">"pierwszeRadio"</span><span class="text-white-50">&gt;</span><span class="text-light">Pierwsze radio</span><span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-check"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"radio"</span><span class="text-light"> class=</span><span class="text-danger">"form-check-input"</span><span class="text-light"> id=</span><span class="text-danger">"drugieRadio"</span><span class="text-light"> name=</span><span class="text-danger">"przykładoweRadio"</span><span class="text-white-50"> /&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">class=</span><span class="text-danger">"form-check-label"</span><span class="text-light"> for=</span><span class="text-danger">"drugieRadio"</span><span class="text-white-50">&gt;</span><span class="text-light">Drugie radio</span><span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-check"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"radio"</span><span class="text-light"> class=</span><span class="text-danger">"form-check-input"</span><span class="text-light"> id=</span><span class="text-danger">"trzecieRadio"</span><span class="text-light"> name=</span><span class="text-danger">"przykładoweRadio"</span><span class="text-light"> disabled</span><span class="text-white-50"> /&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">class=</span><span class="text-danger">"form-check-label"</span><span class="text-light"> for=</span><span class="text-danger">"trzecieRadio"</span><span class="text-white-50">&gt;</span><span class="text-light">Trzecie zablokowane radio</span><span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">form</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h3 class="mt-3">Wyświetlanie w lini</h3>
+            <p>Aby nasze checkboxy i radio wyświetlały się w jednej lini wystarczy do diva z klasą
+                <kbd>.form-check</kbd> dopisać klasę <kbd>.form-check-inline</kbd></p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <form>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="pierwszyCheckboxLiniowy" />
+                            <label class="form-check-label" for="pierwszyCheckboxLiniowy">Pierwszy checkbox</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="drugiCheckboxLiniowy" disabled />
+                            <label class="form-check-label" for="drugiCheckboxLiniowy">Drugi zablokowany
+                                checkbox</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-input" id="pierwszeRadioLiniowe"
+                                name="przykładoweRadioLiniowe" />
+                            <label class="form-check-label" for="pierwszeRadioLiniowe">Pierwsze radio</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-input" id="drugieRadioLiniowe"
+                                name="przykładoweRadioLiniowe" />
+                            <label class="form-check-label" for="drugieRadioLiniowe">Drugie radio</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-input" id="trzecieRadioLiniowe"
+                                name="przykładoweRadioLiniowe" disabled />
+                            <label class="form-check-label" for="trzecieRadioLiniowe">Trzecie zablokowane radio</label>
+                        </div>
+                    </form>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">form</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-check form-check-inline"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"checkbox"</span><span class="text-light"> class=</span><span class="text-danger">"form-check-input"</span><span class="text-light"> id=</span><span class="text-danger">"pierwszyCheckboxLiniowy"</span><span class="text-white-50"> /&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">class=</span><span class="text-danger">"form-check-label"</span><span class="text-light"> for=</span><span class="text-danger">"pierwszyCheckboxLiniowy"</span><span class="text-white-50">&gt;</span><span class="text-light">Pierwszy checkbox</span><span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-check form-check-inline"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"checkbox"</span><span class="text-light"> class=</span><span class="text-danger">"form-check-input"</span><span class="text-light"> id=</span><span class="text-danger">"drugiCheckboxLiniowy"</span><span class="text-light"> disabled</span><span class="text-white-50"> /&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">class=</span><span class="text-danger">"form-check-label"</span><span class="text-light"> for=</span><span class="text-danger">"drugiCheckboxLiniowy"</span><span class="text-white-50">&gt;</span><span class="text-light">Drugi zablokowany checkbox</span><span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-check form-check-inline"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"radio"</span><span class="text-light"> class=</span><span class="text-danger">"form-check-input"</span><span class="text-light"> id=</span><span class="text-danger">"pierwszeRadioLiniowe"</span><span class="text-light"> name=</span><span class="text-danger">"przykładoweRadioLiniowe"</span><span class="text-white-50"> /&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">class=</span><span class="text-danger">"form-check-label"</span><span class="text-light"> for=</span><span class="text-danger">"pierwszeRadioLiniowe"</span><span class="text-white-50">&gt;</span><span class="text-light">Pierwsze radio</span><span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-check form-check-inline"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"radio"</span><span class="text-light"> class=</span><span class="text-danger">"form-check-input"</span><span class="text-light"> id=</span><span class="text-danger">"drugieRadioLiniowe"</span><span class="text-light"> name=</span><span class="text-danger">"przykładoweRadioLiniowe"</span><span class="text-white-50"> /&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">class=</span><span class="text-danger">"form-check-label"</span><span class="text-light"> for=</span><span class="text-danger">"drugieRadioLiniowe"</span><span class="text-white-50">&gt;</span><span class="text-light">Drugie radio</span><span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-check form-check-inline"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"radio"</span><span class="text-light"> class=</span><span class="text-danger">"form-check-input"</span><span class="text-light"> id=</span><span class="text-danger">"trzecieRadioLiniowe"</span><span class="text-light"> name=</span><span class="text-danger">"przykładoweRadioLiniowe"</span><span class="text-light"> disabled</span><span class="text-white-50"> /&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">class=</span><span class="text-danger">"form-check-label"</span><span class="text-light"> for=</span><span class="text-danger">"trzecieRadioLiniowe"</span><span class="text-white-50">&gt;</span><span class="text-light">Trzecie zablokowane radio</span><span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">form</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h3 class="mt-3">Bez etykiet</h3>
+            <p>Jeśli ktoś potrzebował by samych przycisków bez etykiet, można coś takiego wykonać rezygnując ze
+                znacznika <kbd>&lt;label&gt;</kbd> oraz poprzed dodanie do inputa klasy <kbd>.position-static</kbd></p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input position-static" aria-label="pusty checkbox" />
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input position-static" name="pusteRadio"
+                            aria-label="puste radio" />
+                    </div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-check"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"checkbox"</span><span class="text-light"> class=</span><span class="text-danger">"form-check-input position-static"</span><span class="text-light"> aria-label=</span><span class="text-danger">"pusty checkbox"</span><span class="text-white-50"> /&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-check"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"radio"</span><span class="text-light"> class=</span><span class="text-danger">"form-check-input position-static"</span><span class="text-light"> name=</span><span class="text-danger">"pusteRadio"</span><span class="text-light"> aria-label=</span><span class="text-danger">"puste radio"</span><span class="text-white-50"> /&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+</code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Układ formularzy</h2>
+            <p>Podstawowy układ formularzy jest taki w którym kolejne jego elementy układają się pod sobą. Taki efekt
+                uzyskujemy grupując poszczególne elementy w divach z klasą <kbd>.form-group</kbd>. Samym elementom
+                nadajemy klasę <kbd>.form-control</kbd>. Dla elementów typu checkbox oraz radio jest trochę inaczej.
+                Osadzamy je w divach z klasą <kbd>.form-check</kbd> i nadajemy im klasę <kbd>.form-check-input</kbd></p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <form>
+                        <div class="form-group">
+                            <label for="przykładowePole1">Etykieta pola</label>
+                            <input type="text" class="form-control" id="przykładowePole1"
+                                placeholder="Pierwsze przykładowe pole" />
+                        </div>
+                        <div class="form-group">
+                            <label for="przykładowePole2">Etykieta pola</label>
+                            <input type="text" class="form-control" id="przykładowePole2"
+                                placeholder="Drugie przykładowe pole" />
+                        </div>
+                    </form>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">form</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-group"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">for=</span><span class="text-danger">"przykładowePole1"</span><span class="text-white-50">&gt;</span><span class="text-light">Etykieta pola</span><span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"text"</span><span class="text-light"> class=</span><span class="text-danger">"form-control"</span><span class="text-light"> id=</span><span class="text-danger">"przykładowePole1"</span><span class="text-light"> placeholder=</span><span class="text-danger">"Pierwsze przykładowe pole"</span><span class="text-white-50"> /&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-group"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">for=</span><span class="text-danger">"przykładowePole2"</span><span class="text-white-50">&gt;</span><span class="text-light">Etykieta pola</span><span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"text"</span><span class="text-light"> class=</span><span class="text-danger">"form-control"</span><span class="text-light"> id=</span><span class="text-danger">"przykładowePole2"</span><span class="text-light"> placeholder=</span><span class="text-danger">"Drugie przykładowe pole"</span><span class="text-white-50"> /&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">form</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h3 class="mt-3">Formularz na siatce</h3>
+            <p>Siatkę Bootstrapa można także wykorzystać do budowy formularza. Możemy na przykład stworzyć rząd, czyli
+                element div z klasą <kbd>.row</kbd>, a w nim dwie kolumny, czyli divy z klasą <kbd>.col</kbd>. W ich
+                wnętrzu umieszczamy nasz element formularza.</p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <form>
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control" id="przykladowePoleSiatka1"
+                                    placeholder="Pierwsze przykładowe pole" />
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" id="przykladowePoleSiatka2"
+                                    placeholder="Drugie przykładowe pole" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">form</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"row"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"col"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"text"</span><span class="text-light"> class=</span><span class="text-danger">"form-control"</span><span class="text-light"> id=</span><span class="text-danger">"przykladowePoleSiatka1"</span><span class="text-light"> placeholder=</span><span class="text-danger">"Pierwsze przykładowe pole"</span><span class="text-white-50"> /&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"col"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"text"</span><span class="text-light"> class=</span><span class="text-danger">"form-control"</span><span class="text-light"> id=</span><span class="text-danger">"przykladowePoleSiatka2"</span><span class="text-light"> placeholder=</span><span class="text-danger">"Drugie przykładowe pole"</span><span class="text-white-50"> /&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">form</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h3 class="mt-3">Ciaśniejszy formularz</h3>
+            <p>Jeśli będziemy chcieli uzyskać mniejsze odstępu pomiędzy polami formularza możemy zastosować klasę
+                <kbd>.form-row</kbd> zamiast klasy <kbd>.row</kbd></p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <form>
+                        <div class="form-row">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Pierwsze przykładowe pole" />
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Drugie przykładowe pole" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">form</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-row"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"col"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"text"</span><span class="text-light"> class=</span><span class="text-danger">"form-control"</span><span class="text-light"> placeholder=</span><span class="text-danger">"Pierwsze przykładowe pole"</span><span class="text-white-50"> /&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"col"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"text"</span><span class="text-light"> class=</span><span class="text-danger">"form-control"</span><span class="text-light"> placeholder=</span><span class="text-danger">"Drugie przykładowe pole"</span><span class="text-white-50"> /&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">form</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h3 class="mt-3">Poziomy formularz</h3>
+            <p>Zamiast standardowego formularza gdzie pola i etykiety są na różnych poziomach, możemy stworzyć poziomy
+                formularz. Aby to stworzyć w naszym formularzu zaczynamy od diva z klasą <kbd>.form-group</kbd> i
+                dodajemy mu klasę <kbd>.row</kbd>. W jego wnętrzu tworzymy etykiete. Nadajemy jej klasę np.
+                <kbd>.col-sm-2</kbd> i dodatkowo doajemy je klasę <kbd>.col-form-label</kbd>. Teraz możemy stworzyć
+                naszego inputa. Umieszczamy go w divie z klasą np. <kbd>.col-sm-10</kbd> i nadajemy mu samemu klasę
+                <kbd>.form-control</kbd></p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <form>
+                        <div class="form-group row">
+                            <label for="przykladowyEmailSiatka" class="col-sm-2 col-form-label">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="przykladowyEmailSiatka"
+                                    placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="przykladoweHasłoSiatka" class="col-sm-2 col-form-label">Hasło</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="przykladoweHasłoSiatka"
+                                    placeholder="Hasło">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">form</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-group row"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">for=</span><span class="text-danger">"przykladowyEmailSiatka"</span><span class="text-light"> class=</span><span class="text-danger">"col-sm-2 col-form-label"</span><span class="text-white-50">&gt;</span><span class="text-light">Email</span><span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"col-sm-10"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"email"</span><span class="text-light"> class=</span><span class="text-danger">"form-control"</span><span class="text-light"> id=</span><span class="text-danger">"przykladowyEmailSiatka"</span><span class="text-light"> placeholder=</span><span class="text-danger">"Email"</span><span class="text-white-50"> /&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-group row"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">for=</span><span class="text-danger">"przykladoweHasłoSiatka"</span><span class="text-light"> class=</span><span class="text-danger">"col-sm-2 col-form-label"</span><span class="text-white-50">&gt;</span><span class="text-light">Hasło</span><span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"col-sm-10"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"password"</span><span class="text-light"> class=</span><span class="text-danger">"form-control"</span><span class="text-light"> id=</span><span class="text-danger">"przykladoweHasłoSiatka"</span><span class="text-light"> placeholder=</span><span class="text-danger">"Hasło"</span><span class="text-white-50"> /&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">form</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h4 class="mt-3">Rozmiary poziomych formularzy</h4>
+            <p>Możemy zmieniać rozmiary formularzy za pomocą klas <kbd>.form-control-lg</kbd> oraz
+                <kbd>.form-control-sm</kbd>. Dodatkowo aby zmienić rozmiary etykiet możemy nadac im klasy
+                <kbd>.col-form-label-lg</kbd> lub <kbd>.col-form-label-sm</kbd></p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <form>
+                        <div class="form-group row">
+                            <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control form-control-sm" id="colFormLabelSm"
+                                    placeholder=".col-form-label-sm" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="colFormLabel" class="col-sm-2 col-form-label col-form-label">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="colFormLabel"
+                                    placeholder=".col-form-label" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control form-control-lg" id="colFormLabelLg"
+                                    placeholder=".col-form-label-lg" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">form</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-group row"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">for=</span><span class="text-danger">"colFormLabelSm"</span><span class="text-light"> class=</span><span class="text-danger">"col-sm-2 col-form-label col-form-label-sm"</span><span class="text-white-50">&gt;</span><span class="text-light">Email</span><span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"col-sm-10"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"email"</span><span class="text-light"> class=</span><span class="text-danger">"form-control"</span><span class="text-light"> id=</span><span class="text-danger">"colFormLabelSm"</span><span class="text-light"> placeholder=</span><span class="text-danger">".col-form-label-sm"</span><span class="text-white-50"> /&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-group row"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">for=</span><span class="text-danger">"colFormLabel"</span><span class="text-light"> class=</span><span class="text-danger">"col-sm-2 col-form-label"</span><span class="text-white-50">&gt;</span><span class="text-light">Email</span><span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"col-sm-10"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"email"</span><span class="text-light"> class=</span><span class="text-danger">"form-control"</span><span class="text-light"> id=</span><span class="text-danger">"colFormLabel"</span><span class="text-light"> placeholder=</span><span class="text-danger">".col-form-label"</span><span class="text-white-50"> /&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-group row"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">for=</span><span class="text-danger">"colFormLabelLg"</span><span class="text-light"> class=</span><span class="text-danger">"col-sm-2 col-form-label col-form-label-lg"</span><span class="text-white-50">&gt;</span><span class="text-light">Email</span><span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"col-sm-10"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"email"</span><span class="text-light"> class=</span><span class="text-danger">"form-control"</span><span class="text-light"> id=</span><span class="text-danger">"colFormLabelLg"</span><span class="text-light"> placeholder=</span><span class="text-danger">".col-form-label-lg"</span><span class="text-white-50"> /&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">form</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h4 class="mt-3">Automatyczna szerokość</h4>
+            <p>Jeśli chcemy aby formularz zajmował tylko niezbędną ilość miejsca możemy zastąpić klasę
+                <kbd>.col</kbd> klasą <kbd>.col-auto</kbd>. Szerokość takiej kolumny będzie zależała wtedy od
+                zawartości.</p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <form>
+                        <div class="form-group row">
+                            <div class="col-auto">
+                                <input type="text" class="form-control" id="przykładoweImię" placeholder="Imię" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-auto">
+                                <input type="text" class="form-control" id="przykładoweNazwisko"
+                                    placeholder="Nazwisko" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">form</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-group row"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"col-auto"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"text"</span><span class="text-light"> class=</span><span class="text-danger">"form-control"</span><span class="text-light"> id=</span><span class="text-danger">"przykładoweImię"</span><span class="text-light"> placeholder=</span><span class="text-danger">"Imię"</span><span class="text-white-50"> /&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-group row"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"col-auto"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"text"</span><span class="text-light"> class=</span><span class="text-danger">"form-control"</span><span class="text-light"> id=</span><span class="text-danger">"przykładoweNazwisko"</span><span class="text-light"> placeholder=</span><span class="text-danger">"Nazwisko"</span><span class="text-white-50"> /&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">form</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h4 class="mt-3">Formularze liniowe</h4>
+            <p>Jeśli nie chcemy korzystać z siatek Bootstrapa, a chcemy uzykać formularz poziomy, to możemy nadać
+                naszemu formularzowi klasę <kbd>.form-inline</kbd>, co spowoduje, że wszystkie elementy będą układały
+                się obok siebie.</p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <form class="form-inline">
+                        <input type="text" class="form-control mr-sm-2" id="przykładoweImię2" placeholder="Imię" />
+                        <input type="text" class="form-control mr-sm-2" id="przykładoweNazwisko2"
+                            placeholder="Nazwisko" />
+                    </form>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">form </span><span class="text-light">class=</span><span class="text-danger">"form-inline"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"text"</span><span class="text-light"> class=</span><span class="text-danger">"form-control mr-sm-2"</span><span class="text-light"> id=</span><span class="text-danger">"przykładoweImię2"</span><span class="text-light"> placeholder=</span><span class="text-danger">"Imię"</span><span class="text-white-50"> /&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"text"</span><span class="text-light"> class=</span><span class="text-danger">"form-control mr-sm-2"</span><span class="text-light"> id=</span><span class="text-danger">"przykładoweNazwisko2"</span><span class="text-light"> placeholder=</span><span class="text-danger">"Nazwisko"</span><span class="text-white-50"> /&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">form</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Podpowiedzi w formularzu</h2>
+            <p>Jeśli chcemy dać użytkownikowi jakąś podpowiedź odnośnie danych wprowadzanych do formularza, to możemy w
+                tym celu wykorzystać znacznik <kbd>&lt;small&gt;</kbd> z klasą <kbd>.from-text</kbd> oraz opcjonalną
+                klasą <kbd>.text-mute</kbd>, który zmieni nasz tekst na szary.</p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <form>
+                        <div class="form-group">
+                            <label for="przykładoweHasłoPodp">Hasło</label>
+                            <input type="password" class="form-control" id="przykładoweHasłoPodp"
+                                aria-describedby="warunkiHasła" />
+                            <small id="warunkiHasła" class="form-text text-muted">Hasło musi mieć co najmniej 6 znaków,
+                                a także zawierać co najmniej jedną dużą literę i jeden znak specjalny.</small>
+                        </div>
+                    </form>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">form</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"form-group"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">label </span><span class="text-light">for=</span><span class="text-danger">"przykładoweHasłoPodp"</span><span class="text-white-50">&gt;</span><span class="text-light">Hasło</span><span class="text-white-50">&lt;/</span><span class="text-info">label</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">input </span><span class="text-light">type=</span><span class="text-danger">"password"</span><span class="text-light"> class=</span><span class="text-danger">"form-control"</span><span class="text-light"> id=</span><span class="text-danger">"przykładoweHasłoPodp"</span><span class="text-light"> aria-describedby=</span><span class="text-danger">"warunkiHasła"</span><span class="text-white-50"> /&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">small </span><span class="text-light">id=</span><span class="text-danger">"warunkiHasła"</span><span class="text-light"> class=</span><span class="text-danger">"form-text text-muted"</span><span class="text-white-50">&gt;</span><span class="text-light">Hasło musi mieć co najmniej 6 znaków, a
+            także zawierać co najmniej jedną dużą literę i jeden znak specjalny.</span><span class="text-white-50">&lt;/</span><span class="text-info">small</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">form</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+        </div>
+    </main>
+
+    <footer class="container-fluid py-2 bg-primary fixed-bottom">
+        <p class="text-center text-light m-0">Stworzono przez Jakub Kobiałka</p>
+    </footer>
+
+    <!--JS scripts-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
