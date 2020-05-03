@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="pl_PL">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jakub Kobialka" />
+    <title>Kompedium wiedzy o Bootstrapie</title>
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark navbar-expand-lg bg-primary">
+            <a class="navbar-brand" href="../../index.html">
+                <svg class="bi bi-bootstrap" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M12 1H4a3 3 0 00-3 3v8a3 3 0 003 3h8a3 3 0 003-3V4a3 3 0 00-3-3zM4 0a4 4 0 00-4 4v8a4 4 0 004 4h8a4 4 0 004-4V4a4 4 0 00-4-4H4z"
+                        clip-rule="evenodd" />
+                    <path fill-rule="evenodd"
+                        d="M8.537 12H5.062V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396zM6.375 4.658v2.467h1.558c1.16 0 1.764-.428 1.764-1.23 0-.78-.569-1.237-1.541-1.237H6.375zm1.898 6.229H6.375V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377z"
+                        clip-rule="evenodd" />
+                </svg>
+                Kompedium Bootstrap
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu"
+                aria-controls="mainmenu" aria-expanded="false" aria-label="Przełącznik nawigacji">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainmenu">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Układ</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../layout/containers.html">Kontenery</a>
+                            <a class="dropdown-item" href="../layout/grid.html">Siatka</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Zawartość</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../content/typography.html">Typografia</a>
+                            <a class="dropdown-item" href="../content/code.html">Wyświetlanie kodu</a>
+                            <a class="dropdown-item" href="../content/images.html">Obrazy</a>
+                            <a class="dropdown-item" href="../content/figures.html">Obrazy z podpisem</a>
+                            <a class="dropdown-item" href="../content/tables.html">Tabele</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Komponenty</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="alerts.html">Alerty</a>
+                            <a class="dropdown-item" href="badges.html">Odznaki</a>
+                            <a class="dropdown-item" href="breadcrumb.html">Okruszki</a>
+                            <a class="dropdown-item" href="button.html">Przyciski</a>
+                            <a class="dropdown-item" href="button-group.html">Grupy przycisków</a>
+                            <a class="dropdown-item" href="cards.html">Karty</a>
+                            <a class="dropdown-item" href="slider.html">Slider</a>
+                            <a class="dropdown-item" href="collapse.html">Akordeon</a>
+                            <a class="dropdown-item" href="dropdowns.html">Listy rozwijane</a>
+                            <a class="dropdown-item" href="forms.html">Formularze</a>
+                            <a class="dropdown-item" href="forms-extra.html">Dodatki do formularzy</a>
+                            <a class="dropdown-item" href="jumbotron.html">Jumbotron</a>
+                            <a class="dropdown-item" href="#">Listy</a>
+                            <a class="dropdown-item">Pop-up</a>
+                            <a class="dropdown-item">Paginacja</a>
+                            <a class="dropdown-item">Komunikaty</a>
+                            <a class="dropdown-item">Paski postępu</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Narzędzia</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item">Ramki</a>
+                            <a class="dropdown-item">Clearfix</a>
+                            <a class="dropdown-item">Ikona zamykania</a>
+                            <a class="dropdown-item">Kolory</a>
+                            <a class="dropdown-item">Display</a>
+                            <a class="dropdown-item">Umieszczanie filmików zewnętrznych</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container my-5">
+            <header>
+                <h1>Listy</h1>
+            </header>
+            <h2>Podstawowy przykład</h2>
+            <p>Standardową liste tworzymy za pomocą znacznika <kbd>&lt;ul&gt;</kbd> lub <kbd>&lt;ol&gt;</kbd> i
+                umieszczonych w niej znacznikach <kbd>&lt;li&gt;</kbd> <br />
+                Aby je specjalnie ostylować wystarczy, że nadamy elementowi ul lub ol klasę <kbd>.list-group</kbd>.
+                Następnie musimy ostylować każdy element li odpowiednio klasą <kbd>.list-group-item</kbd>
+            </p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <ul class="list-group">
+                        <li class="list-group-item">Element 1</li>
+                        <li class="list-group-item">Element 2</li>
+                        <li class="list-group-item">Element 3</li>
+                        <li class="list-group-item">Element 4</li>
+                        <li class="list-group-item">Element 5</li>
+                    </ul>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">ul </span><span class="text-light">class=</span><span class="text-danger">"list-group"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item"</span><span class="text-white-50">&gt;</span><span class="text-light">Element 1</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item"</span><span class="text-white-50">&gt;</span><span class="text-light">Element 2</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item"</span><span class="text-white-50">&gt;</span><span class="text-light">Element 3</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item"</span><span class="text-white-50">&gt;</span><span class="text-light">Element 4</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item"</span><span class="text-white-50">&gt;</span><span class="text-light">Element 5</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">ul</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Aktywny element</h2>
+            <p>Aby wskazać który element listy jest aktualnie aktywny możemy go wyróżnić poprzez dodanie do
+                odpowiedniego znacznika <kbd>&lt;li&gt;</kbd> klasy <kbd>.active</kbd></p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <ul class="list-group">
+                        <li class="list-group-item">Element 1</li>
+                        <li class="list-group-item">Element 2</li>
+                        <li class="list-group-item active">Element 3</li>
+                        <li class="list-group-item">Element 4</li>
+                        <li class="list-group-item">Element 5</li>
+                    </ul>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">ul </span><span class="text-light">class=</span><span class="text-danger">"list-group"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item"</span><span class="text-white-50">&gt;</span><span class="text-light">Element 1</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item"</span><span class="text-white-50">&gt;</span><span class="text-light">Element 2</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item active"</span><span class="text-white-50">&gt;</span><span class="text-light">Element 3</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item"</span><span class="text-white-50">&gt;</span><span class="text-light">Element 4</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item"</span><span class="text-white-50">&gt;</span><span class="text-light">Element 5</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">ul</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Nieaktywny element</h2>
+            <p>Jeśli będziemy chcieli wyłączyć jakiś element z listy możemy dodać mu klasę <kbd>.disabled</kbd></p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <ul class="list-group">
+                        <li class="list-group-item">Element 1</li>
+                        <li class="list-group-item">Element 2</li>
+                        <li class="list-group-item disabled">Element 3</li>
+                        <li class="list-group-item">Element 4</li>
+                        <li class="list-group-item">Element 5</li>
+                    </ul>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">ul </span><span class="text-light">class=</span><span class="text-danger">"list-group"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item"</span><span class="text-white-50">&gt;</span><span class="text-light">Element 1</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item"</span><span class="text-white-50">&gt;</span><span class="text-light">Element 2</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item disabled"</span><span class="text-white-50">&gt;</span><span class="text-light">Element 3</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item"</span><span class="text-white-50">&gt;</span><span class="text-light">Element 4</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item"</span><span class="text-white-50">&gt;</span><span class="text-light">Element 5</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">ul</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Linki i przyciski jako lista</h2>
+            <p>Zamiast zwykłych elementów li do budowy naszej listy możemy użyć także linków lub przycisków. Aby
+                stworzyć taką listę tworzymy element ul lub ol i nadajemy mu klasę <kbd>.list-group</kbd>. Natomiast
+                elementy li zamieniamy na znaczniki <kbd>&lt;a&gt;</kbd> lub <kbd>&lt;button&gt;</kbd>. Aby je ostylować
+                musimy użyć klasy <kbd>.list-group-item</kbd>, tak samo jak w przypadko zwykłej listy. Dodatkowo jednak
+                musimy dołączyć jeszcze klasę <kbd>.list-group-item-action</kbd>. W takich listach możemy również
+                korzystać z klas <kbd>.active</kbd> oraz <kbd>.disabled</kbd></p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <ul class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action active">Element 1</a>
+                        <a href="#" class="list-group-item list-group-item-action">Element 2</a>
+                        <a href="#" class="list-group-item list-group-item-action">Element 3</a>
+                        <a href="#" class="list-group-item list-group-item-action disabled">Element 4</a>
+                        <a href="#" class="list-group-item list-group-item-action">Element 5</a>
+                    </ul>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">ul </span><span class="text-light">class=</span><span class="text-danger">"list-group"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">href=</span><span class="text-danger">"#"</span><span class="text-light"> class=</span><span class="text-danger">"list-group-item list-group-item-action active"</span><span class="text-white-50">&gt;</span><span class="text-light">Element 1</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">href=</span><span class="text-danger">"#"</span><span class="text-light"> class=</span><span class="text-danger">"list-group-item list-group-item-action"</span><span class="text-white-50">&gt;</span><span class="text-light">Element 2</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">href=</span><span class="text-danger">"#"</span><span class="text-light"> class=</span><span class="text-danger">"list-group-item list-group-item-action"</span><span class="text-white-50">&gt;</span><span class="text-light">Element 3</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">href=</span><span class="text-danger">"#"</span><span class="text-light"> class=</span><span class="text-danger">"list-group-item list-group-item-action disabled"</span><span class="text-white-50">&gt;</span><span class="text-light">Element 4</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">href=</span><span class="text-danger">"#"</span><span class="text-light"> class=</span><span class="text-danger">"list-group-item list-group-item-action"</span><span class="text-white-50">&gt;</span><span class="text-light">Element 5</span><span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">ul</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <p class="mt-3">Przykład z użyciem przycisków jako elementów listy: </p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <ul class="list-group">
+                        <button type="button" class="list-group-item list-group-item-action active">Element 1</button>
+                        <button type="button" class="list-group-item list-group-item-action">Element 2</button>
+                        <button type="button" class="list-group-item list-group-item-action">Element 3</button>
+                        <button type="button" class="list-group-item list-group-item-action disabled">Element 4</button>
+                        <button type="button" class="list-group-item list-group-item-action">Element 5</button>
+                    </ul>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">ul </span><span class="text-light">class=</span><span class="text-danger">"list-group"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">type=</span><span class="text-danger">"button"</span><span class="text-light"> class=</span><span class="text-danger">"list-group-item list-group-item-action active"</span><span class="text-white-50">&gt;</span><span class="text-light">Element 1</span><span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">type=</span><span class="text-danger">"button"</span><span class="text-light"> class=</span><span class="text-danger">"list-group-item list-group-item-action"</span><span class="text-white-50">&gt;</span><span class="text-light">Element 2</span><span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">type=</span><span class="text-danger">"button"</span><span class="text-light"> class=</span><span class="text-danger">"list-group-item list-group-item-action"</span><span class="text-white-50">&gt;</span><span class="text-light">Element 3</span><span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">type=</span><span class="text-danger">"button"</span><span class="text-light"> class=</span><span class="text-danger">"list-group-item list-group-item-action disabled"</span><span class="text-white-50">&gt;</span><span class="text-light">Element 4</span><span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">button </span><span class="text-light">type=</span><span class="text-danger">"button"</span><span class="text-light"> class=</span><span class="text-danger">"list-group-item list-group-item-action"</span><span class="text-white-50">&gt;</span><span class="text-light">Element 5</span><span class="text-white-50">&lt;/</span><span class="text-info">button</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">ul</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Lista bez ramek</h2>
+            <p>Jeśli nie chcemy aby nasza lista posiadała ramką ją otaczającą możemy w łatwy sposób się jej pozbyć. Aby
+                osiągnąć taki efekt możemy dopisać do naszego znacznika <kbd>&lt;ul&gt;</kbd> lub <kbd>&lt;ol&gt;</kbd>
+                klasę <kbd>.list-group-flush</kbd>. Sposób ten działa nie tylko dla zwykłych list, ale także dla tych
+                zbudowanych z linków lub przycisków.</p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <div class="p-2">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Element 1</li>
+                            <li class="list-group-item">Element 2</li>
+                            <li class="list-group-item">Element 3</li>
+                            <li class="list-group-item">Element 4</li>
+                            <li class="list-group-item">Element 5</li>
+                        </ul>
+                    </div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">ul </span><span class="text-light">class=</span><span class="text-danger">"list-group list-group-flush"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item"</span><span class="text-white-50">&gt;</span><span class="text-light">Element 1</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item"</span><span class="text-white-50">&gt;</span><span class="text-light">Element 2</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item"</span><span class="text-white-50">&gt;</span><span class="text-light">Element 3</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item"</span><span class="text-white-50">&gt;</span><span class="text-light">Element 4</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item"</span><span class="text-white-50">&gt;</span><span class="text-light">Element 5</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">ul</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Lista z kolorami</h2>
+            <p>Dzięki naszym klasom kontekstowym Bootstrapa możemy pokolować elementy naszej listy. Wystarczy do każdego
+                elementu dopisać klasę <kbd>.list-group-item-*</kbd>, gdzie "*" oznacza odpowiedni kontekst.</p>
+            <div class="col-12 border border-dark mt-3">
+                <div class="p-2">
+                    <ul class="list-group">
+                        <li class="list-group-item">Domyślny brak kontekstu elementu listy</li>
+                        <li class="list-group-item list-group-item-primary">Element list z kontekstem typu primary</li>
+                        <li class="list-group-item list-group-item-secondary">Element list z kontekstem typu secondary
+                        </li>
+                        <li class="list-group-item list-group-item-success">Element list z kontekstem typu success</li>
+                        <li class="list-group-item list-group-item-danger">Element list z kontekstem typu danger</li>
+                        <li class="list-group-item list-group-item-warning">Element list z kontekstem typu warning</li>
+                        <li class="list-group-item list-group-item-info">Element list z kontekstem typu info</li>
+                        <li class="list-group-item list-group-item-light">Element list z kontekstem typu light</li>
+                        <li class="list-group-item list-group-item-dark">Element list z kontekstem typu dark</li>
+                    </ul>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">ul </span><span class="text-light">class=</span><span class="text-danger">"list-group"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item"</span><span class="text-white-50">&gt;</span><span class="text-light">Domyślny brak kontekstu elementu listy</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item list-group-item-primary"</span><span class="text-white-50">&gt;</span><span class="text-light">Element list z kontekstem typu primary</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item list-group-item-secondary"</span><span class="text-white-50">&gt;</span><span class="text-light">Element list z kontekstem typu secondary</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item list-group-item-success"</span><span class="text-white-50">&gt;</span><span class="text-light">Element list z kontekstem typu success</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item list-group-item-danger"</span><span class="text-white-50">&gt;</span><span class="text-light">Element list z kontekstem typu danger</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item list-group-item-warning"</span><span class="text-white-50">&gt;</span><span class="text-light">Element list z kontekstem typu warning</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item list-group-item-info"</span><span class="text-white-50">&gt;</span><span class="text-light">Element list z kontekstem typu info</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item list-group-item-light"</span><span class="text-white-50">&gt;</span><span class="text-light">Element list z kontekstem typu light</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item list-group-item-dark"</span><span class="text-white-50">&gt;</span><span class="text-light">Element list z kontekstem typu dark</span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">ul</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Lista z odznakami</h2>
+            <p>Do naszej listy możemy dodać odznaki, które mogą posłużyć np. do informowania o ilości postów z danej
+                kategorii. Do zbudowania takiej listy przydadzą się klasy Flexboxa. <br />
+                Zaczynamy standardowo od utworzenia listy z klasą <kbd>.list-group</kbd> oraz dodaniem do niej jej
+                elementów z klasą <kbd>.list-group-item</kbd>. Następnie dodajemy do tych elementów trzy następujące
+                klasy:
+                <ul>
+                    <li><kbd>.d-flex</kbd> - klasa ta pozwala na wyświelanie jako flex ( display: flex; )</li>
+                    <li><kbd>.justify-content-between</kbd> - klasa ta rozsuwa zawartość ( justify-content:
+                        space-between; )</li>
+                    <li><kbd>.align-items-center</kbd> - klasa ta wyśrodkowuje elementy w pionie ( align-items: center;)
+                    </li>
+                </ul>
+                Wewnątrz każdego elementu tworzymy element <kbd>&lt;span&gt;</kbd> z klasami <kbd>.badge .badge-primary
+                    .badge-pill</kbd> który wyświeli naszą odznakę.
+            </p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Posty w danej kategorii <span class="badge badge-primary badge-pill">21</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Ilość przedmiotów w koszyku <span class="badge badge-primary badge-pill">7</span>
+                        </li>
+                    </ul>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">ul </span><span class="text-light">class=</span><span class="text-danger">"list-group"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item d-flex justify-content-between align-items-center"</span><span class="text-white-50">&gt;</span><span class="text-light">
+        Posty w danej kategorii <span class="text-white-50">&lt;</span><span class="text-info">span </span><span class="text-light">class=</span><span class="text-danger">"badge badge-primary badge-pill"</span><span class="text-white-50">&gt;</span><span class="text-light">21</span><span class="text-white-50">&lt;/</span><span class="text-info">span</span><span class="text-white-50">&gt;</span>
+    </span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">li </span><span class="text-light">class=</span><span class="text-danger">"list-group-item d-flex justify-content-between align-items-center"</span><span class="text-white-50">&gt;</span><span class="text-light">
+        Ilość przedmiotów w koszyku <span class="text-white-50">&lt;</span><span class="text-info">span </span><span class="text-light">class=</span><span class="text-danger">"badge badge-primary badge-pill"</span><span class="text-white-50">&gt;</span><span class="text-light">7</span><span class="text-white-50">&lt;/</span><span class="text-info">span</span><span class="text-white-50">&gt;</span>
+    </span><span class="text-white-50">&lt;/</span><span class="text-info">li</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">ul</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Lista z rozbudowaną treścią</h2>
+            <p>Dotychczas nasza lista zawierała tylko jeden element. Możemy jednak ją bardziej rozbudować i dodać jej
+                dodatkowe treści czy też inne elementy. Przydatne nam tutaj będą klasy Flexboxa.<br />
+                Jak zwykle zaczynamy od utworzenia naszej listy z klasą <kbd>.list-group</kbd> gdzie umieszamy nasze
+                elementy listy z klasami <kbd>.list-group-item .list-group-item-action</kbd>. Do naszych elementów listy
+                musimy dopisać jeszcze klasy:
+                <ul>
+                    <li><kbd>.flex-column</kbd> - klasa ta ustawia nasze elementy od góry do dołu tworząc kolumnę (
+                        flex-direction: column; )</li>
+                    <li><kbd>.align-items-start</kbd> - klasa ta pozwala na ustawienie kolejnych elementów od góry
+                        elementu nadrzędnego. ( align-items: flex-start; )</li>
+                </ul>
+                Teraz w tak ostylowanym elemencie klasy możemy stworzyć diva z klasami:
+                <ul>
+                    <li><kbd>.d-flex</kbd> - klasa ta pozwala na wyświelanie jako flex ( display: flex; )</li>
+                    <li><kbd>.w-100</kbd> - klasa ta powoduje, że każdy element listy ma zajmować całą szerokość
+                        elementu nadrzędnego, a każdy kolejny element będzie ustawiał się pod poprzednim. ( width:
+                        100%;)</li>
+                    <li><kbd>.justify-content-between</kbd> - klasa ta rozsuwa zawartość ( justify-content:
+                        space-between; )</li>
+                </ul>
+                W takim elemencie div możemy teraz umieścić jakiś nagłówek oraz mały dopisek.
+                Poza divem umieszczamy paragraf z tekstem, a na samym dole mały dopisek o kategorii oraz o autorze
+                wpisu.
+            </p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <ul class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Tytuł pierwszego wpisu</h5>
+                                <small>6 dni temu</small>
+                            </div>
+                            <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et tempore,
+                                deserunt laborum corporis esse pariatur amet natus sunt voluptatem sapiente suscipit
+                                blanditiis nam obcaecati nemo eum animi cum! Officiis, pariatur!</p>
+                            <small>Kategoria / Autor wpisu</small>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Tytuł drugiego wpisu</h5>
+                                <small>5 dni temu</small>
+                            </div>
+                            <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis
+                                recusandae nostrum laboriosam facilis nulla, quam, aperiam odio sunt officiis labore ab
+                                et modi minus expedita ex enim consectetur beatae nesciunt?</p>
+                            <small>Kategoria / Autor wpisu</small>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Tytuł trzeciego wpisu</h5>
+                                <small>4 dni temu</small>
+                            </div>
+                            <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ducimus ea
+                                illo explicabo laborum velit est suscipit officia ab. Quae distinctio nesciunt
+                                voluptatem voluptate ipsam quam amet veniam aperiam sunt?</p>
+                            <small>Kategoria / Autor wpisu</small>
+                        </a>
+                    </ul>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">ul </span><span class="text-light">class=</span><span class="text-danger">"list-group"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">href=</span><span class="text-danger">"#"</span><span class="text-light"> class=</span><span class="text-danger">"list-group-item list-group-item-action flex-column align-items-start active"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"d-flex w-100 justify-content-between"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">h5 </span><span class="text-light">class=</span><span class="text-danger">"mb-1"</span><span class="text-white-50">&gt;</span><span class="text-light">Tytuł pierwszego wpisu</span><span class="text-white-50">&lt;/</span><span class="text-info">h5</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">small</span><span class="text-white-50">&gt;</span><span class="text-light">6 dni temu</span><span class="text-white-50">&lt;/</span><span class="text-info">small</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">p </span><span class="text-light">class=</span><span class="text-danger">"mb-1"</span><span class="text-white-50">&gt;</span>
+            <span class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et tempore,
+            deserunt laborum corporis esse pariatur amet natus sunt voluptatem sapiente suscipit
+            blanditiis nam obcaecati nemo eum animi cum! Officiis, pariatur!</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">p</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">small</span><span class="text-white-50">&gt;</span><span class="text-light">Kategoria / Autor wpisu</span><span class="text-white-50">&lt;/</span><span class="text-info">small</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">href=</span><span class="text-danger">"#"</span><span class="text-light"> class=</span><span class="text-danger">"list-group-item list-group-item-action flex-column align-items-start"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"d-flex w-100 justify-content-between"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">h5 </span><span class="text-light">class=</span><span class="text-danger">"mb-1"</span><span class="text-white-50">&gt;</span><span class="text-light">Tytuł drugiego wpisu</span><span class="text-white-50">&lt;/</span><span class="text-info">h5</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">small</span><span class="text-white-50">&gt;</span><span class="text-light">5 dni temu</span><span class="text-white-50">&lt;/</span><span class="text-info">small</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">p </span><span class="text-light">class=</span><span class="text-danger">"mb-1"</span><span class="text-white-50">&gt;</span>
+            <span class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis
+            recusandae nostrum laboriosam facilis nulla, quam, aperiam odio sunt officiis labore ab
+            et modi minus expedita ex enim consectetur beatae nesciunt?</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">p</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">small</span><span class="text-white-50">&gt;</span><span class="text-light">Kategoria / Autor wpisu</span><span class="text-white-50">&lt;/</span><span class="text-info">small</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">a </span><span class="text-light">href=</span><span class="text-danger">"#"</span><span class="text-light"> class=</span><span class="text-danger">"list-group-item list-group-item-action flex-column align-items-start active"</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"d-flex w-100 justify-content-between"</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">h5 </span><span class="text-light">class=</span><span class="text-danger">"mb-1"</span><span class="text-white-50">&gt;</span><span class="text-light">Tytuł trzeciego wpisu</span><span class="text-white-50">&lt;/</span><span class="text-info">h5</span><span class="text-white-50">&gt;</span>
+            <span class="text-white-50">&lt;</span><span class="text-info">small</span><span class="text-white-50">&gt;</span><span class="text-light">4 dni temu</span><span class="text-white-50">&lt;/</span><span class="text-info">small</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">p </span><span class="text-light">class=</span><span class="text-danger">"mb-1"</span><span class="text-white-50">&gt;</span>
+            <span class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ducimus ea
+            illo explicabo laborum velit est suscipit officia ab. Quae distinctio nesciunt
+            voluptatem voluptate ipsam quam amet veniam aperiam sunt?</span>
+        <span class="text-white-50">&lt;/</span><span class="text-info">p</span><span class="text-white-50">&gt;</span>
+        <span class="text-white-50">&lt;</span><span class="text-info">small</span><span class="text-white-50">&gt;</span><span class="text-light">Kategoria / Autor wpisu</span><span class="text-white-50">&lt;/</span><span class="text-info">small</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;/</span><span class="text-info">a</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">ul</span><span class="text-white-50">&gt;</span></code></pre>
+                </div>
+                <!--/code-->
+            </div>
+        </div>
+    </main>
+
+    <footer class="container-fluid py-2 bg-primary fixed-bottom">
+        <p class="text-center text-light m-0">Stworzono przez Jakub Kobiałka</p>
+    </footer>
+
+    <!--JS scripts-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
