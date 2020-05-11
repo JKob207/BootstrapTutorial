@@ -47,11 +47,11 @@
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Zawartość</a>
 
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="typography.html">Typografia</a>
-                            <a class="dropdown-item" href="#">Wyświetlanie kodu</a>
-                            <a class="dropdown-item" href="images.html">Obrazy</a>
-                            <a class="dropdown-item" href="figures.html">Obrazy z podpisem</a>
-                            <a class="dropdown-item" href="tables.html">Tabele</a>
+                            <a class="dropdown-item" href="../content/typography.html">Typografia</a>
+                            <a class="dropdown-item" href="../content/code.html">Wyświetlanie kodu</a>
+                            <a class="dropdown-item" href="../content/images.html">Obrazy</a>
+                            <a class="dropdown-item" href="../content/figures.html">Obrazy z podpisem</a>
+                            <a class="dropdown-item" href="../content/tables.html">Tabele</a>
                         </div>
                     </li>
 
@@ -83,8 +83,8 @@
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Narzędzia</a>
 
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="../tools/borders.html">Ramki</a>
-                            <a class="dropdown-item" href="../tools/clearfix.html">Clearfix</a>
+                            <a class="dropdown-item" href="borders.html">Ramki</a>
+                            <a class="dropdown-item" href="#">Clearfix</a>
                             <a class="dropdown-item">Ikona zamykania</a>
                             <a class="dropdown-item">Kolory</a>
                             <a class="dropdown-item">Display</a>
@@ -99,101 +99,45 @@
     <main>
         <div class="container my-5">
             <header>
-                <h1>Wyświetlanie kodu</h1>
+                <h1>Clearfix</h1>
             </header>
-            <h2>Wstawianie kodu liniowo</h2>
-            <p>Znacznik <kbd>&lt;code&gt;</kbd> służy do liniowego wstawiania kodu na stronę. Jednak aby otrzymać ostre
-                nawiasy, należy zapisywać je jako: <xmp>&lt;</xmp> dla znacznika mniejszości "&lt;" oraz <xmp>&gt;</xmp>
-                dla znacznika większości "&gt;"
-            </p>
+            <p>Podczas stosowania właściwości <kbd>float</kbd> mogą wystąpić problemy z poprawnym wyświetlaniem treści.
+                Przykładowo nasz obraz oraz tekst zamknięte w elemencie div wychodzą poza ten div, przez co nasz div ma
+                zerową wysokość i nie jest wyświetlany.</p>
             <div class="col-12 bg-light border border-dark mt-3">
                 <div class="p-2">
-                    <p>Indentyfikator do elementu HTML dodajemy poprzez
-                        <code>&lt;p id="id-name"&gt;...&lt;/p&gt;</code>
-                    </p>
-                    <p>Klasę do elementu HTML dodajemy poprzez
-                        <code>&lt;p class="class-name"&gt;...&lt;/p&gt;</code>
-                    </p>
+                    <div class="border border-danger">
+                        <p class="lead float-left">Tekst w divie</p>
+                        <img src="https://placehold.it/100" class="img-fluid float-right" />
+                    </div>
                 </div>
-                <!--code-->
-                <div class="bg-dark pl-1">
-                    <pre class="mt-1">
-<code><span class="text-white-50">&lt;</span><span class="text-info">p</span><span class="text-white-50">&gt;</span><span class="text-light">Indentyfikator do elementu HTML dodajemy poprzez 
-    <span class="text-white-50">&lt;</span><span class="text-info">code</span><span class="text-white-50">&gt;</span><span class="text-light">&lt;p id="id-name"&gt;...&lt;/p&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">code</span><span class="text-white-50">&gt;</span></span>
-<span class="text-white-50">&lt;/</span><span class="text-info">p</span><span class="text-white-50">&gt;</span>
-<span class="text-white-50">&lt;</span><span class="text-info">p</span><span class="text-white-50">&gt;</span><span class="text-light">Klasę do elementu HTML dodajemy poprzez 
-    <span class="text-white-50">&lt;</span><span class="text-info">code</span><span class="text-white-50">&gt;</span><span class="text-light">&lt;p class="class-name"&gt;...&lt;/p&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">code</span><span class="text-white-50">&gt;</span></span>
-<span class="text-white-50">&lt;/</span><span class="text-info">p</span><span class="text-white-50">&gt;</span>
-</code></pre>
-                </div>
-                <!--/code-->
             </div>
-            <h2 class="mt-3">Wstawianie kodu blokowo</h2>
-            <p>Znacznik <kbd>&lt;pre&gt;</kbd> służy do wstawiania całych bloków kodu wraz z "wcięciami".</p>
-            <div class="col-12 bg-light border border-dark mt-3">
-                <pre>
-                    Tutaj kod z wcięciami
-                </pre>
-                <!--code-->
-                <div class="bg-dark pl-1">
-                    <pre class="mt-1">
-<code><span class="text-white-50">&lt;</span><span class="text-info">pre</span><span class="text-white-50">&gt;</span>
-                    <span class="text-light">Tutaj kod z wcięciami</span>
-<span class="text-white-50">&lt;/</span><span class="text-info">pre</span><span class="text-white-50">&gt;</span></code></pre>
-                </div>
-                <!--/code-->
+            <div class="my-5" style="height: 1rem;;"></div>
+            <!--code-->
+            <div class="bg-dark pl-1">
+                <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"border border-danger"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">p </span><span class="text-light">class=</span><span class="text-danger">"lead float-left"</span><span class="text-white-50">&gt;</span><span class="text-light">Tekst w divie</span><span class="text-white-50">&lt;/</span><span class="text-info">p</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">img</span><span class="text-light"> src=</span><span class="text-danger">"https://placehold.it/100"</span><span class="text-light"> class=</span><span class="text-danger">"img-fluid float-right"</span><span class="text-white-50"> /&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></pre>
             </div>
-            <h2 class="mt-3">Wyświetlanie wzorów</h2>
-            <p>Znacznik <kbd>&lt;var&gt;</kbd> służy do umieszczenia w nim wzorów</p>
+            <!--/code-->
+            <p class="mt-3">Rozwiązaniem tej sytuacji jest zastosowanie "cleafix". Dodaje on do floatowanych elementów
+                klasę <kbd>.cleafix</kbd></p>
             <div class="col-12 bg-light border border-dark mt-3">
                 <div class="p-2">
-                    <var>y=ax+b</var>
+                    <div class="border border-success clearfix">
+                        <p class="lead float-left">Tekst w divie</p>
+                        <img src="https://placehold.it/100" class="img-fluid float-right" />
+                    </div>
                 </div>
                 <!--code-->
                 <div class="bg-dark pl-1">
                     <pre class="mt-1">
-<code><span class="text-white-50">&lt;</span><span class="text-info">var</span><span class="text-white-50">&gt;</span><span class="text-light">y=ax+b</span><span class="text-white-50">&lt;/</span><span class="text-info">var</span><span class="text-white-50">&gt;</span>
-</code></pre>
-                </div>
-                <!--/code-->
-            </div>
-            <h2 class="mt-3">Znaki klawiaturowe</h2>
-            <p>Znacznik <kbd>&lt;kbd&gt;</kbd> pozwala na uzyskanie formatownia podobnego do przyciskow na
-                klawiaturze
-            </p>
-            <div class="col-12 bg-light border border-dark mt-3">
-                <div class="p-2">
-                    <p>
-                        Aby wyświetlić zawartość katalogu w terminalu w Windowsie należy użyć polecenia
-                        <kbd>dir</kbd>
-                        <br />Natomiast aby to samo zrobić w konsoli w Linuksie należy wpisać <kbd>ls</kbd>
-                    </p>
-                </div>
-                <!--code-->
-                <div class="bg-dark pl-1">
-                    <pre class="mt-1">
-<code><span class="text-white-50">&lt;</span><span class="text-info">p</span><span class="text-white-50">&gt;</span>
-    <span class="text-light">Aby wyświetlić zawartość katalogu w terminalu w Windowsie należy użyć polecenia</span>
-    <span class="text-white-50">&lt;</span><span class="text-info">kbd</span><span class="text-white-50">&gt;</span><span class="text-light">dir</span><span class="text-white-50">&lt;/</span><span class="text-info">kbd</span><span class="text-white-50">&gt;</span>
-    <span class="text-light">Natomiast aby to samo zrobić w konsoli w Linuksie należy wpisać</span>
-    <span class="text-white-50">&lt;</span><span class="text-info">kbd</span><span class="text-white-50">&gt;</span><span class="text-light">ls</span><span class="text-white-50">&lt;/</span><span class="text-info">kbd</span><span class="text-white-50">&gt;</span>
-<span class="text-white-50">&lt;/</span><span class="text-info">p</span><span class="text-white-50">&gt;</span></code></pre>
-                </div>
-                <!--/code-->
-            </div>
-            <h2 class="mt-3">Wyświetlanie komunikatów</h2>
-            <p>Znacznik <kbd>&lt;samp&gt;</kbd> pozwala na uzyskanie formatownia podobnego do kominukatu w oknie
-                konsoli
-            </p>
-            <div class="col-12 bg-light border border-dark mt-3">
-                <div class="p-2">
-                    <samp>Komunikat zwrócony przez program.</samp>
-                </div>
-                <!--code-->
-                <div class="bg-dark pl-1">
-                    <pre class="mt-1">
-<code><span class="text-white-50">&lt;</span><span class="text-info">samp</span><span class="text-white-50">&gt;</span><span class="text-light">Kominikat zwrócony przez program.</span><span class="text-white-50">&lt;/</span><span class="text-info">samp</span><span class="text-white-50">&gt;</span>
-</code></pre>
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"border border-success clearfix"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">p </span><span class="text-light">class=</span><span class="text-danger">"lead float-left"</span><span class="text-white-50">&gt;</span><span class="text-light">Tekst w divie</span><span class="text-white-50">&lt;/</span><span class="text-info">p</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">img</span><span class="text-light"> src=</span><span class="text-danger">"https://placehold.it/100"</span><span class="text-light"> class=</span><span class="text-danger">"img-fluid float-right"</span><span class="text-white-50"> /&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></pre>
                 </div>
                 <!--/code-->
             </div>
