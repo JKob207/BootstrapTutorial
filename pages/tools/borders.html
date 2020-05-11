@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pl_PL">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jakub Kobialka" />
+    <title>Kompedium wiedzy o Bootstrapie</title>
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark navbar-expand-lg bg-primary">
+            <a class="navbar-brand" href="../../index.html">
+                <svg class="bi bi-bootstrap" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M12 1H4a3 3 0 00-3 3v8a3 3 0 003 3h8a3 3 0 003-3V4a3 3 0 00-3-3zM4 0a4 4 0 00-4 4v8a4 4 0 004 4h8a4 4 0 004-4V4a4 4 0 00-4-4H4z"
+                        clip-rule="evenodd" />
+                    <path fill-rule="evenodd"
+                        d="M8.537 12H5.062V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396zM6.375 4.658v2.467h1.558c1.16 0 1.764-.428 1.764-1.23 0-.78-.569-1.237-1.541-1.237H6.375zm1.898 6.229H6.375V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377z"
+                        clip-rule="evenodd" />
+                </svg>
+                Kompedium Bootstrap
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu"
+                aria-controls="mainmenu" aria-expanded="false" aria-label="Przełącznik nawigacji">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainmenu">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Układ</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../layout/containers.html">Kontenery</a>
+                            <a class="dropdown-item" href="../layout/grid.html">Siatka</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Zawartość</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../content/typography.html">Typografia</a>
+                            <a class="dropdown-item" href="../content/code.html">Wyświetlanie kodu</a>
+                            <a class="dropdown-item" href="../content/images.html">Obrazy</a>
+                            <a class="dropdown-item" href="../content/figures.html">Obrazy z podpisem</a>
+                            <a class="dropdown-item" href="../content/tables.html">Tabele</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Komponenty</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../utilities/alerts.html">Alerty</a>
+                            <a class="dropdown-item" href="../utilities/badges.html">Odznaki</a>
+                            <a class="dropdown-item" href="../utilities/breadcrumb.html">Okruszki</a>
+                            <a class="dropdown-item" href="../utilities/button.html">Przyciski</a>
+                            <a class="dropdown-item" href="../utilities/button-group.html">Grupy przycisków</a>
+                            <a class="dropdown-item" href="../utilities/cards.html">Karty</a>
+                            <a class="dropdown-item" href="../utilities/slider.html">Slider</a>
+                            <a class="dropdown-item" href="../utilities/collapse.html">Akordeon</a>
+                            <a class="dropdown-item" href="../utilities/dropdowns.html">Listy rozwijane</a>
+                            <a class="dropdown-item" href="../utilities/forms.html">Formularze</a>
+                            <a class="dropdown-item" href="../utilities/forms-extra.html">Dodatki do formularzy</a>
+                            <a class="dropdown-item" href="../utilities/jumbotron.html">Jumbotron</a>
+                            <a class="dropdown-item" href="../utilities/list-group.html">Listy</a>
+                            <a class="dropdown-item" href="../utilities/pop-up.html">Pop-up</a>
+                            <a class="dropdown-item" href="../utilities/pagination.html">Paginacja</a>
+                            <a class="dropdown-item" href="../utilities/popovers.html">Komunikaty</a>
+                            <a class="dropdown-item" href="../utilities/progress.html">Paski postępu</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Narzędzia</a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Ramki</a>
+                            <a class="dropdown-item">Clearfix</a>
+                            <a class="dropdown-item">Ikona zamykania</a>
+                            <a class="dropdown-item">Kolory</a>
+                            <a class="dropdown-item">Display</a>
+                            <a class="dropdown-item">Umieszczanie filmików zewnętrznych</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container my-5">
+            <header>
+                <h1>Ramki</h1>
+            </header>
+            <h2>Podstawowy przykład</h2>
+            <p>Bootstrap oferuje nam gotowe stylizacje ramek. Jeśli chcemy nadać jakiemuś naszemu elementowi ramkę mamy
+                do wyboru pięć klas ramek:
+            <ul>
+                <li><kbd>.border</kbd> - zostanie dodana ramka na wszystkich bokach</li>
+                <li><kbd>.border-top</kbd> - zostanie dodana ramka u góry</li>
+                <li><kbd>.border-right</kbd> - zostanie dodana ramka po prawej</li>
+                <li><kbd>.border-bottom</kbd> - zostanie dodana ramka na dole</li>
+                <li><kbd>.border-left</kbd> - zostanie dodana ramka po lewej</li>
+            </ul>
+            </p>
+            <div class="col-12 border border-dark mt-3">
+                <div class="p-2">
+                    <div class="row">
+                        <div class="border m-2 bg-light" style="width: 5rem; height: 5rem;"></div>
+                        <div class="border-top m-2 bg-light" style=" width: 5rem; height: 5rem;"></div>
+                        <div class="border-right m-2 bg-light" style=" width: 5rem; height: 5rem;"></div>
+                        <div class="border-bottom m-2 bg-light" style=" width: 5rem; height: 5rem;"></div>
+                        <div class="border-left m-2 bg-light" style=" width: 5rem; height: 5rem;"></div>
+                    </div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"border"</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"border-top"</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"border-right"</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"border-bottom"</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"border-left"</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+</code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Usuwanie ramek</h2>
+            <p>Możemy też usuwać jakieś nadane już ramki, odejmując wybraną ramkę od pozostałych. Mamy tutaj do
+                dyspozycja następujące klasy:
+            <ul>
+                <li><kbd>.border-0</kbd> - zostanie usunięta ramka na wszystkich bokach</li>
+                <li><kbd>.border-top-0</kbd> - zostanie usunięta ramka u góry</li>
+                <li><kbd>.border-right-0</kbd> - zostanie usunięta ramka po prawej</li>
+                <li><kbd>.border-bottom-0</kbd> - zostanie usunięta ramka na dole</li>
+                <li><kbd>.border-left-0</kbd> - zostanie usunięta ramka po lewej</li>
+            </ul>
+            </p>
+            <div class="col-12 border border-dark mt-3">
+                <div class="p-2">
+                    <div class="row">
+                        <div class="border-0 m-2 bg-light" style="width: 5rem; height: 5rem;"></div>
+                        <div class="border border-top-0 bg-light m-2" style=" width: 5rem; height: 5rem;"></div>
+                        <div class="border border-right-0 bg-light m-2" style=" width: 5rem; height: 5rem;"></div>
+                        <div class="border border-bottom-0 bg-light m-2" style=" width: 5rem; height: 5rem;"></div>
+                        <div class="border border-left-0 bg-light m-2" style=" width: 5rem; height: 5rem;"></div>
+                    </div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"border-0"</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"border border-top-0"</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"border border-right-0"</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"border border-bottom-0"</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"border border-left-0"</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+</code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Kolory ramek</h2>
+            <p>Do zmiany koloru ramki możemy używać wbudowanych klas kontekstowych Bootstrap'a. Mamy do wyboru klasy:
+            <ul>
+                <li><kbd>.border-primary</kbd></li>
+                <li><kbd>.border-secondary</kbd></li>
+                <li><kbd>.border-success</kbd></li>
+                <li><kbd>.border-danger</kbd></li>
+                <li><kbd>.border-warning</kbd></li>
+                <li><kbd>.border-info</kbd></li>
+                <li><kbd>.border-light</kbd></li>
+                <li><kbd>.border-dark</kbd></li>
+                <li><kbd>.border-white</kbd></li>
+            </ul>
+            </p>
+            <div class="col-12 border border-dark mt-3">
+                <div class="p-2">
+                    <div class="row">
+                        <div class="border border-primary m-2 bg-light" style="width: 5rem; height: 5rem;"></div>
+                        <div class="border border-secondary m-2 bg-light" style="width: 5rem; height: 5rem;"></div>
+                        <div class="border border-success m-2 bg-light" style="width: 5rem; height: 5rem;"></div>
+                        <div class="border border-danger m-2 bg-light" style="width: 5rem; height: 5rem;"></div>
+                        <div class="border border-warning m-2 bg-light" style="width: 5rem; height: 5rem;"></div>
+                        <div class="border border-info m-2 bg-light" style="width: 5rem; height: 5rem;"></div>
+                        <div class="border border-light m-2 bg-light" style="width: 5rem; height: 5rem;"></div>
+                        <div class="border border-dark m-2 bg-light" style="width: 5rem; height: 5rem;"></div>
+                        <div class="border border-white m-2 bg-light" style="width: 5rem; height: 5rem;"></div>
+                    </div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"border border-primary"</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"border border-secondary"</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"border border-success"</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"border border-warning"</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"border border-danger"</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"border border-info"</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"border border-light"</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"border border-dark"</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"border border-white"</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+</code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Zaokrąglone ramki</h2>
+            <p>Ramki możemy też zaokrąlić. Służą nam do tego odpowiednie klasy:
+            <ul>
+                <li><kbd>.rounded</kbd> - zaokrągla wszystkie boki</li>
+                <li><kbd>.rounded-top</kbd> - zaokrągla u góry</li>
+                <li><kbd>.rounded-right</kbd> - zaokrągla po prawej</li>
+                <li><kbd>.rounded-bottom</kbd> - zaokrągla na dole</li>
+                <li><kbd>.rounded-left</kbd> - zaokrągla po lewej</li>
+                <li><kbd>.rounded-circle</kbd> - tworzy okrąg</li>
+                <li><kbd>.rounded-0</kbd> - usuwa zaokrąglenie</li>
+            </ul>
+            </p>
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <div class="row">
+                        <img src="https://placehold.it/100?text=rounded" alt=".rounded" class="rounded m-2" />
+                        <img src="https://placehold.it/100?text=rounded-top" alt=".rounded-top"
+                            class="rounded-top m-2" />
+                        <img src="https://placehold.it/100?text=rounded-right" alt=".rounded-right"
+                            class="rounded-right m-2" />
+                        <img src="https://placehold.it/100?text=rounded-bottom" alt=".rounded-bottom"
+                            class="rounded-bottom m-2" />
+                        <img src="https://placehold.it/100?text=rounded-left" alt=".rounded-left"
+                            class="rounded-left m-2" />
+                        <img src="https://placehold.it/100?text=rounded-circle" alt=".rounded-circle"
+                            class="rounded-circle m-2" />
+                        <img src="https://placehold.it/100?text=rounded-0" alt=".rounded-0" class="rounded-0 m-2" />
+                    </div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">img</span><span class="text-light"> src=</span><span class="text-danger">"https://placehold.it/100?text=rounded"</span><span class="text-light"> alt=</span><span class="text-danger">".rounded"</span><span class="text-light"> class=</span><span class="text-danger">"rounded"</span><span class="text-white-50"> /&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">img</span><span class="text-light"> src=</span><span class="text-danger">"https://placehold.it/100?text=rounded-top"</span><span class="text-light"> alt=</span><span class="text-danger">".rounded-top"</span><span class="text-light"> class=</span><span class="text-danger">"rounded-top"</span><span class="text-white-50"> /&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">img</span><span class="text-light"> src=</span><span class="text-danger">"https://placehold.it/100?text=rounded-right"</span><span class="text-light"> alt=</span><span class="text-danger">".rounded-right"</span><span class="text-light"> class=</span><span class="text-danger">"rounded-right"</span><span class="text-white-50"> /&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">img</span><span class="text-light"> src=</span><span class="text-danger">"https://placehold.it/100?text=rounded-bottom"</span><span class="text-light"> alt=</span><span class="text-danger">".rounded-bottom"</span><span class="text-light"> class=</span><span class="text-danger">"rounded-bottom"</span><span class="text-white-50"> /&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">img</span><span class="text-light"> src=</span><span class="text-danger">"https://placehold.it/100?text=rounded-left"</span><span class="text-light"> alt=</span><span class="text-danger">".rounded-left"</span><span class="text-light"> class=</span><span class="text-danger">"rounded-left"</span><span class="text-white-50"> /&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">img</span><span class="text-light"> src=</span><span class="text-danger">"https://placehold.it/100?text=rounded-circle"</span><span class="text-light"> alt=</span><span class="text-danger">".rounded-circle"</span><span class="text-light"> class=</span><span class="text-danger">"rounded-circle"</span><span class="text-white-50"> /&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">img</span><span class="text-light"> src=</span><span class="text-danger">"https://placehold.it/100?text=rounded-0"</span><span class="text-light"> alt=</span><span class="text-danger">".rounded-0"</span><span class="text-light"> class=</span><span class="text-danger">"rounded-0"</span><span class="text-white-50"> /&gt;</span>
+</code></pre>
+                </div>
+
+                <!--/code-->
+            </div>
+        </div>
+    </main>
+
+    <footer class="container-fluid py-2 bg-primary fixed-bottom">
+        <p class="text-center text-light m-0">Stworzono przez Jakub Kobiałka</p>
+    </footer>
+
+    <!--JS scripts-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
