@@ -86,8 +86,8 @@
                             <a class="dropdown-item" href="borders.html">Ramki</a>
                             <a class="dropdown-item" href="clearfix.html">Clearfix</a>
                             <a class="dropdown-item" href="colors.html">Kolory</a>
-                            <a class="dropdown-item" href="#">Display</a>
-                            <a class="dropdown-item" href="embeds.html">Umieszczanie filmików zewnętrznych</a>
+                            <a class="dropdown-item" href="display.html">Display</a>
+                            <a class="dropdown-item" href="#">Umieszczanie filmików zewnętrznych</a>
                         </div>
                     </li>
                 </ul>
@@ -98,120 +98,72 @@
     <main>
         <div class="container my-5">
             <header>
-                <h1>Display</h1>
+                <h1>Umieszczanie filmików zewnętrznych</h1>
             </header>
-            <p>W Bootstrapie mamy do dyspozycji odpowiednie klasy które odpowiadają nam za display, czyli sposób
-                wyświelania elementów. Możemy zdefiniować czy dany element ma wyświetlać się liniowo, bloko, jako tabela
-                czy też jako flex. Klasy te możemy dostosować także do wybranych breakpointów, czyli dla wybranych
-                szerokości ekranu. Składnia takiej klasy wygląda następująco: <kbd>.d-xx-yy</kbd>, gdzie "xx" oznacza
-                nasz breakpoint, a "yy" oznacza sposób wyświetlania.
-                Do dyspozycji mamy następujące klasy:
+            <p>Na naszych stronach możemy umieszczać także filmiki z serwisu YouTube czy też elementy innych stron lub
+                różne widżety za pomocą iframe. Bootstrap w tym celu ma przygotowane parę klas zapewniających
+                responsywność iframe oraz pilnowanie ich proporcji.<br />
+                Musimy zacząć od stworzenia elementu div z klasą <kbd>.embed-responsive</kbd> w którym umieszczamy nasz
+                iframe z klasą <kbd>.embed-responsive-item</kbd><br />
+                Jeśli teraz chcemy umieścić film z YouTube z odpowiednimi proporcjami musimy w tym celu do naszego
+                elemntu div dodać odpowienie klasy:
             <ul>
-                <li><kbd>.d-none</kbd></li>
-                <li><kbd>.d-inline</kbd></li>
-                <li><kbd>.d-inline-block</kbd></li>
-                <li><kbd>.d-block</kbd></li>
-                <li><kbd>.d-table</kbd></li>
-                <li><kbd>.d-table-cell</kbd></li>
-                <li><kbd>.d-table-row</kbd></li>
-                <li><kbd>.d-flex</kbd></li>
-                <li><kbd>.d-inline-flex</kbd></li>
+                <li><kbd>.embed-responsive-21by9</kbd> - dla obrazu o porporcjach 21:9</li>
+                <li><kbd>.embed-responsive-16by9</kbd> - dla obrazu o porporcjach 16:9 (jest to standard dla YouTube)
+                </li>
+                <li><kbd>.embed-responsive-4by3</kbd> - dla obrazu o porporcjach 4:3</li>
+                <li><kbd>.embed-responsive-1by1</kbd> - dla obrazu o porporcjach 1:1</li>
             </ul>
             </p>
-            <h2 class="mt-3">Podstawowy przykład</h2>
             <div class="col-12 bg-light border border-dark mt-3">
                 <div class="p-2">
-                    <div class="m-2">
-                        <div class="d-inline p-2 bg-primary text-white">.d-inline</div>
-                        <div class="d-inline p-2 bg-secondary text-white">.d-inline</div>
+                    <div>
+                        <p>21:9</p>
+                        <div class="embed-responsive embed-responsive-21by9">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ZV9qvauLlmo"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div>
+                        <p>16:9</p>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ZV9qvauLlmo"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div>
+                        <p>4:3</p>
+                        <div class="embed-responsive embed-responsive-4by3">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ZV9qvauLlmo"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div>
+                        <p>1:1</p>
+                        <div class="embed-responsive embed-responsive-1by1">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ZV9qvauLlmo"
+                                allowfullscreen></iframe>
+                        </div>
                     </div>
                 </div>
                 <!--code-->
                 <div class="bg-dark pl-1">
                     <pre class="mt-1">
-<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"d-inline p-2 bg-primary text-white"</span><span class="text-white-50">&gt;</span><span class="text-light">.d-inline</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
-<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"d-inline p-2 bg-secondary text-white"</span><span class="text-white-50">&gt;</span><span class="text-light">.d-inline</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
-</code></pre>
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"embed-responsive embed-responsive-21by9"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">iframe </span><span class="text-light">class=</span><span class="text-danger">"embed-responsive-item"</span><span class="text-light"> src=</span><span class="text-danger">"https://www.youtube.com/embed/ZV9qvauLlmo"</span><span class="text-light"> allowfullscreen</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">iframe</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"embed-responsive embed-responsive-16by9"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">iframe </span><span class="text-light">class=</span><span class="text-danger">"embed-responsive-item"</span><span class="text-light"> src=</span><span class="text-danger">"https://www.youtube.com/embed/ZV9qvauLlmo"</span><span class="text-light"> allowfullscreen</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">iframe</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"embed-responsive embed-responsive-4by3"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">iframe </span><span class="text-light">class=</span><span class="text-danger">"embed-responsive-item"</span><span class="text-light"> src=</span><span class="text-danger">"https://www.youtube.com/embed/ZV9qvauLlmo"</span><span class="text-light"> allowfullscreen</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">iframe</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"embed-responsive embed-responsive-1by1"</span><span class="text-white-50">&gt;</span>
+    <span class="text-white-50">&lt;</span><span class="text-info">iframe </span><span class="text-light">class=</span><span class="text-danger">"embed-responsive-item"</span><span class="text-light"> src=</span><span class="text-danger">"https://www.youtube.com/embed/ZV9qvauLlmo"</span><span class="text-light"> allowfullscreen</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">iframe</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span></code></pre>
                 </div>
                 <!--/code-->
             </div>
-            <div class="col-12 bg-light border border-dark mt-3">
-                <div class="p-2">
-                    <div class="m-2">
-                        <div class="d-block p-2 bg-primary text-white">.d-block</div>
-                        <div class="d-block p-2 bg-secondary text-white">.d-block</div>
-                    </div>
-                </div>
-                <!--code-->
-                <div class="bg-dark pl-1">
-                    <pre class="mt-1">
-<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"d-block p-2 bg-primary text-white"</span><span class="text-white-50">&gt;</span><span class="text-light">.d-block</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
-<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"d-block p-2 bg-secondary text-white"</span><span class="text-white-50">&gt;</span><span class="text-light">.d-block</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
-</code></pre>
-                </div>
-                <!--/code-->
-            </div>
-            <h2 class="mt-3">Ukrywanie elementów</h2>
-            <p>Możemy ukrywać wybrane elementy w zależności od rozdzielczości ekranu. W tym celu wykorzystamy kombinacje
-                różnych klas.</p>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Rozmiar ekranu</th>
-                        <th>Klasa</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Ukryte cały czas</td>
-                        <td><kbd>.d-none</kbd></td>
-                    </tr>
-                    <tr>
-                        <td>Ukryte tylko na xs</td>
-                        <td><kbd>.d-none .d-sm-block</kbd></td>
-                    </tr>
-                    <tr>
-                        <td>Ukryte tylko na sm</td>
-                        <td><kbd>.d-sm-none .d-md-block</kbd></td>
-                    </tr>
-                    <tr>
-                        <td>Ukryte tylko na md</td>
-                        <td><kbd>.d-md-none .d-lg-block</kbd></td>
-                    </tr>
-                    <tr>
-                        <td>Ukryte tylko na lg</td>
-                        <td><kbd>.d-lg-none .d-xl-block</kbd></td>
-                    </tr>
-                    <tr>
-                        <td>Ukryte tylko na xl</td>
-                        <td><kbd>.d-xl-none</kbd></td>
-                    </tr>
-                    <tr>
-                        <td>Widoczne zawsze</td>
-                        <td><kbd>.d-block</kbd></td>
-                    </tr>
-                    <tr>
-                        <td>Widoczne tylko na xs</td>
-                        <td><kbd>.d-block .d-sm-none</kbd></td>
-                    </tr>
-                    <tr>
-                        <td>Widoczne tylko na sm</td>
-                        <td><kbd>.d-none .d-sm-block .d-md-none</kbd></td>
-                    </tr>
-                    <tr>
-                        <td>Widoczne tylko na md</td>
-                        <td><kbd>.d-none .d-md-block .d-lg-none</kbd></td>
-                    </tr>
-                    <tr>
-                        <td>Widoczne tylko na lg</td>
-                        <td><kbd>.d-none .d-lg-block .d-xl-none</kbd></td>
-                    </tr>
-                    <tr>
-                        <td>Widoczne tylko na xl</td>
-                        <td><kbd>.d-none .d-xl-block</kbd></td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
     </main>
 
