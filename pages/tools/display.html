@@ -47,11 +47,11 @@
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Zawartość</a>
 
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="typography.html">Typografia</a>
-                            <a class="dropdown-item" href="code.html">Wyświetlanie kodu</a>
-                            <a class="dropdown-item" href="#">Obrazy</a>
-                            <a class="dropdown-item" href="figures.html">Obrazy z podpisem</a>
-                            <a class="dropdown-item" href="tables.html">Tabele</a>
+                            <a class="dropdown-item" href="../content/typography.html">Typografia</a>
+                            <a class="dropdown-item" href="../content/code.html">Wyświetlanie kodu</a>
+                            <a class="dropdown-item" href="../content/images.html">Obrazy</a>
+                            <a class="dropdown-item" href="../content/figures.html">Obrazy z podpisem</a>
+                            <a class="dropdown-item" href="../content/tables.html">Tabele</a>
                         </div>
                     </li>
 
@@ -83,10 +83,10 @@
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">Narzędzia</a>
 
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="../tools/borders.html">Ramki</a>
-                            <a class="dropdown-item" href="../tools/clearfix.html">Clearfix</a>
-                            <a class="dropdown-item" href="../tools/colors.html">Kolory</a>
-                            <a class="dropdown-item" href="../tools/display.html">Display</a>
+                            <a class="dropdown-item" href="borders.html">Ramki</a>
+                            <a class="dropdown-item" href="clearfix.html">Clearfix</a>
+                            <a class="dropdown-item" href="colors.html">Kolory</a>
+                            <a class="dropdown-item" href="#">Display</a>
                             <a class="dropdown-item">Umieszczanie filmików zewnętrznych</a>
                         </div>
                     </li>
@@ -98,82 +98,120 @@
     <main>
         <div class="container my-5">
             <header>
-                <h1>Obrazki</h1>
+                <h1>Display</h1>
             </header>
-            <h2>Obraz responsywny</h2>
-            <p>Aby obrazek był responsywny i skalował się odpowienio należy nadać mu klasę <kbd>.img-fluid</kbd></p>
-            <div class="col-12 bg-light border border-dark mt-3">
-                <div class="p-2 row">
-                    <img src="https://placehold.it/350x250" class="img-fluid col-10 offset-1" />
-                </div>
-                <!--code-->
-                <div class="bg-dark pl-1">
-                    <pre class="mt-1">
-<code><span class="text-white-50">&lt;</span><span class="text-info">img </span><span class="text-light">src=</span><span class="text-danger">"https://placehold.it/350x250"</span><span class="text-light"> class=</span><span class="text-danger">"img-fluid"</span><span class="text-white-50"> /&gt;</span>
-</code></pre>
-                </div>
-                <!--/code-->
-            </div>
-            <h2 class="mt-3">Kształty obrazków</h2>
-            <p>Dzięki klasom w Bootstrapie możemy zaokrąglić rogi obrazkowi <kbd>.rounded</kbd>, umieścić go w okręgu
-                <kbd>.rounded-circle</kbd> albo dodać mu ramkę <kbd>.img-thumbnail</kbd></p>
-            <div class="col-12 bg-light border border-dark mt-3">
-                <div class="p-2 row">
-                    <img src="https://placehold.it/200?text=.rounded" class="rounded col-4" />
-                    <img src="https://placehold.it/200?text=.rounded-circle" class="rounded-circle col-4" />
-                    <img src="https://placehold.it/200?text=.img-thumbnail" class="img-thumbnail col-4" />
-                </div>
-                <!--code-->
-                <div class="bg-dark pl-1">
-                    <pre class="mt-1">
-<code><span class="text-white-50">&lt;</span><span class="text-info">img </span><span class="text-light">src=</span><span class="text-danger">"https://placehold.it/200?text=.rounded"</span><span class="text-light"> class=</span><span class="text-danger">"rounded"</span><span class="text-white-50"> /&gt;</span>
-<span class="text-white-50">&lt;</span><span class="text-info">img </span><span class="text-light">src=</span><span class="text-danger">"https://placehold.it/200?text=.rounded-circle"</span><span class="text-light"> class=</span><span class="text-danger">"rounded-circle"</span><span class="text-white-50"> /&gt;</span>
-<span class="text-white-50">&lt;</span><span class="text-info">img </span><span class="text-light">src=</span><span class="text-danger">"https://placehold.it/200?text=.img-thumbnail"</span><span class="text-light"> class=</span><span class="text-danger">"img-thumbnail"</span><span class="text-white-50"> /&gt;</span>
-</code></pre>
-                </div>
-                <!--/code-->
-            </div>
-            <h2 class="mt-3">Ustawianie obrazków</h2>
-            <p>Aby ustawić nasz obraz po stronie lewej krawędzi mamy do dyspozycji klasę <kbd>.float-left</kbd>,
-                natomiast aby wyrównać obraz do prawej używamy klasy <kbd>.float-right</kbd></p>
+            <p>W Bootstrapie mamy do dyspozycji odpowiednie klasy które odpowiadają nam za display, czyli sposób
+                wyświelania elementów. Możemy zdefiniować czy dany element ma wyświetlać się liniowo, bloko, jako tabela
+                czy też jako flex. Klasy te możemy dostosować także do wybranych breakpointów, czyli dla wybranych
+                szerokości ekranu. Składnia takiej klasy wygląda następująco: <kbd>.d-xx-yy</kbd>, gdzie "xx" oznacza
+                nasz breakpoint, a "yy" oznacza sposób wyświetlania.
+                Do dyspozycji mamy następujące klasy:
+            <ul>
+                <li><kbd>.d-none</kbd></li>
+                <li><kbd>.d-inline</kbd></li>
+                <li><kbd>.d-inline-block</kbd></li>
+                <li><kbd>.d-block</kbd></li>
+                <li><kbd>.d-table</kbd></li>
+                <li><kbd>.d-table-cell</kbd></li>
+                <li><kbd>.d-table-row</kbd></li>
+                <li><kbd>.d-flex</kbd></li>
+                <li><kbd>.d-inline-flex</kbd></li>
+            </ul>
+            </p>
+            <h2 class="mt-3">Podstawowy przykład</h2>
             <div class="col-12 bg-light border border-dark mt-3">
                 <div class="p-2">
-                    <img src="https://placehold.it/200?text=.float-left" class="rounded float-left" />
-                    <img src="https://placehold.it/200?text=.float-right" class="rounded float-right" />
-                    <div class="clearfix"></div>
-                </div>
-                <!--code-->
-                <div class="bg-dark pl-1">
-                    <pre class="mt-1">
-<code><span class="text-white-50">&lt;</span><span class="text-info">img </span><span class="text-light">src=</span><span class="text-danger">"https://placehold.it/200?text=.float-left"</span><span class="text-light"> class=</span><span class="text-danger">"rounded float-left"</span><span class="text-white-50"> /&gt;</span>
-<span class="text-white-50">&lt;</span><span class="text-info">img </span><span class="text-light">src=</span><span class="text-danger">"https://placehold.it/200?text=.float-right"</span><span class="text-light"> class=</span><span class="text-danger">"rounded float-right"</span><span class="text-white-50"> /&gt;</span>
-<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"clearfix"</span><span class="text-white-50">&gt;</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
-</code></pre>
-                </div>
-                <!--/code-->
-            </div>
-            <p class="mt-2">Natomiast aby wyrówać obrazek mamy do dyspozycji dwie metody. Można użyć klasy
-                <kbd>.mx-auto</kbd> wraz z
-                <kbd>.d-block</kbd>. Można użyć także klasy <kbd>.text-center</kbd></p>
-            <div class="col-12 bg-light border border-dark mt-3">
-                <div class="p-2">
-                    <img src="https://placehold.it/300?text=.mx-auto+.d-block" class="mx-auto d-block" />
-                    <div class="text-center mt-4">
-                        <img src="https://placehold.it/300?text=.text-center" />
+                    <div class="m-2">
+                        <div class="d-inline p-2 bg-primary text-white">.d-inline</div>
+                        <div class="d-inline p-2 bg-secondary text-white">.d-inline</div>
                     </div>
                 </div>
                 <!--code-->
                 <div class="bg-dark pl-1">
                     <pre class="mt-1">
-<code><span class="text-white-50">&lt;</span><span class="text-info">img </span><span class="text-light">src=</span><span class="text-danger">"https://placehold.it/300?text=.mx-auto+.d-block"</span><span class="text-light"> class=</span><span class="text-danger">"mx-auto d-block"</span><span class="text-white-50"> /&gt;</span>
-<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"text-center mt-4"</span><span class="text-white-50">&gt;</span>
-    <span class="text-white-50">&lt;</span><span class="text-info">img </span><span class="text-light">src=</span><span class="text-danger">"https://placehold.it/300?text=.text-center"</span><span class="text-white-50"> /&gt;</span>
-<span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"d-inline p-2 bg-primary text-white"</span><span class="text-white-50">&gt;</span><span class="text-light">.d-inline</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"d-inline p-2 bg-secondary text-white"</span><span class="text-white-50">&gt;</span><span class="text-light">.d-inline</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
 </code></pre>
                 </div>
                 <!--/code-->
             </div>
-
+            <div class="col-12 bg-light border border-dark mt-3">
+                <div class="p-2">
+                    <div class="m-2">
+                        <div class="d-block p-2 bg-primary text-white">.d-block</div>
+                        <div class="d-block p-2 bg-secondary text-white">.d-block</div>
+                    </div>
+                </div>
+                <!--code-->
+                <div class="bg-dark pl-1">
+                    <pre class="mt-1">
+<code><span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"d-block p-2 bg-primary text-white"</span><span class="text-white-50">&gt;</span><span class="text-light">.d-block</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+<span class="text-white-50">&lt;</span><span class="text-info">div </span><span class="text-light">class=</span><span class="text-danger">"d-block p-2 bg-secondary text-white"</span><span class="text-white-50">&gt;</span><span class="text-light">.d-block</span><span class="text-white-50">&lt;/</span><span class="text-info">div</span><span class="text-white-50">&gt;</span>
+</code></pre>
+                </div>
+                <!--/code-->
+            </div>
+            <h2 class="mt-3">Ukrywanie elementów</h2>
+            <p>Możemy ukrywać wybrane elementy w zależności od rozdzielczości ekranu. W tym celu wykorzystamy kombinacje
+                różnych klas.</p>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Rozmiar ekranu</th>
+                        <th>Klasa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ukryte cały czas</td>
+                        <td><kbd>.d-none</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>Ukryte tylko na xs</td>
+                        <td><kbd>.d-none .d-sm-block</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>Ukryte tylko na sm</td>
+                        <td><kbd>.d-sm-none .d-md-block</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>Ukryte tylko na md</td>
+                        <td><kbd>.d-md-none .d-lg-block</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>Ukryte tylko na lg</td>
+                        <td><kbd>.d-lg-none .d-xl-block</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>Ukryte tylko na xl</td>
+                        <td><kbd>.d-xl-none</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>Widoczne zawsze</td>
+                        <td><kbd>.d-block</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>Widoczne tylko na xs</td>
+                        <td><kbd>.d-block .d-sm-none</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>Widoczne tylko na sm</td>
+                        <td><kbd>.d-none .d-sm-block .d-md-none</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>Widoczne tylko na md</td>
+                        <td><kbd>.d-none .d-md-block .d-lg-none</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>Widoczne tylko na lg</td>
+                        <td><kbd>.d-none .d-lg-block .d-xl-none</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>Widoczne tylko na xl</td>
+                        <td><kbd>.d-none .d-xl-block</kbd></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </main>
 
